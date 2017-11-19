@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace myGarag_e_MAINPROJECT
 {
     public partial class myGarage_ShopMain : Form
@@ -17,44 +18,7 @@ namespace myGarag_e_MAINPROJECT
             InitializeComponent();
         }
 
-        protected MySqlConnection setMySqlConnection(string connectionString)
-        {
-            MySqlConnection dbConnection;
-
-            try
-            {
-                dbConnection = new MySqlConnection(connectionString); // instatiating the connection
-                dbConnection.Open();
-            }
-
-//#pragma warning disable CS0168 // The variable 'obj' is declared but never used
-            catch (MySqlException obj)
-//#pragma warning restore CS0168 // The variable 'obj' is declared but never used
-            {
-                MessageBox.Show("Σφάλμα σύνδεσης.\n" + obj.Message);
-                return null;
-            }
-
-            return dbConnection;
-        }
-
-
-        private DataSet getTableData(string tableName) // it returns a datased which contains data from a table
-        {
-            MySqlConnection dbConnection = setMySqlConnection("server=localhost;uid=root;pwd=;database=adopse");
-            string dbCommand = "SELECT * FROM " + tableName;
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(dbCommand, dbConnection);
-            DataSet dataset = new DataSet();
-
-
-            dataAdapter.Fill(dataset, tableName);
-            dbConnection.Close();
-            return dataset;
-
-        }
-
-
-
+       
 
         private void ShopManagementTabs_Selected(object sender, TabControlEventArgs e)
         {
@@ -67,13 +31,13 @@ namespace myGarag_e_MAINPROJECT
                 case 0: //
                     break;
 
-                case 1:
-                    ds = getTableData("pelatologio");
+                case 1: 
+                    ds = DbFiles.DbMethods.getTableData("pelatologio");
                     dataGridView2.DataSource = ds.Tables["pelatologio"];
                     break;
 
                 case 2:
-                    ds = getTableData("proion");
+                    ds = DbFiles.DbMethods.getTableData("proion");
                     dataGridView3.DataSource = ds.Tables["proion"];
                     break;
 
