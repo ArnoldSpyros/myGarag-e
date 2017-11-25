@@ -101,6 +101,7 @@
             this.LoginBtn.TabIndex = 3;
             this.LoginBtn.Text = "Είσοδος";
             this.LoginBtn.UseVisualStyleBackColor = true;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // RegisterBtn
             // 
