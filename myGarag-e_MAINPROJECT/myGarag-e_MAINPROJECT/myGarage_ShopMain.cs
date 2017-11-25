@@ -16,13 +16,14 @@ namespace myGarag_e_MAINPROJECT
         public myGarage_ShopMain()
         {
             InitializeComponent();
+            
         }
 
        
 
         private void ShopManagementTabs_Selected(object sender, TabControlEventArgs e)
         {
-            MessageBox.Show("You are in the " + ShopManagementTabs.SelectedIndex + " tab"); // This line is for debug purpose. You can remove it if you want to.
+            //MessageBox.Show("You are in the " + ShopManagementTabs.SelectedIndex + " tab"); // This line is for debug purpose. You can remove it if you want to.
             int idx = ShopManagementTabs.SelectedIndex;
             DataSet ds;
 
@@ -47,6 +48,16 @@ namespace myGarag_e_MAINPROJECT
                 default: //
                     break;
             }
+
+        }
+
+        private void NewAppointmentBtn_Click(object sender, EventArgs e)
+        {
+            AppointmentForm window = new AppointmentForm();
+            window.Visible = true;
+
+            //this.Enabled = false;
+            //NewAppointmentBtn.Enabled = false;
 
         }
     }
