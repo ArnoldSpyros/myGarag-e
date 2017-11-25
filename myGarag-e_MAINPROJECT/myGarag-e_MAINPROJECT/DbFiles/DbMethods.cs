@@ -63,7 +63,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 
         public static int deleteFromTable(string tableName, string conditionField, string condition)
         {
-            MySqlConnection dbConnection = setMySqlConnection("server=localhost;uid=root;pwd=;database=adopse");
+            MySqlConnection dbConnection = setMySqlConnection(connectionString);
             string dbCommandStr = String.Format("DELETE FROM {0} WHERE {1}={2}", tableName, conditionField, condition);
             MySqlCommand dbCommand = new MySqlCommand(dbCommandStr, dbConnection);
 
