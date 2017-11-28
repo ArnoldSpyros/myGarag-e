@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace myGarag_e_MAINPROJECT.DbFiles
 {
@@ -26,7 +27,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             catch (MySqlException obj)
             {
 
-                System.Windows.Forms.MessageBox.Show("Σφάλμα σύνδεσης.\n" + obj.Message);
+                MessageBox.Show("Σφάλμα σύνδεσης.\n" + obj.Message);
                 return null;
             }
 
@@ -36,14 +37,22 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 
         public static DataSet getTableData(string tableName) // it returns a datased which contains data from a table
         {
-            MySqlConnection dbConnection = setMySqlConnection(connectionString);
-            string dbCommand = String.Format("SELECT * FROM {0}", tableName);
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(dbCommand, dbConnection);
-            DataSet dataset = new DataSet();
+            try
+            {
+                MySqlConnection dbConnection = setMySqlConnection(connectionString);
+                string dbCommand = String.Format("SELECT * FROM {0}", tableName);
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(dbCommand, dbConnection);
+                DataSet dataset = new DataSet();
 
-            dataAdapter.Fill(dataset, tableName);
-            dbConnection.Close();
-            return dataset;
+                dataAdapter.Fill(dataset, tableName);
+                dbConnection.Close();
+                return dataset;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
 
         }
 
