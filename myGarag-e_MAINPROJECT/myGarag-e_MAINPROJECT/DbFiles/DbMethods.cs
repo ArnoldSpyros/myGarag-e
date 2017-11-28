@@ -25,7 +25,6 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 
             catch (MySqlException obj)
             {
-
                 System.Windows.Forms.MessageBox.Show("Σφάλμα σύνδεσης.\n" + obj.Message);
                 return null;
             }
