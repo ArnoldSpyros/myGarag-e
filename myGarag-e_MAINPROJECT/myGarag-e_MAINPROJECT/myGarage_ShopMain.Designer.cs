@@ -47,8 +47,6 @@
             this.ClienteleTab = new System.Windows.Forms.TabPage();
             this.NewClientBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.DeleteBtnColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MoreInfoColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.StocksTab = new System.Windows.Forms.TabPage();
             this.AddItemBtn = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -62,6 +60,7 @@
             this.OrdersContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DeleteOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.InfoOrder = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewClienteleBtn = new System.Windows.Forms.Button();
             this.ShopUserMenuStrip.SuspendLayout();
             this.ShopUserPanel.SuspendLayout();
             this.AdministrativePanel.SuspendLayout();
@@ -209,6 +208,7 @@
             this.NewOrderBtn.TabIndex = 1;
             this.NewOrderBtn.Text = "Νέα Παραγγελία";
             this.NewOrderBtn.UseVisualStyleBackColor = true;
+            this.NewOrderBtn.Click += new System.EventHandler(this.NewOrderBtn_Click);
             // 
             // dataGridView1
             // 
@@ -220,6 +220,7 @@
             // 
             // ClienteleTab
             // 
+            this.ClienteleTab.Controls.Add(this.NewClienteleBtn);
             this.ClienteleTab.Controls.Add(this.NewClientBtn);
             this.ClienteleTab.Controls.Add(this.dataGridView2);
             this.ClienteleTab.Location = new System.Drawing.Point(4, 22);
@@ -238,29 +239,15 @@
             this.NewClientBtn.TabIndex = 1;
             this.NewClientBtn.Text = "Νέος Πελάτης";
             this.NewClientBtn.UseVisualStyleBackColor = true;
+            this.NewClientBtn.Click += new System.EventHandler(this.NewClientBtn_Click);
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DeleteBtnColumn,
-            this.MoreInfoColumn});
             this.dataGridView2.Location = new System.Drawing.Point(7, 48);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(757, 370);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // DeleteBtnColumn
-            // 
-            this.DeleteBtnColumn.HeaderText = "";
-            this.DeleteBtnColumn.Name = "DeleteBtnColumn";
-            this.DeleteBtnColumn.Text = "Διαγραφή Πελάτη";
-            // 
-            // MoreInfoColumn
-            // 
-            this.MoreInfoColumn.HeaderText = "";
-            this.MoreInfoColumn.Name = "MoreInfoColumn";
-            this.MoreInfoColumn.Text = "Πληροφορίες";
             // 
             // StocksTab
             // 
@@ -282,6 +269,7 @@
             this.AddItemBtn.TabIndex = 1;
             this.AddItemBtn.Text = "Προσθήκη Αντικειμένου";
             this.AddItemBtn.UseVisualStyleBackColor = true;
+            this.AddItemBtn.Click += new System.EventHandler(this.AddItemBtn_Click);
             // 
             // dataGridView3
             // 
@@ -311,7 +299,6 @@
             this.NewAppointmentBtn.TabIndex = 1;
             this.NewAppointmentBtn.Text = "Νέο Ραντεβού";
             this.NewAppointmentBtn.UseVisualStyleBackColor = true;
-            this.NewAppointmentBtn.Click += new System.EventHandler(this.NewAppointmentBtn_Click);
             // 
             // dataGridView4
             // 
@@ -367,6 +354,16 @@
             this.InfoOrder.Name = "InfoOrder";
             this.InfoOrder.Size = new System.Drawing.Size(219, 22);
             this.InfoOrder.Text = "Πληροφορίες Παραγγελίας";
+            // 
+            // NewClienteleBtn
+            // 
+            this.NewClienteleBtn.Location = new System.Drawing.Point(222, 6);
+            this.NewClienteleBtn.Name = "NewClienteleBtn";
+            this.NewClienteleBtn.Size = new System.Drawing.Size(190, 23);
+            this.NewClienteleBtn.TabIndex = 2;
+            this.NewClienteleBtn.Text = "Νέο Πελατολόγιο";
+            this.NewClienteleBtn.UseVisualStyleBackColor = true;
+            this.NewClienteleBtn.Click += new System.EventHandler(this.NewClienteleBtn_Click);
             // 
             // myGarage_ShopMain
             // 
@@ -426,13 +423,12 @@
         private System.Windows.Forms.TabPage ClienteleTab;
         private System.Windows.Forms.Button NewClientBtn;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewButtonColumn DeleteBtnColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn MoreInfoColumn;
         private System.Windows.Forms.TabPage StocksTab;
         private System.Windows.Forms.Button AddItemBtn;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.TabPage AppointmentsTab;
         private System.Windows.Forms.Button NewAppointmentBtn;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Button NewClienteleBtn;
     }
 }
