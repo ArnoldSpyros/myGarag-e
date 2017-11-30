@@ -26,13 +26,13 @@ namespace myGarag_e_MAINPROJECT
 
         private void registerClientB_Click(object sender, EventArgs e)
         {
-            string code = ClientTbKodikosPelati.Text;
+            string ID = ClientTbKodikosPelati.Text;
             string name = ClientTbOnoma.Text;
             string lastName = ClientTbEpitheto.Text;
             string phoneNumber = ClientTbTilefono.Text;
             string password = ClientTbPassword.Text;
 
-            int insertedRows = DbFiles.DbMethods.registUser(code, name, lastName, phoneNumber, password);
+            int insertedRows = DbFiles.DbMethods.registUser(ID, name, lastName, phoneNumber, password);
             if (insertedRows != 0)
             {
                 MessageBox.Show("Successfully registred!", "INFO", MessageBoxButtons.OK);

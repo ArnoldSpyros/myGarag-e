@@ -8,6 +8,7 @@ namespace myGarag_e_MAINPROJECT.Classes
 {
     class User
     {
+        private string ID;
         private Minima[] minimata;
         private RolosUser[] roles = new RolosUser[2];
         private String username;
@@ -21,9 +22,10 @@ namespace myGarag_e_MAINPROJECT.Classes
         {
         }
 
-        public User(RolosUser[] roles, string username, string name, string lastName, string phoneNumber, string address)
+        public User(string ID,RolosUser rolos, string username, string name, string lastName, string phoneNumber, string address)
         {
-            this.roles = roles;
+            this.ID = ID;
+            this.roles[0] = rolos;
             this.username = username;
             this.name = name;
             this.lastName = lastName;
