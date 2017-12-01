@@ -15,5 +15,14 @@ namespace myGarag_e_MAINPROJECT
         {
             InitializeComponent();
         }
+
+        
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            string username = UserTB.Text;
+            string password = PassTB.Text;
+            DbFiles.DbMethods.connectionString = "server=jabc.zapto.org;uid=" + username + ";pwd=" + password + ";database=adopse";
+
+        }
     }
 }
