@@ -39,6 +39,7 @@
             this.ClientTbEpitheto = new System.Windows.Forms.TextBox();
             this.ClientTbOnoma = new System.Windows.Forms.TextBox();
             this.ClientTbKodikosPelati = new System.Windows.Forms.TextBox();
+            this.registerClientB = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,11 +142,22 @@
             this.ClientTbKodikosPelati.Size = new System.Drawing.Size(148, 20);
             this.ClientTbKodikosPelati.TabIndex = 0;
             // 
+            // registerClientB
+            // 
+            this.registerClientB.Location = new System.Drawing.Point(221, 279);
+            this.registerClientB.Name = "registerClientB";
+            this.registerClientB.Size = new System.Drawing.Size(94, 34);
+            this.registerClientB.TabIndex = 1;
+            this.registerClientB.Text = "Προσθήκη";
+            this.registerClientB.UseVisualStyleBackColor = true;
+            this.registerClientB.Click += new System.EventHandler(this.registerClientB_Click);
+            // 
             // myGarage_NewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(408, 325);
+            this.Controls.Add(this.registerClientB);
             this.Controls.Add(this.groupBox1);
             this.Name = "myGarage_NewClient";
             this.Text = "Προσθήκη νέου πελάτη";
@@ -169,5 +181,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button registerClientB;
     }
 }
