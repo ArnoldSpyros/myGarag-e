@@ -13,7 +13,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
     class DbMethods
     {
 
-        public static string connectionString = "server=localhost;uid=root;pwd=;database=adopse";
+        public static string connectionString = "server=jabc.zapto.org;uid=root;pwd=;database=adopse";
         public static User user;
 
         public static MySqlConnection setMySqlConnection(string connectionString)
