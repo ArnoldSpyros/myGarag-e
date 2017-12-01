@@ -44,3 +44,31 @@ C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJ
 C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.exe
 C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.pdb
 C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csprojResolveAssemblyReference.cache
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\myGarag-e_MAINPROJECT.exe.config
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\myGarag-e_MAINPROJECT.exe
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\myGarag-e_MAINPROJECT.pdb
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\el-GR\myGarag-e_MAINPROJECT.resources.dll
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\el\myGarag-e_MAINPROJECT.resources.dll
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.dll
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.dll
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySQL.Data.EntityFrameworkCore.dll
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.xml
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.Entity.EF6.xml
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySQL.Data.EntityFrameworkCore.xml
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.xml
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csprojResolveAssemblyReference.cache
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.resources
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_ShopMain.resources
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_StartingPage.resources
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_SystemAdminMain.resources
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.Properties.Resources.resources
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.el-GR.resources
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.el.resources
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csproj.GenerateResource.Cache
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csproj.CoreCompileInputs.cache
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el-GR\myGarag-e_MAINPROJECT.resources.dll
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el\myGarag-e_MAINPROJECT.resources.dll
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.exe
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.pdb
+C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.Display_Insert_Update_Delete_Search_Image_In_MySQL_Database.resources
