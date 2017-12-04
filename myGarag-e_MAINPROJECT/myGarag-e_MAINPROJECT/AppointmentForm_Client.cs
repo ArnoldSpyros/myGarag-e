@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace myGarag_e_MAINPROJECT
 {
-    public partial class AppointmentForm : Form
+    public partial class AppointmentForm_Client : Form
     {
-        public AppointmentForm()
+        public AppointmentForm_Client()
         {
             InitializeComponent();
         }

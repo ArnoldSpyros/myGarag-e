@@ -67,7 +67,6 @@ C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPRO
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el\myGarag-e_MAINPROJECT.resources.dll
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.exe
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.pdb
-C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.AppointmentForm.resources
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\myGarag-e_MAINPROJECT.exe.config
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\myGarag-e_MAINPROJECT.exe
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\myGarag-e_MAINPROJECT.pdb
@@ -103,3 +102,4 @@ C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPRO
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewClient.resources
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewItem.resources
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewOrder.resources
+C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.AppointmentForm_Client.resources

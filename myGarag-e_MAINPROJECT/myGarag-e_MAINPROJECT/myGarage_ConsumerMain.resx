@@ -112,16 +112,16 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ApplicationLOGO.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ApplicationLOGO.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 24pt, style=Bold</value>
   </data>
@@ -132,9 +132,9 @@
     <value>780, 0</value>
   </data>
   <data name="ApplicationLOGO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>780, 37</value>
+    <value>784, 37</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ApplicationLOGO.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -148,7 +148,7 @@
     <value>ApplicationLOGO</value>
   </data>
   <data name="&gt;&gt;ApplicationLOGO.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ApplicationLOGO.Parent" xml:space="preserve">
     <value>$this</value>
@@ -162,7 +162,7 @@
   <data name="UserPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <metadata name="ConsumerMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ConsumerMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>15, 17</value>
   </metadata>
   <data name="ConsumerMenuStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -173,6 +173,12 @@
   </data>
   <data name="ConsumerMenuStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="νέοΡαντεβούToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="νέοΡαντεβούToolStripMenuItem.Text" xml:space="preserve">
+    <value>Νέο Ραντεβού</value>
   </data>
   <data name="AppointmentsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 21</value>
@@ -186,35 +192,11 @@
   <data name="CartMenuItem.Text" xml:space="preserve">
     <value>Καλάθι αγορών</value>
   </data>
-  <data name="εισερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="εισερχόμεναToolStripMenuItem.Text" xml:space="preserve">
-    <value>Εισερχόμενα</value>
-  </data>
-  <data name="εξερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="εξερχόμεναToolStripMenuItem.Text" xml:space="preserve">
-    <value>Εξερχόμενα</value>
-  </data>
   <data name="MessagesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 21</value>
   </data>
   <data name="MessagesMenuItem.Text" xml:space="preserve">
     <value>Μηνύματα</value>
-  </data>
-  <data name="πληροφορίεςToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="πληροφορίεςToolStripMenuItem.Text" xml:space="preserve">
-    <value>Πληροφορίες Προφίλ</value>
-  </data>
-  <data name="επεξεργασίαΠροφίλToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="επεξεργασίαΠροφίλToolStripMenuItem.Text" xml:space="preserve">
-    <value>Επεξεργασία προφίλ</value>
   </data>
   <data name="AccountMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 21</value>
@@ -238,7 +220,7 @@
     <value>ConsumerMenuStrip</value>
   </data>
   <data name="&gt;&gt;ConsumerMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ConsumerMenuStrip.Parent" xml:space="preserve">
     <value>UserPanel</value>
@@ -259,7 +241,7 @@
     <value>UserPanel</value>
   </data>
   <data name="&gt;&gt;UserPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;UserPanel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -267,8 +249,77 @@
   <data name="&gt;&gt;UserPanel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="εισερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="εισερχόμεναToolStripMenuItem.Text" xml:space="preserve">
+    <value>Εισερχόμενα</value>
+  </data>
+  <data name="εξερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="εξερχόμεναToolStripMenuItem.Text" xml:space="preserve">
+    <value>Εξερχόμενα</value>
+  </data>
+  <data name="πληροφορίεςToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="πληροφορίεςToolStripMenuItem.Text" xml:space="preserve">
+    <value>Πληροφορίες Προφίλ</value>
+  </data>
+  <data name="επεξεργασίαΠροφίλToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="επεξεργασίαΠροφίλToolStripMenuItem.Text" xml:space="preserve">
+    <value>Επεξεργασία προφίλ</value>
+  </data>
   <data name="SearchPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;SearchBtn.Name" xml:space="preserve">
+    <value>SearchBtn</value>
+  </data>
+  <data name="&gt;&gt;SearchBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchBtn.Parent" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SearchTextBox.Name" xml:space="preserve">
+    <value>SearchTextBox</value>
+  </data>
+  <data name="&gt;&gt;SearchTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchTextBox.Parent" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SearchPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 43</value>
+  </data>
+  <data name="SearchPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 49</value>
+  </data>
+  <data name="SearchPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.Name" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="SearchBtn.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -289,7 +340,7 @@
     <value>SearchBtn</value>
   </data>
   <data name="&gt;&gt;SearchBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SearchBtn.Parent" xml:space="preserve">
     <value>SearchPanel</value>
@@ -313,33 +364,12 @@
     <value>SearchTextBox</value>
   </data>
   <data name="&gt;&gt;SearchTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SearchTextBox.Parent" xml:space="preserve">
     <value>SearchPanel</value>
   </data>
   <data name="&gt;&gt;SearchTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SearchPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 43</value>
-  </data>
-  <data name="SearchPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>391, 49</value>
-  </data>
-  <data name="SearchPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;SearchPanel.Name" xml:space="preserve">
-    <value>SearchPanel</value>
-  </data>
-  <data name="&gt;&gt;SearchPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SearchPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SearchPanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="PartsShopPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -348,41 +378,11 @@
   <data name="PartsShopPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <metadata name="IconColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="IconColumn.HeaderText" xml:space="preserve">
-    <value />
-  </data>
-  <metadata name="BuyItemColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="BuyItemColumn.HeaderText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BuyItemColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="BuyItemColumn.ToolTipText" xml:space="preserve">
-    <value>Αγοράστε αυτό το προϊόν</value>
-  </data>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>779, 458</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
     <value>dataGridView1</value>
   </data>
   <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
     <value>PartsShopPanel</value>
@@ -403,7 +403,7 @@
     <value>PartsShopPanel</value>
   </data>
   <data name="&gt;&gt;PartsShopPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PartsShopPanel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -411,7 +411,55 @@
   <data name="&gt;&gt;PartsShopPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="IconColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BuyItemColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>779, 458</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>PartsShopPanel</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="IconColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="IconColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <metadata name="BuyItemColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BuyItemColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BuyItemColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="BuyItemColumn.ToolTipText" xml:space="preserve">
+    <value>Αγοράστε αυτό το προϊόν</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -433,66 +481,72 @@
     <value>AppointmentsMenuItem</value>
   </data>
   <data name="&gt;&gt;AppointmentsMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CartMenuItem.Name" xml:space="preserve">
     <value>CartMenuItem</value>
   </data>
   <data name="&gt;&gt;CartMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MessagesMenuItem.Name" xml:space="preserve">
     <value>MessagesMenuItem</value>
   </data>
   <data name="&gt;&gt;MessagesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;εισερχόμεναToolStripMenuItem.Name" xml:space="preserve">
     <value>εισερχόμεναToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;εισερχόμεναToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;εξερχόμεναToolStripMenuItem.Name" xml:space="preserve">
     <value>εξερχόμεναToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;εξερχόμεναToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;AccountMenuItem.Name" xml:space="preserve">
     <value>AccountMenuItem</value>
   </data>
   <data name="&gt;&gt;AccountMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;πληροφορίεςToolStripMenuItem.Name" xml:space="preserve">
     <value>πληροφορίεςToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;πληροφορίεςToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;επεξεργασίαΠροφίλToolStripMenuItem.Name" xml:space="preserve">
     <value>επεξεργασίαΠροφίλToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;επεξεργασίαΠροφίλToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;IconColumn.Name" xml:space="preserve">
     <value>IconColumn</value>
   </data>
   <data name="&gt;&gt;IconColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BuyItemColumn.Name" xml:space="preserve">
     <value>BuyItemColumn</value>
   </data>
   <data name="&gt;&gt;BuyItemColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;νέοΡαντεβούToolStripMenuItem.Name" xml:space="preserve">
+    <value>νέοΡαντεβούToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;νέοΡαντεβούToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>myGarage_ConsumerMain</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

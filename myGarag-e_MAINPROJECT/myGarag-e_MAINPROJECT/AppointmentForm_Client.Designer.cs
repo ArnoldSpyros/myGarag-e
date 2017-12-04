@@ -1,6 +1,6 @@
 ﻿namespace myGarag_e_MAINPROJECT
 {
-    partial class AppointmentForm
+    partial class AppointmentForm_Client
     {
         /// <summary>
         /// Required designer variable.

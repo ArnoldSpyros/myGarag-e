@@ -45,6 +45,7 @@
             this.NewOrderBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ClienteleTab = new System.Windows.Forms.TabPage();
+            this.NewClienteleBtn = new System.Windows.Forms.Button();
             this.NewClientBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.StocksTab = new System.Windows.Forms.TabPage();
@@ -60,7 +61,6 @@
             this.OrdersContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DeleteOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.InfoOrder = new System.Windows.Forms.ToolStripMenuItem();
-            this.NewClienteleBtn = new System.Windows.Forms.Button();
             this.ShopUserMenuStrip.SuspendLayout();
             this.ShopUserPanel.SuspendLayout();
             this.AdministrativePanel.SuspendLayout();
@@ -231,6 +231,16 @@
             this.ClienteleTab.Text = "Πελατολόγιο";
             this.ClienteleTab.UseVisualStyleBackColor = true;
             // 
+            // NewClienteleBtn
+            // 
+            this.NewClienteleBtn.Location = new System.Drawing.Point(222, 6);
+            this.NewClienteleBtn.Name = "NewClienteleBtn";
+            this.NewClienteleBtn.Size = new System.Drawing.Size(190, 23);
+            this.NewClienteleBtn.TabIndex = 2;
+            this.NewClienteleBtn.Text = "Νέο Πελατολόγιο";
+            this.NewClienteleBtn.UseVisualStyleBackColor = true;
+            this.NewClienteleBtn.Click += new System.EventHandler(this.NewClienteleBtn_Click);
+            // 
             // NewClientBtn
             // 
             this.NewClientBtn.Location = new System.Drawing.Point(7, 6);
@@ -299,6 +309,7 @@
             this.NewAppointmentBtn.TabIndex = 1;
             this.NewAppointmentBtn.Text = "Νέο Ραντεβού";
             this.NewAppointmentBtn.UseVisualStyleBackColor = true;
+            this.NewAppointmentBtn.Click += new System.EventHandler(this.NewAppointmentBtn_Click_1);
             // 
             // dataGridView4
             // 
@@ -354,16 +365,6 @@
             this.InfoOrder.Name = "InfoOrder";
             this.InfoOrder.Size = new System.Drawing.Size(219, 22);
             this.InfoOrder.Text = "Πληροφορίες Παραγγελίας";
-            // 
-            // NewClienteleBtn
-            // 
-            this.NewClienteleBtn.Location = new System.Drawing.Point(222, 6);
-            this.NewClienteleBtn.Name = "NewClienteleBtn";
-            this.NewClienteleBtn.Size = new System.Drawing.Size(190, 23);
-            this.NewClienteleBtn.TabIndex = 2;
-            this.NewClienteleBtn.Text = "Νέο Πελατολόγιο";
-            this.NewClienteleBtn.UseVisualStyleBackColor = true;
-            this.NewClienteleBtn.Click += new System.EventHandler(this.NewClienteleBtn_Click);
             // 
             // myGarage_ShopMain
             // 

@@ -47,6 +47,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IconColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.BuyItemColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.νέοΡαντεβούToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UserPanel.SuspendLayout();
             this.ConsumerMenuStrip.SuspendLayout();
             this.SearchPanel.SuspendLayout();
@@ -78,6 +79,8 @@
             // 
             // AppointmentsMenuItem
             // 
+            this.AppointmentsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.νέοΡαντεβούToolStripMenuItem});
             this.AppointmentsMenuItem.Name = "AppointmentsMenuItem";
             resources.ApplyResources(this.AppointmentsMenuItem, "AppointmentsMenuItem");
             // 
@@ -174,6 +177,12 @@
             this.BuyItemColumn.Text = "Αγορά";
             this.BuyItemColumn.UseColumnTextForButtonValue = true;
             // 
+            // νέοΡαντεβούToolStripMenuItem
+            // 
+            this.νέοΡαντεβούToolStripMenuItem.Name = "νέοΡαντεβούToolStripMenuItem";
+            resources.ApplyResources(this.νέοΡαντεβούToolStripMenuItem, "νέοΡαντεβούToolStripMenuItem");
+            this.νέοΡαντεβούToolStripMenuItem.Click += new System.EventHandler(this.νέοΡαντεβούToolStripMenuItem_Click);
+            // 
             // myGarage_ConsumerMain
             // 
             resources.ApplyResources(this, "$this");
@@ -214,6 +223,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewImageColumn IconColumn;
         private System.Windows.Forms.DataGridViewButtonColumn BuyItemColumn;
+        private System.Windows.Forms.ToolStripMenuItem νέοΡαντεβούToolStripMenuItem;
     }
 }
 

@@ -17,5 +17,11 @@ namespace myGarag_e_MAINPROJECT
             InitializeComponent();
             
         }
+
+        private void νέοΡαντεβούToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AppointmentForm_Client window = new AppointmentForm_Client();
+            window.Visible = true;
+        }
     }
 }

@@ -104,12 +104,17 @@ namespace myGarag_e_MAINPROJECT
 
         private void NewAppointmentBtn_Click(object sender, EventArgs e)
         {
-            AppointmentForm window = new AppointmentForm();
+            
+
+        }
+
+        private void NewAppointmentBtn_Click_1(object sender, EventArgs e)
+        {
+            AppointmentForm_Shop window = new AppointmentForm_Shop();
             window.Visible = true;
 
             //this.Enabled = false;
             //NewAppointmentBtn.Enabled = false;
-
         }
     }
 }

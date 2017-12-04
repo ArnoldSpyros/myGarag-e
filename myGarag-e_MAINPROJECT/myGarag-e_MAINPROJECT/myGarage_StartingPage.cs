@@ -21,7 +21,7 @@ namespace myGarag_e_MAINPROJECT
         {
             string username = UserTB.Text;
             string password = PassTB.Text;
-            DbFiles.DbMethods.findUser(username);
+            //DbFiles.DbMethods.findUser(username);
             //DbFiles.DbMethods.connectionString = "server=server=jabc.zapto.org;uid=" + username + ";pwd=" + password + ";database=adopse";
         }
     }
