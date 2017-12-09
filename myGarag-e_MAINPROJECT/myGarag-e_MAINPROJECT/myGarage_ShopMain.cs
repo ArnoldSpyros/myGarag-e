@@ -62,7 +62,7 @@ namespace myGarag_e_MAINPROJECT
             
             if (newClientFormShown == false)
             {
-                myGarage_NewClient newclientform = new myGarage_NewClient();
+                myGarage_NewUser newclientform = new myGarage_NewUser();
                 newclientform.Show();
                 newClientFormShown = true;
             }

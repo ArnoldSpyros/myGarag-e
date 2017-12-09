@@ -45,7 +45,7 @@
             this.NewOrderBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ClienteleTab = new System.Windows.Forms.TabPage();
-            this.NewClientBtn = new System.Windows.Forms.Button();
+            this.NewClienteleBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.StocksTab = new System.Windows.Forms.TabPage();
             this.AddItemBtn = new System.Windows.Forms.Button();
@@ -60,7 +60,6 @@
             this.OrdersContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DeleteOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.InfoOrder = new System.Windows.Forms.ToolStripMenuItem();
-            this.NewClienteleBtn = new System.Windows.Forms.Button();
             this.ShopUserMenuStrip.SuspendLayout();
             this.ShopUserPanel.SuspendLayout();
             this.AdministrativePanel.SuspendLayout();
@@ -221,7 +220,6 @@
             // ClienteleTab
             // 
             this.ClienteleTab.Controls.Add(this.NewClienteleBtn);
-            this.ClienteleTab.Controls.Add(this.NewClientBtn);
             this.ClienteleTab.Controls.Add(this.dataGridView2);
             this.ClienteleTab.Location = new System.Drawing.Point(4, 22);
             this.ClienteleTab.Name = "ClienteleTab";
@@ -231,15 +229,15 @@
             this.ClienteleTab.Text = "Πελατολόγιο";
             this.ClienteleTab.UseVisualStyleBackColor = true;
             // 
-            // NewClientBtn
+            // NewClienteleBtn
             // 
-            this.NewClientBtn.Location = new System.Drawing.Point(7, 6);
-            this.NewClientBtn.Name = "NewClientBtn";
-            this.NewClientBtn.Size = new System.Drawing.Size(190, 23);
-            this.NewClientBtn.TabIndex = 1;
-            this.NewClientBtn.Text = "Νέος Πελάτης";
-            this.NewClientBtn.UseVisualStyleBackColor = true;
-            this.NewClientBtn.Click += new System.EventHandler(this.NewClientBtn_Click);
+            this.NewClienteleBtn.Location = new System.Drawing.Point(7, 6);
+            this.NewClienteleBtn.Name = "NewClienteleBtn";
+            this.NewClienteleBtn.Size = new System.Drawing.Size(190, 23);
+            this.NewClienteleBtn.TabIndex = 2;
+            this.NewClienteleBtn.Text = "Νέο Πελατολόγιο";
+            this.NewClienteleBtn.UseVisualStyleBackColor = true;
+            this.NewClienteleBtn.Click += new System.EventHandler(this.NewClienteleBtn_Click);
             // 
             // dataGridView2
             // 
@@ -355,16 +353,6 @@
             this.InfoOrder.Size = new System.Drawing.Size(219, 22);
             this.InfoOrder.Text = "Πληροφορίες Παραγγελίας";
             // 
-            // NewClienteleBtn
-            // 
-            this.NewClienteleBtn.Location = new System.Drawing.Point(222, 6);
-            this.NewClienteleBtn.Name = "NewClienteleBtn";
-            this.NewClienteleBtn.Size = new System.Drawing.Size(190, 23);
-            this.NewClienteleBtn.TabIndex = 2;
-            this.NewClienteleBtn.Text = "Νέο Πελατολόγιο";
-            this.NewClienteleBtn.UseVisualStyleBackColor = true;
-            this.NewClienteleBtn.Click += new System.EventHandler(this.NewClienteleBtn_Click);
-            // 
             // myGarage_ShopMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,7 +409,6 @@
         private System.Windows.Forms.Button NewOrderBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage ClienteleTab;
-        private System.Windows.Forms.Button NewClientBtn;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage StocksTab;
         private System.Windows.Forms.Button AddItemBtn;

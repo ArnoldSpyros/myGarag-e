@@ -40,28 +40,29 @@
             this.StoreListPanel = new System.Windows.Forms.Panel();
             this.AdminTabPane = new System.Windows.Forms.TabControl();
             this.ShopsTabPage = new System.Windows.Forms.TabPage();
-            this.CorporatesTabPage = new System.Windows.Forms.TabPage();
-            this.ShopsDataGridView = new System.Windows.Forms.DataGridView();
-            this.ShopTbKodikosKatastimatos = new System.Windows.Forms.TextBox();
-            this.ShopTbIdioktitis = new System.Windows.Forms.TextBox();
-            this.ShopTbAddress = new System.Windows.Forms.TextBox();
-            this.ShopTbPerioxi = new System.Windows.Forms.TextBox();
-            this.ShopTbMeRantevou = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.BanDeleteStoreBtn = new System.Windows.Forms.Button();
             this.ShopsDataEdit = new System.Windows.Forms.GroupBox();
+            this.ShopTbKodikosKatastimatos = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ShopTbIdioktitis = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ShopTbAddress = new System.Windows.Forms.TextBox();
+            this.ShopTbMeRantevou = new System.Windows.Forms.CheckBox();
+            this.ShopTbPerioxi = new System.Windows.Forms.TextBox();
             this.ShopsDataPreview = new System.Windows.Forms.GroupBox();
+            this.ShopsDataGridView = new System.Windows.Forms.DataGridView();
+            this.CorporatesTabPage = new System.Windows.Forms.TabPage();
             this.AdminPanel.SuspendLayout();
             this.AdminMenuStrip.SuspendLayout();
             this.StoreListPanel.SuspendLayout();
             this.AdminTabPane.SuspendLayout();
             this.ShopsTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShopsDataGridView)).BeginInit();
             this.ShopsDataEdit.SuspendLayout();
             this.ShopsDataPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShopsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ApplicationLOGO
@@ -110,13 +111,13 @@
             // εισερχόμεναToolStripMenuItem
             // 
             this.εισερχόμεναToolStripMenuItem.Name = "εισερχόμεναToolStripMenuItem";
-            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.εισερχόμεναToolStripMenuItem.Text = "Εισερχόμενα";
             // 
             // εξερχόμεναToolStripMenuItem
             // 
             this.εξερχόμεναToolStripMenuItem.Name = "εξερχόμεναToolStripMenuItem";
-            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.εξερχόμεναToolStripMenuItem.Text = "Εξερχόμενα";
             // 
             // AccountMenuItem
@@ -162,6 +163,7 @@
             // 
             // ShopsTabPage
             // 
+            this.ShopsTabPage.Controls.Add(this.BanDeleteStoreBtn);
             this.ShopsTabPage.Controls.Add(this.ShopsDataEdit);
             this.ShopsTabPage.Controls.Add(this.ShopsDataPreview);
             this.ShopsTabPage.Location = new System.Drawing.Point(4, 22);
@@ -172,110 +174,15 @@
             this.ShopsTabPage.Text = "Καταστήματα";
             this.ShopsTabPage.UseVisualStyleBackColor = true;
             // 
-            // CorporatesTabPage
+            // BanDeleteStoreBtn
             // 
-            this.CorporatesTabPage.Location = new System.Drawing.Point(4, 22);
-            this.CorporatesTabPage.Name = "CorporatesTabPage";
-            this.CorporatesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.CorporatesTabPage.Size = new System.Drawing.Size(761, 417);
-            this.CorporatesTabPage.TabIndex = 1;
-            this.CorporatesTabPage.Text = "Συνεργάτες";
-            this.CorporatesTabPage.UseVisualStyleBackColor = true;
-            // 
-            // ShopsDataGridView
-            // 
-            this.ShopsDataGridView.AllowUserToAddRows = false;
-            this.ShopsDataGridView.AllowUserToDeleteRows = false;
-            this.ShopsDataGridView.AllowUserToOrderColumns = true;
-            this.ShopsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ShopsDataGridView.Location = new System.Drawing.Point(6, 19);
-            this.ShopsDataGridView.Name = "ShopsDataGridView";
-            this.ShopsDataGridView.ReadOnly = true;
-            this.ShopsDataGridView.Size = new System.Drawing.Size(380, 319);
-            this.ShopsDataGridView.TabIndex = 0;
-            // 
-            // ShopTbKodikosKatastimatos
-            // 
-            this.ShopTbKodikosKatastimatos.Location = new System.Drawing.Point(178, 22);
-            this.ShopTbKodikosKatastimatos.Name = "ShopTbKodikosKatastimatos";
-            this.ShopTbKodikosKatastimatos.Size = new System.Drawing.Size(173, 20);
-            this.ShopTbKodikosKatastimatos.TabIndex = 1;
-            // 
-            // ShopTbIdioktitis
-            // 
-            this.ShopTbIdioktitis.Location = new System.Drawing.Point(178, 66);
-            this.ShopTbIdioktitis.Name = "ShopTbIdioktitis";
-            this.ShopTbIdioktitis.Size = new System.Drawing.Size(173, 20);
-            this.ShopTbIdioktitis.TabIndex = 2;
-            // 
-            // ShopTbAddress
-            // 
-            this.ShopTbAddress.Location = new System.Drawing.Point(178, 125);
-            this.ShopTbAddress.Name = "ShopTbAddress";
-            this.ShopTbAddress.Size = new System.Drawing.Size(173, 20);
-            this.ShopTbAddress.TabIndex = 3;
-            // 
-            // ShopTbPerioxi
-            // 
-            this.ShopTbPerioxi.Location = new System.Drawing.Point(178, 188);
-            this.ShopTbPerioxi.Name = "ShopTbPerioxi";
-            this.ShopTbPerioxi.Size = new System.Drawing.Size(173, 20);
-            this.ShopTbPerioxi.TabIndex = 4;
-            // 
-            // ShopTbMeRantevou
-            // 
-            this.ShopTbMeRantevou.AutoSize = true;
-            this.ShopTbMeRantevou.Location = new System.Drawing.Point(178, 241);
-            this.ShopTbMeRantevou.Name = "ShopTbMeRantevou";
-            this.ShopTbMeRantevou.Size = new System.Drawing.Size(66, 17);
-            this.ShopTbMeRantevou.TabIndex = 5;
-            this.ShopTbMeRantevou.Text = "Ναί\\Όχι";
-            this.ShopTbMeRantevou.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Κωδικός Καταστήματος:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(96, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Ιδιοκτήτης:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(96, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Διεύθυνση:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(108, 191);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Περιοχή:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(80, 242);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Με ραντεβού:";
+            this.BanDeleteStoreBtn.Location = new System.Drawing.Point(12, 7);
+            this.BanDeleteStoreBtn.Name = "BanDeleteStoreBtn";
+            this.BanDeleteStoreBtn.Size = new System.Drawing.Size(454, 23);
+            this.BanDeleteStoreBtn.TabIndex = 13;
+            this.BanDeleteStoreBtn.Text = "Μεταβολή καταστημάτων";
+            this.BanDeleteStoreBtn.UseVisualStyleBackColor = true;
+            this.BanDeleteStoreBtn.Click += new System.EventHandler(this.BanDeleteStoreBtn_Click);
             // 
             // ShopsDataEdit
             // 
@@ -296,6 +203,89 @@
             this.ShopsDataEdit.TabStop = false;
             this.ShopsDataEdit.Text = "Επεξεργασία";
             // 
+            // ShopTbKodikosKatastimatos
+            // 
+            this.ShopTbKodikosKatastimatos.Location = new System.Drawing.Point(178, 22);
+            this.ShopTbKodikosKatastimatos.Name = "ShopTbKodikosKatastimatos";
+            this.ShopTbKodikosKatastimatos.Size = new System.Drawing.Size(173, 20);
+            this.ShopTbKodikosKatastimatos.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(80, 242);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Με ραντεβού:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Κωδικός Καταστήματος:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(108, 191);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Περιοχή:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(96, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Διεύθυνση:";
+            // 
+            // ShopTbIdioktitis
+            // 
+            this.ShopTbIdioktitis.Location = new System.Drawing.Point(178, 66);
+            this.ShopTbIdioktitis.Name = "ShopTbIdioktitis";
+            this.ShopTbIdioktitis.Size = new System.Drawing.Size(173, 20);
+            this.ShopTbIdioktitis.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(96, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Ιδιοκτήτης:";
+            // 
+            // ShopTbAddress
+            // 
+            this.ShopTbAddress.Location = new System.Drawing.Point(178, 125);
+            this.ShopTbAddress.Name = "ShopTbAddress";
+            this.ShopTbAddress.Size = new System.Drawing.Size(173, 20);
+            this.ShopTbAddress.TabIndex = 3;
+            // 
+            // ShopTbMeRantevou
+            // 
+            this.ShopTbMeRantevou.AutoSize = true;
+            this.ShopTbMeRantevou.Location = new System.Drawing.Point(178, 241);
+            this.ShopTbMeRantevou.Name = "ShopTbMeRantevou";
+            this.ShopTbMeRantevou.Size = new System.Drawing.Size(66, 17);
+            this.ShopTbMeRantevou.TabIndex = 5;
+            this.ShopTbMeRantevou.Text = "Ναί\\Όχι";
+            this.ShopTbMeRantevou.UseVisualStyleBackColor = true;
+            // 
+            // ShopTbPerioxi
+            // 
+            this.ShopTbPerioxi.Location = new System.Drawing.Point(178, 188);
+            this.ShopTbPerioxi.Name = "ShopTbPerioxi";
+            this.ShopTbPerioxi.Size = new System.Drawing.Size(173, 20);
+            this.ShopTbPerioxi.TabIndex = 4;
+            // 
             // ShopsDataPreview
             // 
             this.ShopsDataPreview.Controls.Add(this.ShopsDataGridView);
@@ -305,6 +295,28 @@
             this.ShopsDataPreview.TabIndex = 12;
             this.ShopsDataPreview.TabStop = false;
             this.ShopsDataPreview.Text = "Προεπισκόπηση";
+            // 
+            // ShopsDataGridView
+            // 
+            this.ShopsDataGridView.AllowUserToAddRows = false;
+            this.ShopsDataGridView.AllowUserToDeleteRows = false;
+            this.ShopsDataGridView.AllowUserToOrderColumns = true;
+            this.ShopsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShopsDataGridView.Location = new System.Drawing.Point(6, 19);
+            this.ShopsDataGridView.Name = "ShopsDataGridView";
+            this.ShopsDataGridView.ReadOnly = true;
+            this.ShopsDataGridView.Size = new System.Drawing.Size(380, 319);
+            this.ShopsDataGridView.TabIndex = 0;
+            // 
+            // CorporatesTabPage
+            // 
+            this.CorporatesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.CorporatesTabPage.Name = "CorporatesTabPage";
+            this.CorporatesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.CorporatesTabPage.Size = new System.Drawing.Size(761, 417);
+            this.CorporatesTabPage.TabIndex = 1;
+            this.CorporatesTabPage.Text = "Συνεργάτες";
+            this.CorporatesTabPage.UseVisualStyleBackColor = true;
             // 
             // myGarage_SystemAdminMain
             // 
@@ -316,17 +328,17 @@
             this.Controls.Add(this.ApplicationLOGO);
             this.MinimumSize = new System.Drawing.Size(780, 600);
             this.Name = "myGarage_SystemAdminMain";
-            this.Text = "myGarage_SystemAdminMain";
+            this.Text = "Φόρμα διαχειριστή συστήματος";
             this.AdminPanel.ResumeLayout(false);
             this.AdminMenuStrip.ResumeLayout(false);
             this.AdminMenuStrip.PerformLayout();
             this.StoreListPanel.ResumeLayout(false);
             this.AdminTabPane.ResumeLayout(false);
             this.ShopsTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ShopsDataGridView)).EndInit();
             this.ShopsDataEdit.ResumeLayout(false);
             this.ShopsDataEdit.PerformLayout();
             this.ShopsDataPreview.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ShopsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,5 +371,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox ShopsDataEdit;
         private System.Windows.Forms.GroupBox ShopsDataPreview;
+        private System.Windows.Forms.Button BanDeleteStoreBtn;
     }
 }
