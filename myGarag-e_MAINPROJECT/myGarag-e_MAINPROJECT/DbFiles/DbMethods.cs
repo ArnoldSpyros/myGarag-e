@@ -25,7 +25,6 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                 dbConnection = new MySqlConnection(connectionString); // instatiating the connection
                 dbConnection.Open();
             }
-
             catch (MySqlException obj)
             {
 
@@ -137,7 +136,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                 string name = tableRow[1].ToString();
                 string lastName = tableRow[2].ToString();
                 string phoneNumber = tableRow[3].ToString();
-                user = new User(ID,new Pelatis(), username, name, lastName, phoneNumber, "Unknown address");
+                user = new User(ID, new Pelatis(), username, name, lastName, phoneNumber, "Unknown address");
 
                 return true;
             }
@@ -145,6 +144,33 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             {
                 MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+
+        }
+
+        public static int insertProduct(string kodikosProiontos, string perigrafi, byte[] eikona, string timi, string kataskeuastis, string xoraKataskeuis)
+        {
+
+            try
+            {
+                MySqlConnection dbConnection = setMySqlConnection(connectionString);
+                string query = "INSERT INTO proion (kodikosProiontos,perigrafi,eikona,timi,kataskeuastis,xoraKataskeuis) VALUES (@kodikosProiontos,@perigrafi,@eikona,@timi,@kataskeuastis,@xoraKataskeuis)";
+                MySqlCommand command = new MySqlCommand(query, dbConnection);
+
+                command.Parameters.AddWithValue("@kodikosProiontos", kodikosProiontos);
+                command.Parameters.AddWithValue("@perigrafi", perigrafi);
+                command.Parameters.AddWithValue("@eikona", eikona);
+                command.Parameters.AddWithValue("@timi", timi);
+                command.Parameters.AddWithValue("@kataskeuastis", kataskeuastis);
+                command.Parameters.AddWithValue("@xoraKataskeuis", xoraKataskeuis);
+
+                int insertedRows = command.ExecuteNonQuery();
+                return insertedRows;
+            }
+            catch (MySqlException obj)
+            {
+                MessageBox.Show(obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
             }
 
         }

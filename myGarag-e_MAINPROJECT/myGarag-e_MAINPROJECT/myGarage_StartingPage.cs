@@ -20,7 +20,7 @@ namespace myGarag_e_MAINPROJECT
         {
             string username = UserTB.Text;
             string password = PassTB.Text;
-            DbFiles.DbMethods.findUser(username);
+            DbFiles.DbMethods.findCustomer(username);
             //DbFiles.DbMethods.connectionString = "server=localhost;uid=" + username + ";pwd=" + password + ";database=adopse";
         }
     }
