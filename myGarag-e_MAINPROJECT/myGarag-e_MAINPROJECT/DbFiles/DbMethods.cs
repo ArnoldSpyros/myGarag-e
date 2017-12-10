@@ -41,8 +41,8 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             try
             {
                 MySqlConnection dbConnection = setMySqlConnection(connectionString);
-                string dbCommand = String.Format("SELECT * FROM {0}", tableName);
-                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(dbCommand, dbConnection);
+                string query = String.Format("SELECT * FROM {0}", tableName);
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, dbConnection);
                 DataSet dataset = new DataSet();
 
                 dataAdapter.Fill(dataset, tableName);
@@ -62,8 +62,8 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             try
             {
                 MySqlConnection dbConnection = setMySqlConnection(connectionString);
-                string dbCommand = String.Format("SELECT * FROM {0} WHERE {1} = '{2}'", tableName, conditionField, condition);
-                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(dbCommand, dbConnection);
+                string query = String.Format("SELECT * FROM {0} WHERE {1} = '{2}'", tableName, conditionField, condition);
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, dbConnection);
                 DataSet dataset = new DataSet();
 
                 dataAdapter.Fill(dataset, tableName);
@@ -77,16 +77,42 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             }
         }
 
+        public static int updateTable(string tableName, string columnToUpdate, string newValue, string conditionColumn, string condition)
+        {
+
+            MySqlConnection dbConnection = setMySqlConnection(connectionString);
+            string query = String.Format("UPDATE {0} SET {1} = @newValue WHERE {2} = @condition", tableName, columnToUpdate, conditionColumn);
+            MySqlCommand command = new MySqlCommand(query, dbConnection);
+
+            try
+            {
+                command.Parameters.AddWithValue("@newValue", newValue);
+                command.Parameters.AddWithValue("@condition", condition);
+
+                command.Prepare();
+                int result = command.ExecuteNonQuery();
+                dbConnection.Close();
+                return result;
+            }
+            catch (MySqlException obj)
+            {
+                MessageBox.Show(obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+
+        }
 
         public static int deleteFromTable(string tableName, string conditionField, string condition)
         {
             try
             {
                 MySqlConnection dbConnection = setMySqlConnection(connectionString);
-                string dbCommandStr = String.Format("DELETE FROM {0} WHERE {1}={2}", tableName, conditionField, condition);
-                MySqlCommand dbCommand = new MySqlCommand(dbCommandStr, dbConnection);
+                string query = String.Format("DELETE FROM {0} WHERE {1} = @condition", tableName, conditionField);
+                MySqlCommand command = new MySqlCommand(query, dbConnection);
 
-                int deletedRows = dbCommand.ExecuteNonQuery();
+                command.Parameters.AddWithValue("@condition", condition);
+                command.Prepare();
+                int deletedRows = command.ExecuteNonQuery();
                 dbConnection.Close();
                 return deletedRows; // return the number of deleted rows.
             }
@@ -105,14 +131,15 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                 MySqlConnection dbConnection = setMySqlConnection(connectionString);
                 string dbCommandStr = String.Format("INSERT INTO pelatis (kodikosPelati,onoma,epitheto,tilefono,password)" +
                     " VALUES (@ID,@name,@lastName,@phoneNumber,@password)");
-                MySqlCommand dbCommand = new MySqlCommand(dbCommandStr, dbConnection);
-                dbCommand.Parameters.AddWithValue("@ID", ID);
-                dbCommand.Parameters.AddWithValue("@name", name);
-                dbCommand.Parameters.AddWithValue("@lastName", lastName);
-                dbCommand.Parameters.AddWithValue("@phoneNumber", phoneNumber);
-                dbCommand.Parameters.AddWithValue("@password", password);
-                int insertedRows = dbCommand.ExecuteNonQuery();
+                MySqlCommand command = new MySqlCommand(dbCommandStr, dbConnection);
+                command.Parameters.AddWithValue("@ID", ID);
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@lastName", lastName);
+                command.Parameters.AddWithValue("@phoneNumber", phoneNumber);
+                command.Parameters.AddWithValue("@password", password);
 
+                command.Prepare();
+                int insertedRows = command.ExecuteNonQuery();
                 dbConnection.Close();
                 return insertedRows;
             }
@@ -164,7 +191,9 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                 command.Parameters.AddWithValue("@kataskeuastis", kataskeuastis);
                 command.Parameters.AddWithValue("@xoraKataskeuis", xoraKataskeuis);
 
+                command.Prepare();
                 int insertedRows = command.ExecuteNonQuery();
+                dbConnection.Close();
                 return insertedRows;
             }
             catch (MySqlException obj)
@@ -172,8 +201,8 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                 MessageBox.Show(obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
-
         }
+
 
 
     }
