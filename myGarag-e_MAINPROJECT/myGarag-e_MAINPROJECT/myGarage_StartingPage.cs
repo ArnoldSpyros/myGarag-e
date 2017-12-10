@@ -21,7 +21,8 @@ namespace myGarag_e_MAINPROJECT
         {
             string username = UserTB.Text;
             string password = PassTB.Text;
-            DbFiles.DbMethods.connectionString = "server=localhost;uid=" + username + ";pwd=" + password + ";database=adopse";
+            DbFiles.DbMethods.findCustomer(username);
+            //DbFiles.DbMethods.connectionString = "server=localhost;uid=" + username + ";pwd=" + password + ";database=adopse";
         }
 
         private void RegisterBtn_Click(object sender, EventArgs e)

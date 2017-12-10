@@ -75,6 +75,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Autokinito.cs" />
+    <Compile Include="Classes\Minima.cs" />
+    <Compile Include="Classes\Pelatis.cs" />
+    <Compile Include="Classes\RolosUser.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="DbFiles\DbMethods.cs" />
     <Compile Include="myGarage_BanOrDeleteStore.cs">
       <SubType>Form</SubType>

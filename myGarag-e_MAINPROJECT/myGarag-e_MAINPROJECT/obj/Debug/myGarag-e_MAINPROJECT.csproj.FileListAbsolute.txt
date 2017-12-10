@@ -74,5 +74,13 @@ C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINP
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.pdb
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewClientele.resources
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewItem.resources
+<<<<<<< HEAD
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_BanOrDeleteStore.resources
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewUser.resources
+=======
+C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewClientele.resources
+C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewClient.resources
+C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewItem.resources
+C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewOrder.resources
+C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csproj.myGarag-e_MAINPROJECT.exe.config
+>>>>>>> Arnold-Branch
