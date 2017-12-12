@@ -100,5 +100,21 @@ namespace myGarag_e_MAINPROJECT
             neworderform.Show();
             newOrderFormShown = true;
         }
+
+        private void NewAppointmentBtn_Click(object sender, EventArgs e)
+        {
+            if (!myGarage_ConsumerMain.appointmentmenuitemshown)
+            {
+                myGarage_NewAppointment newappo = new myGarage_NewAppointment();
+                newappo.Show();
+                myGarage_ConsumerMain.appointmentmenuitemshown = true;
+            }
+            else
+            {
+                MessageBox.Show("Έχετε ήδη ένα ραντεβού ανοιχτό!");
+                myGarage_NewAppointment.ActiveForm.Focus();
+            }
+            
+        }
     }
 }

@@ -131,7 +131,7 @@
             this.MinimumSize = new System.Drawing.Size(380, 340);
             this.Name = "myGarage_StartingPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Start Page";
+            this.Text = "Είσοδος χρήστη";
             this.ResumeLayout(false);
             this.PerformLayout();
 

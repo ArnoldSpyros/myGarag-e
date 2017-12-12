@@ -76,3 +76,5 @@ C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINP
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewItem.resources
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_BanOrDeleteStore.resources
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewUser.resources
+C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_AppointmentList.resources
+C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewAppointment.resources
