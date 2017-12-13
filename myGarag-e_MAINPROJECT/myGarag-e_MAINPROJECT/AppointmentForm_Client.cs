@@ -39,5 +39,11 @@ namespace myGarag_e_MAINPROJECT
                 "ραντεβού και μέχρι τότε το αίτημα σας δεν θα οριστικοποιηθεί.", "Ραντεβού", MessageBoxButtons.OK);
             this.Close();
         }
+
+        private void AppointmentForm_Client_Load(object sender, EventArgs e)
+        {
+            DataSet ds = DbFiles.DbMethods.getTableData("pelatis");
+            d1.DataSource = ds.Tables["pelatis"];
+        }
     }
 }

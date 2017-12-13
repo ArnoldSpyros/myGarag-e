@@ -42,6 +42,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cancelB = new System.Windows.Forms.Button();
             this.sendB = new System.Windows.Forms.Button();
+            this.d1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.d1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -184,11 +186,20 @@
             this.sendB.UseVisualStyleBackColor = true;
             this.sendB.Click += new System.EventHandler(this.sendB_Click);
             // 
-            // AppointmentForm
+            // d1
+            // 
+            this.d1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.d1.Location = new System.Drawing.Point(659, 131);
+            this.d1.Name = "d1";
+            this.d1.Size = new System.Drawing.Size(240, 150);
+            this.d1.TabIndex = 15;
+            // 
+            // AppointmentForm_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 387);
+            this.ClientSize = new System.Drawing.Size(1050, 714);
+            this.Controls.Add(this.d1);
             this.Controls.Add(this.sendB);
             this.Controls.Add(this.cancelB);
             this.Controls.Add(this.label7);
@@ -203,9 +214,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AppointmentForm";
+            this.Name = "AppointmentForm_Client";
             this.Text = "RantebouForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AppointmentForm_FormClosed);
+            this.Load += new System.EventHandler(this.AppointmentForm_Client_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.d1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +240,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button cancelB;
         private System.Windows.Forms.Button sendB;
+        private System.Windows.Forms.DataGridView d1;
     }
 }
