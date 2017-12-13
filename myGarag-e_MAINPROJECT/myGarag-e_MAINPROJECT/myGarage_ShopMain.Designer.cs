@@ -122,13 +122,13 @@
             // εισερχόμεναToolStripMenuItem
             // 
             this.εισερχόμεναToolStripMenuItem.Name = "εισερχόμεναToolStripMenuItem";
-            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.εισερχόμεναToolStripMenuItem.Text = "Εισερχόμενα";
             // 
             // εξερχόμεναToolStripMenuItem
             // 
             this.εξερχόμεναToolStripMenuItem.Name = "εξερχόμεναToolStripMenuItem";
-            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.εξερχόμεναToolStripMenuItem.Text = "Εξερχόμενα";
             // 
             // AccountMenuItem
@@ -297,6 +297,7 @@
             this.NewAppointmentBtn.TabIndex = 1;
             this.NewAppointmentBtn.Text = "Νέο Ραντεβού";
             this.NewAppointmentBtn.UseVisualStyleBackColor = true;
+            this.NewAppointmentBtn.Click += new System.EventHandler(this.NewAppointmentBtn_Click);
             // 
             // dataGridView4
             // 

@@ -81,11 +81,23 @@
     <Compile Include="Classes\RolosUser.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="DbFiles\DbMethods.cs" />
+    <Compile Include="myGarage_AppointmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myGarage_AppointmentList.Designer.cs">
+      <DependentUpon>myGarage_AppointmentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="myGarage_BanOrDeleteStore.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="myGarage_BanOrDeleteStore.Designer.cs">
       <DependentUpon>myGarage_BanOrDeleteStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myGarage_NewAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myGarage_NewAppointment.Designer.cs">
+      <DependentUpon>myGarage_NewAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="myGarage_NewClientele.cs">
       <SubType>Form</SubType>
@@ -137,8 +149,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="myGarage_AppointmentList.resx">
+      <DependentUpon>myGarage_AppointmentList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="myGarage_BanOrDeleteStore.resx">
       <DependentUpon>myGarage_BanOrDeleteStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myGarage_NewAppointment.resx">
+      <DependentUpon>myGarage_NewAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myGarage_NewClientele.resx">
       <DependentUpon>myGarage_NewClientele.cs</DependentUpon>

@@ -45,6 +45,8 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.PartsShopPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.newappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UserPanel.SuspendLayout();
             this.ConsumerMenuStrip.SuspendLayout();
             this.SearchPanel.SuspendLayout();
@@ -76,6 +78,9 @@
             // 
             // AppointmentsMenuItem
             // 
+            this.AppointmentsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newappointmentMenuStripItem,
+            this.listappointmentMenuStripItem});
             this.AppointmentsMenuItem.Name = "AppointmentsMenuItem";
             resources.ApplyResources(this.AppointmentsMenuItem, "AppointmentsMenuItem");
             // 
@@ -153,6 +158,18 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             // 
+            // newappointmentMenuStripItem
+            // 
+            this.newappointmentMenuStripItem.Name = "newappointmentMenuStripItem";
+            resources.ApplyResources(this.newappointmentMenuStripItem, "newappointmentMenuStripItem");
+            this.newappointmentMenuStripItem.Click += new System.EventHandler(this.newappointmentMenuStripItem_Click);
+            // 
+            // listappointmentMenuStripItem
+            // 
+            this.listappointmentMenuStripItem.Name = "listappointmentMenuStripItem";
+            resources.ApplyResources(this.listappointmentMenuStripItem, "listappointmentMenuStripItem");
+            this.listappointmentMenuStripItem.Click += new System.EventHandler(this.listappointmentMenuStripItem_Click);
+            // 
             // myGarage_ConsumerMain
             // 
             resources.ApplyResources(this, "$this");
@@ -191,6 +208,8 @@
         private System.Windows.Forms.ToolStripMenuItem AppointmentsMenuItem;
         private System.Windows.Forms.Panel PartsShopPanel;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem newappointmentMenuStripItem;
+        private System.Windows.Forms.ToolStripMenuItem listappointmentMenuStripItem;
     }
 }
 
