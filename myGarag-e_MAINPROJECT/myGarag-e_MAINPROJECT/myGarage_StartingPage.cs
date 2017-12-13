@@ -11,6 +11,7 @@ namespace myGarag_e_MAINPROJECT
 {
     public partial class myGarage_StartingPage : Form
     {
+        public static myGarage_StartingPage stPage = new myGarage_StartingPage();
         public myGarage_StartingPage()
         {
             InitializeComponent();
@@ -23,6 +24,13 @@ namespace myGarag_e_MAINPROJECT
             string password = PassTB.Text;
             //DbFiles.DbMethods.findUser(username);
             //DbFiles.DbMethods.connectionString = "server=server=jabc.zapto.org;uid=" + username + ";pwd=" + password + ";database=adopse";
+        }
+
+        private void RegisterBtn_Click(object sender, EventArgs e)
+        {
+            myGarage_NewUser nUser = new myGarage_NewUser();
+            nUser.Show();
+            this.Visible = false;
         }
     }
 }

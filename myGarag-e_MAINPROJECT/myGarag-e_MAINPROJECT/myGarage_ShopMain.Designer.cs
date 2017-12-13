@@ -46,7 +46,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ClienteleTab = new System.Windows.Forms.TabPage();
             this.NewClienteleBtn = new System.Windows.Forms.Button();
-            this.NewClientBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.StocksTab = new System.Windows.Forms.TabPage();
             this.AddItemBtn = new System.Windows.Forms.Button();
@@ -123,13 +122,13 @@
             // εισερχόμεναToolStripMenuItem
             // 
             this.εισερχόμεναToolStripMenuItem.Name = "εισερχόμεναToolStripMenuItem";
-            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.εισερχόμεναToolStripMenuItem.Text = "Εισερχόμενα";
             // 
             // εξερχόμεναToolStripMenuItem
             // 
             this.εξερχόμεναToolStripMenuItem.Name = "εξερχόμεναToolStripMenuItem";
-            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.εξερχόμεναToolStripMenuItem.Text = "Εξερχόμενα";
             // 
             // AccountMenuItem
@@ -221,7 +220,6 @@
             // ClienteleTab
             // 
             this.ClienteleTab.Controls.Add(this.NewClienteleBtn);
-            this.ClienteleTab.Controls.Add(this.NewClientBtn);
             this.ClienteleTab.Controls.Add(this.dataGridView2);
             this.ClienteleTab.Location = new System.Drawing.Point(4, 22);
             this.ClienteleTab.Name = "ClienteleTab";
@@ -233,23 +231,13 @@
             // 
             // NewClienteleBtn
             // 
-            this.NewClienteleBtn.Location = new System.Drawing.Point(222, 6);
+            this.NewClienteleBtn.Location = new System.Drawing.Point(7, 6);
             this.NewClienteleBtn.Name = "NewClienteleBtn";
             this.NewClienteleBtn.Size = new System.Drawing.Size(190, 23);
             this.NewClienteleBtn.TabIndex = 2;
             this.NewClienteleBtn.Text = "Νέο Πελατολόγιο";
             this.NewClienteleBtn.UseVisualStyleBackColor = true;
             this.NewClienteleBtn.Click += new System.EventHandler(this.NewClienteleBtn_Click);
-            // 
-            // NewClientBtn
-            // 
-            this.NewClientBtn.Location = new System.Drawing.Point(7, 6);
-            this.NewClientBtn.Name = "NewClientBtn";
-            this.NewClientBtn.Size = new System.Drawing.Size(190, 23);
-            this.NewClientBtn.TabIndex = 1;
-            this.NewClientBtn.Text = "Νέος Πελάτης";
-            this.NewClientBtn.UseVisualStyleBackColor = true;
-            this.NewClientBtn.Click += new System.EventHandler(this.NewClientBtn_Click);
             // 
             // dataGridView2
             // 
@@ -309,7 +297,7 @@
             this.NewAppointmentBtn.TabIndex = 1;
             this.NewAppointmentBtn.Text = "Νέο Ραντεβού";
             this.NewAppointmentBtn.UseVisualStyleBackColor = true;
-            this.NewAppointmentBtn.Click += new System.EventHandler(this.NewAppointmentBtn_Click_1);
+            this.NewAppointmentBtn.Click += new System.EventHandler(this.NewAppointmentBtn_Click);
             // 
             // dataGridView4
             // 
@@ -422,7 +410,6 @@
         private System.Windows.Forms.Button NewOrderBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage ClienteleTab;
-        private System.Windows.Forms.Button NewClientBtn;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage StocksTab;
         private System.Windows.Forms.Button AddItemBtn;

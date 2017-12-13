@@ -113,6 +113,7 @@
             this.RegisterBtn.TabIndex = 4;
             this.RegisterBtn.Text = "Εγγραφή νέου χρήστη";
             this.RegisterBtn.UseVisualStyleBackColor = true;
+            this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
             // 
             // myGarage_StartingPage
             // 
@@ -129,8 +130,8 @@
             this.MaximumSize = new System.Drawing.Size(380, 340);
             this.MinimumSize = new System.Drawing.Size(380, 340);
             this.Name = "myGarage_StartingPage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Start Page";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Είσοδος χρήστη";
             this.ResumeLayout(false);
             this.PerformLayout();
 

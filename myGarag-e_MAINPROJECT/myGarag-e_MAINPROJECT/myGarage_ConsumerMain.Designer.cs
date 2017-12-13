@@ -46,8 +46,8 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.PartsShopPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IconColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.BuyItemColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.newappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UserPanel.SuspendLayout();
             this.ConsumerMenuStrip.SuspendLayout();
             this.SearchPanel.SuspendLayout();
@@ -80,7 +80,8 @@
             // AppointmentsMenuItem
             // 
             this.AppointmentsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newAppointmentToolStripMenuItem});
+            this.newappointmentMenuStripItem,
+            this.listappointmentMenuStripItem});
             this.AppointmentsMenuItem.Name = "AppointmentsMenuItem";
             resources.ApplyResources(this.AppointmentsMenuItem, "AppointmentsMenuItem");
             // 
@@ -160,28 +161,21 @@
             // 
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IconColumn,
-            this.BuyItemColumn});
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             // 
-            // IconColumn
+            // newappointmentMenuStripItem
             // 
-            resources.ApplyResources(this.IconColumn, "IconColumn");
-            this.IconColumn.Name = "IconColumn";
-            this.IconColumn.ReadOnly = true;
-            this.IconColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.newappointmentMenuStripItem.Name = "newappointmentMenuStripItem";
+            resources.ApplyResources(this.newappointmentMenuStripItem, "newappointmentMenuStripItem");
+            this.newappointmentMenuStripItem.Click += new System.EventHandler(this.newappointmentMenuStripItem_Click);
             // 
-            // BuyItemColumn
+            // listappointmentMenuStripItem
             // 
-            resources.ApplyResources(this.BuyItemColumn, "BuyItemColumn");
-            this.BuyItemColumn.Name = "BuyItemColumn";
-            this.BuyItemColumn.ReadOnly = true;
-            this.BuyItemColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.BuyItemColumn.Text = "Αγορά";
-            this.BuyItemColumn.UseColumnTextForButtonValue = true;
+            this.listappointmentMenuStripItem.Name = "listappointmentMenuStripItem";
+            resources.ApplyResources(this.listappointmentMenuStripItem, "listappointmentMenuStripItem");
+            this.listappointmentMenuStripItem.Click += new System.EventHandler(this.listappointmentMenuStripItem_Click);
             // 
             // myGarage_ConsumerMain
             // 
@@ -221,9 +215,8 @@
         private System.Windows.Forms.ToolStripMenuItem AppointmentsMenuItem;
         private System.Windows.Forms.Panel PartsShopPanel;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn IconColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn BuyItemColumn;
-        private System.Windows.Forms.ToolStripMenuItem newAppointmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newappointmentMenuStripItem;
+        private System.Windows.Forms.ToolStripMenuItem listappointmentMenuStripItem;
     }
 }
 

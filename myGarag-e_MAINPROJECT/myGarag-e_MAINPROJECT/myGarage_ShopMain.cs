@@ -16,7 +16,6 @@ namespace myGarag_e_MAINPROJECT
         public myGarage_ShopMain()
         {
             InitializeComponent();
-            
         }
 
        
@@ -63,7 +62,7 @@ namespace myGarag_e_MAINPROJECT
             
             if (newClientFormShown == false)
             {
-                myGarage_NewClient newclientform = new myGarage_NewClient();
+                myGarage_NewUser newclientform = new myGarage_NewUser();
                 newclientform.Show();
                 newClientFormShown = true;
             }
@@ -104,17 +103,18 @@ namespace myGarag_e_MAINPROJECT
 
         private void NewAppointmentBtn_Click(object sender, EventArgs e)
         {
+            if (!myGarage_ConsumerMain.appointmentmenuitemshown)
+            {
+                myGarage_NewAppointment newappo = new myGarage_NewAppointment();
+                newappo.Show();
+                myGarage_ConsumerMain.appointmentmenuitemshown = true;
+            }
+            else
+            {
+                MessageBox.Show("Έχετε ήδη ένα ραντεβού ανοιχτό!");
+                myGarage_NewAppointment.ActiveForm.Focus();
+            }
             
-
-        }
-
-        private void NewAppointmentBtn_Click_1(object sender, EventArgs e)
-        {
-            AppointmentForm_Shop window = new AppointmentForm_Shop();
-            window.Visible = true;
-
-            //this.Enabled = false;
-            //NewAppointmentBtn.Enabled = false;
         }
     }
 }
