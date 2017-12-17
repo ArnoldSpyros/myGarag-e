@@ -79,7 +79,7 @@
             this.UserTB.MinimumSize = new System.Drawing.Size(252, 20);
             this.UserTB.Name = "UserTB";
             this.UserTB.Size = new System.Drawing.Size(252, 20);
-            this.UserTB.TabIndex = 0;
+            this.UserTB.TabIndex = 1;
             // 
             // PassTB
             // 
@@ -88,7 +88,7 @@
             this.PassTB.Name = "PassTB";
             this.PassTB.PasswordChar = '*';
             this.PassTB.Size = new System.Drawing.Size(252, 20);
-            this.PassTB.TabIndex = 1;
+            this.PassTB.TabIndex = 2;
             this.PassTB.UseSystemPasswordChar = true;
             // 
             // LoginBtn

@@ -147,6 +147,12 @@
     <Compile Include="myGarage_SystemAdminMain.Designer.cs">
       <DependentUpon>myGarage_SystemAdminMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="mygarage_UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mygarage_UserInfo.Designer.cs">
+      <DependentUpon>mygarage_UserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="myGarage_AppointmentList.resx">
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="myGarage_SystemAdminMain.resx">
       <DependentUpon>myGarage_SystemAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mygarage_UserInfo.resx">
+      <DependentUpon>mygarage_UserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

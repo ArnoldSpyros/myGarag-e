@@ -21,8 +21,17 @@ namespace myGarag_e_MAINPROJECT
         {
             string username = UserTB.Text;
             string password = PassTB.Text;
-            DbFiles.DbMethods.findCustomer(username);
-            //DbFiles.DbMethods.connectionString = "server=localhost;uid=" + username + ";pwd=" + password + ";database=adopse";
+            if (DbFiles.DbMethods.findCustomer(username))
+            {
+                if (DbFiles.DbMethods.user.getRolosUser() == "Pelatis")
+                {
+                    myGarage_ConsumerMain nConsumer = new myGarage_ConsumerMain();
+                    nConsumer.Show();
+                    nConsumer.Focus();
+                    this.Visible = false;
+                }
+            }
+            //DbFiles.DbMethods.connectionString = "server=jabc.zapto.org;uid=" + username + ";pwd=" + password + ";database=adopse";
         }
 
         private void RegisterBtn_Click(object sender, EventArgs e)

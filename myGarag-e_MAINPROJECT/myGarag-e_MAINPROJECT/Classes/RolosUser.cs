@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace myGarag_e_MAINPROJECT.Classes
 {
-    class RolosUser
+    public class RolosUser
     {
+        public String rolosname;
     }
 }

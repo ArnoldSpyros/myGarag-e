@@ -33,6 +33,29 @@ namespace myGarag_e_MAINPROJECT.Classes
             this.address = address;
         }
 
+        public String getRolosUser()
+        {
+            return this.roles[0].rolosname;
+        }
 
+        public String getUsername()
+        {
+            return this.username;
+        }
+
+        public String getName()
+        {
+            return this.name;
+        }
+
+        public String getLastname()
+        {
+            return this.lastName;
+        }
+
+        public String getPhonenumber()
+        {
+            return this.phoneNumber;
+        }
     }
 }

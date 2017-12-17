@@ -15,7 +15,7 @@ namespace myGarag_e_MAINPROJECT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new myGarage_ConsumerMain());
+            Application.Run(new myGarage_StartingPage());
         }
     }
 }

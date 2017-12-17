@@ -125,6 +125,9 @@
   <data name="ApplicationLOGO.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 24pt, style=Bold</value>
   </data>
+  <data name="ApplicationLOGO.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="ApplicationLOGO.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -156,71 +159,14 @@
   <data name="&gt;&gt;ApplicationLOGO.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="ConsumerMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>15, 17</value>
+  </metadata>
   <data name="UserPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="UserPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
-  </data>
-  <metadata name="ConsumerMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>15, 17</value>
-  </metadata>
-  <data name="ConsumerMenuStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ConsumerMenuStrip.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ConsumerMenuStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="newappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="newappointmentMenuStripItem.Text" xml:space="preserve">
-    <value>Νέο</value>
-  </data>
-  <data name="listappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="listappointmentMenuStripItem.Text" xml:space="preserve">
-    <value>Λίστα</value>
-  </data>
-  <data name="AppointmentsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 21</value>
-  </data>
-  <data name="AppointmentsMenuItem.Text" xml:space="preserve">
-    <value>Ραντεβού</value>
-  </data>
-  <data name="CartMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 21</value>
-  </data>
-  <data name="CartMenuItem.Text" xml:space="preserve">
-    <value>Καλάθι αγορών</value>
-  </data>
-  <data name="MessagesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 21</value>
-  </data>
-  <data name="MessagesMenuItem.Text" xml:space="preserve">
-    <value>Μηνύματα</value>
-  </data>
-  <data name="AccountMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 21</value>
-  </data>
-  <data name="AccountMenuItem.Text" xml:space="preserve">
-    <value>Ο λογαριασμός μου</value>
-  </data>
-  <data name="ConsumerMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ConsumerMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 25</value>
-  </data>
-  <data name="ConsumerMenuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ConsumerMenuStrip.Text" xml:space="preserve">
-    <value>menuStrip1</value>
   </data>
   <data name="&gt;&gt;ConsumerMenuStrip.Name" xml:space="preserve">
     <value>ConsumerMenuStrip</value>
@@ -255,6 +201,72 @@
   <data name="&gt;&gt;UserPanel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="ConsumerMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>15, 17</value>
+  </metadata>
+  <data name="ConsumerMenuStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ConsumerMenuStrip.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ConsumerMenuStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ConsumerMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ConsumerMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>385, 25</value>
+  </data>
+  <data name="ConsumerMenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ConsumerMenuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;ConsumerMenuStrip.Name" xml:space="preserve">
+    <value>ConsumerMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;ConsumerMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ConsumerMenuStrip.Parent" xml:space="preserve">
+    <value>UserPanel</value>
+  </data>
+  <data name="&gt;&gt;ConsumerMenuStrip.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AppointmentsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 21</value>
+  </data>
+  <data name="AppointmentsMenuItem.Text" xml:space="preserve">
+    <value>Ραντεβού</value>
+  </data>
+  <data name="newappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="newappointmentMenuStripItem.Text" xml:space="preserve">
+    <value>Νέο</value>
+  </data>
+  <data name="listappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="listappointmentMenuStripItem.Text" xml:space="preserve">
+    <value>Λίστα</value>
+  </data>
+  <data name="CartMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 21</value>
+  </data>
+  <data name="CartMenuItem.Text" xml:space="preserve">
+    <value>Καλάθι αγορών</value>
+  </data>
+  <data name="MessagesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="MessagesMenuItem.Text" xml:space="preserve">
+    <value>Μηνύματα</value>
+  </data>
   <data name="εισερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 22</value>
   </data>
@@ -267,17 +279,17 @@
   <data name="εξερχόμεναToolStripMenuItem.Text" xml:space="preserve">
     <value>Εξερχόμενα</value>
   </data>
-  <data name="πληροφορίεςToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+  <data name="AccountMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 21</value>
   </data>
-  <data name="πληροφορίεςToolStripMenuItem.Text" xml:space="preserve">
-    <value>Πληροφορίες Προφίλ</value>
+  <data name="AccountMenuItem.Text" xml:space="preserve">
+    <value>Ο λογαριασμός μου</value>
   </data>
-  <data name="επεξεργασίαΠροφίλToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+  <data name="infoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
   </data>
-  <data name="επεξεργασίαΠροφίλToolStripMenuItem.Text" xml:space="preserve">
-    <value>Επεξεργασία προφίλ</value>
+  <data name="infoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Πληροφορίες προφίλ</value>
   </data>
   <data name="SearchPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -329,6 +341,9 @@
   </data>
   <data name="SearchBtn.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
+  </data>
+  <data name="SearchBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="SearchBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>252, 0</value>
@@ -444,6 +459,9 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>36</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -463,6 +481,18 @@
     <value>AppointmentsMenuItem</value>
   </data>
   <data name="&gt;&gt;AppointmentsMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newappointmentMenuStripItem.Name" xml:space="preserve">
+    <value>newappointmentMenuStripItem</value>
+  </data>
+  <data name="&gt;&gt;newappointmentMenuStripItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listappointmentMenuStripItem.Name" xml:space="preserve">
+    <value>listappointmentMenuStripItem</value>
+  </data>
+  <data name="&gt;&gt;listappointmentMenuStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CartMenuItem.Name" xml:space="preserve">
@@ -495,28 +525,10 @@
   <data name="&gt;&gt;AccountMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;πληροφορίεςToolStripMenuItem.Name" xml:space="preserve">
-    <value>πληροφορίεςToolStripMenuItem</value>
+  <data name="&gt;&gt;infoToolStripMenuItem.Name" xml:space="preserve">
+    <value>infoToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;πληροφορίεςToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;επεξεργασίαΠροφίλToolStripMenuItem.Name" xml:space="preserve">
-    <value>επεξεργασίαΠροφίλToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;επεξεργασίαΠροφίλToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;newappointmentMenuStripItem.Name" xml:space="preserve">
-    <value>newappointmentMenuStripItem</value>
-  </data>
-  <data name="&gt;&gt;newappointmentMenuStripItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listappointmentMenuStripItem.Name" xml:space="preserve">
-    <value>listappointmentMenuStripItem</value>
-  </data>
-  <data name="&gt;&gt;listappointmentMenuStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;infoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
