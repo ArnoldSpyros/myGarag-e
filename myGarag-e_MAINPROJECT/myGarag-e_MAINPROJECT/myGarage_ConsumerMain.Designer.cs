@@ -33,7 +33,7 @@
             this.UserPanel = new System.Windows.Forms.Panel();
             this.ConsumerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.AppointmentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            
             this.CartMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MessagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.εισερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,9 +87,7 @@
             // 
             // newAppointmentToolStripMenuItem
             // 
-            this.newAppointmentToolStripMenuItem.Name = "newAppointmentToolStripMenuItem";
-            resources.ApplyResources(this.newAppointmentToolStripMenuItem, "newAppointmentToolStripMenuItem");
-            this.newAppointmentToolStripMenuItem.Click += new System.EventHandler(this.newAppointmentToolStripMenuItem_Click);
+            
             // 
             // CartMenuItem
             // 

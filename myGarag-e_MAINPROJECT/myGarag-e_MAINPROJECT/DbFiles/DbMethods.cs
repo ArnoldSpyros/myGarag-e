@@ -23,6 +23,12 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             try
             {
                 dbConnection = new MySqlConnection(connectionString); // instatiating the connection.
+                /*
+                if (!dbConnection.Ping())
+                {
+                    dbConnection.Open();
+                }
+                */
                 dbConnection.Open();
             }
             catch (MySqlException obj)
