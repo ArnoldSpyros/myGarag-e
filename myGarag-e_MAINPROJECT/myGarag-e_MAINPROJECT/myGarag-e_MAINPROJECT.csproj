@@ -65,12 +65,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppointmentForm_Shop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppointmentForm_Shop.Designer.cs">
-      <DependentUpon>AppointmentForm_Shop.cs</DependentUpon>
-    </Compile>
     <Compile Include="Classes\Autokinito.cs" />
     <Compile Include="Classes\Minima.cs" />
     <Compile Include="Classes\Pelatis.cs" />
@@ -157,12 +151,6 @@
     <EmbeddedResource Include="myGarage_NewClientele.resx">
       <DependentUpon>myGarage_NewClientele.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="AppointmentForm_Client.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppointmentForm_Client.Designer.cs">
-      <DependentUpon>AppointmentForm_Client.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="myGarage_ConsumerMain.el-GR.resx">
       <DependentUpon>myGarage_ConsumerMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,9 +188,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="AppointmentForm_Client.resx">
-      <DependentUpon>AppointmentForm_Client.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
