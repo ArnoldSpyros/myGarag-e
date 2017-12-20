@@ -18,13 +18,13 @@ namespace myGarag_e_MAINPROJECT
             InitializeComponent();
         }
 
-       
+
 
         private void ShopManagementTabs_Selected(object sender, TabControlEventArgs e)
         {
             try
             {
-                MessageBox.Show("You are in the " + ShopManagementTabs.SelectedIndex + " tab"); // This line is for debug purpose. You can remove it if you want to.
+                //MessageBox.Show("You are in the " + ShopManagementTabs.SelectedIndex + " tab"); // This line is for debug purpose. You can remove it if you want to.
                 int idx = ShopManagementTabs.SelectedIndex;
                 DataSet ds;
 
@@ -34,7 +34,9 @@ namespace myGarag_e_MAINPROJECT
                         break;
 
                     case 1:
-                        ds = DbFiles.DbMethods.getTableData("pelatologio");
+                        //Κλήση της μεθόδου εμφάνισης πελατολόγιου
+                        //
+                        ds = loadPelatologio("1000");
                         dataGridView2.DataSource = ds.Tables["pelatologio"];
                         break;
                     case 2:
@@ -55,11 +57,36 @@ namespace myGarag_e_MAINPROJECT
             }
         }
 
-        //By defautl this is set to false, it's enabled when a new client form is shown and switches back and forth
+        private DataSet loadPelatologio(string kodikosKatastimatos)
+        {
+            try
+            {
+                //string sql = String.Format("SELECT * FROM {0}", "pelatologio");
+                string sql = String.Format("SELECT PEL.kodikosSinalagis, PEL.kodikosPelati, P.onoma, P.epitheto, P.tilefono from pelatologio PEL JOIN pelatis P WHERE PEL.kodikosPelati = P.kodikosPelati AND PEL.kodikosPelatologiou = {0}", kodikosKatastimatos);
+                MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+
+                DataSet ds = new DataSet();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con);
+
+                adapter.Fill(ds, "pelatologio");
+                con.Close();
+
+                return ds;
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return null;
+            }
+
+        }
+
+        //By default this is set to false, it's enabled when a new client form is shown and switches back and forth
         public static Boolean newClientFormShown = false;
         private void NewClientBtn_Click(object sender, EventArgs e)
         {
-            
+
             if (newClientFormShown == false)
             {
                 myGarage_NewUser newclientform = new myGarage_NewUser();
@@ -114,7 +141,59 @@ namespace myGarag_e_MAINPROJECT
                 MessageBox.Show("Έχετε ήδη ένα ραντεβού ανοιχτό!");
                 myGarage_NewAppointment.ActiveForm.Focus();
             }
+
+        }
+
+        private void diagrafiPelatiB_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Είστε σίγουροι πως θέλετε να διαγράψετε τη συγκεκριμένη καταχώρηση; Αυτή η ενέργια δεν μπορεί να αναιρεθεί!","ΔΙΑΓΡΑΦΗ",MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                string code = dataGridView2.CurrentRow.Cells["kodikosSinalagis"].Value.ToString();
+                
+                if (diagrafiSinalagis(code) >= 1)
+                {
+                    MessageBox.Show("Η διαγραφή ολοκληρώθηκε!");
+                    //Ανανέωση του πίνακα
+                    DataSet ds = new DataSet();
+                    ds = loadPelatologio("1000");
+                    dataGridView2.DataSource = ds.Tables["pelatologio"];
+                }
+                else
+                {
+                    MessageBox.Show("Αποτυχία!");
+                }
+            }
             
         }
+
+        private int diagrafiSinalagis(string kodikosSinalagis)
+        {
+            //Διαγραφή επιλεγμένου πελάτη
+            try
+            {
+                string sql = "DELETE FROM pelatologio WHERE kodikosSinalagis = @kodikosSinalagis";
+                MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+
+                MySqlCommand command = new MySqlCommand(sql, con);
+                command.Parameters.AddWithValue("@kodikosSinalagis", kodikosSinalagis);
+                command.Prepare();
+
+                int rowsAffected = command.ExecuteNonQuery();
+                con.Close();
+
+                return rowsAffected;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return 0;
+            }
+        }
     }
+
+    
+
+
+    
 }
