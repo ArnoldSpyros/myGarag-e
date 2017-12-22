@@ -13,7 +13,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
     class DbMethods
     {
 
-        public static string connectionString = "server=jabc.zapto.org;uid=KoSp;pwd=A6dK.S5p;database=adopse"; // database connection string.
+        public static string connectionString = "server=jabc.zapto.org;uid=BaKa;pwd=A6dB.K2a;database=adopse"; // database connection string.
         public static User user; // logged in user object.
 
         public static MySqlConnection setMySqlConnection(string connectionString) // method that sets the connection with the database.
@@ -23,7 +23,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             try
             {
                 dbConnection = new MySqlConnection(connectionString); // instatiating the connection.
-                dbConnection.Open(); 
+                dbConnection.Open();
             }
             catch (MySqlException obj)
             {
