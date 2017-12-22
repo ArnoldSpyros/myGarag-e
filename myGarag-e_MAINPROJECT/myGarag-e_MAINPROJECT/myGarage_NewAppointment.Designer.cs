@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.NewAppointmentSBKatastima = new System.Windows.Forms.ComboBox();
-            this.NewAppointmentTbOnomateponimo = new System.Windows.Forms.TextBox();
-            this.NewAppointmentChbDate = new System.Windows.Forms.DateTimePicker();
-            this.NewAppointmentRTbSxolia = new System.Windows.Forms.RichTextBox();
             this.NewAppointmentBtnOloklirwsi = new System.Windows.Forms.Button();
+            this.NewAppointmentRTbSxolia = new System.Windows.Forms.RichTextBox();
+            this.NewAppointmentChbDate = new System.Windows.Forms.DateTimePicker();
+            this.NewAppointmentTbOnomateponimo = new System.Windows.Forms.TextBox();
+            this.NewAppointmentSBKatastima = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,32 +59,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Νέο ραντεβού";
             // 
-            // label1
+            // NewAppointmentBtnOloklirwsi
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ον/νυμο:";
+            this.NewAppointmentBtnOloklirwsi.Location = new System.Drawing.Point(92, 289);
+            this.NewAppointmentBtnOloklirwsi.Name = "NewAppointmentBtnOloklirwsi";
+            this.NewAppointmentBtnOloklirwsi.Size = new System.Drawing.Size(147, 23);
+            this.NewAppointmentBtnOloklirwsi.TabIndex = 5;
+            this.NewAppointmentBtnOloklirwsi.Text = "Ολοκλήρωση";
+            this.NewAppointmentBtnOloklirwsi.UseVisualStyleBackColor = true;
+            this.NewAppointmentBtnOloklirwsi.Click += new System.EventHandler(this.NewAppointmentBtnOloklirwsi_Click);
             // 
-            // label2
+            // NewAppointmentRTbSxolia
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Κατάστημα:";
+            this.NewAppointmentRTbSxolia.Location = new System.Drawing.Point(123, 180);
+            this.NewAppointmentRTbSxolia.Name = "NewAppointmentRTbSxolia";
+            this.NewAppointmentRTbSxolia.Size = new System.Drawing.Size(200, 96);
+            this.NewAppointmentRTbSxolia.TabIndex = 4;
+            this.NewAppointmentRTbSxolia.Text = "";
             // 
-            // label3
+            // NewAppointmentChbDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Κανονισμένη ημ/νια:";
+            this.NewAppointmentChbDate.Location = new System.Drawing.Point(123, 140);
+            this.NewAppointmentChbDate.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.NewAppointmentChbDate.Name = "NewAppointmentChbDate";
+            this.NewAppointmentChbDate.Size = new System.Drawing.Size(200, 20);
+            this.NewAppointmentChbDate.TabIndex = 3;
+            // 
+            // NewAppointmentTbOnomateponimo
+            // 
+            this.NewAppointmentTbOnomateponimo.Location = new System.Drawing.Point(123, 40);
+            this.NewAppointmentTbOnomateponimo.Name = "NewAppointmentTbOnomateponimo";
+            this.NewAppointmentTbOnomateponimo.Size = new System.Drawing.Size(200, 20);
+            this.NewAppointmentTbOnomateponimo.TabIndex = 1;
+            // 
+            // NewAppointmentSBKatastima
+            // 
+            this.NewAppointmentSBKatastima.FormattingEnabled = true;
+            this.NewAppointmentSBKatastima.Location = new System.Drawing.Point(123, 83);
+            this.NewAppointmentSBKatastima.Name = "NewAppointmentSBKatastima";
+            this.NewAppointmentSBKatastima.Size = new System.Drawing.Size(200, 21);
+            this.NewAppointmentSBKatastima.TabIndex = 2;
             // 
             // label4
             // 
@@ -95,46 +109,32 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Σημειώσεις/σχόλια:";
             // 
-            // NewAppointmentSBKatastima
+            // label3
             // 
-            this.NewAppointmentSBKatastima.FormattingEnabled = true;
-            this.NewAppointmentSBKatastima.Location = new System.Drawing.Point(123, 83);
-            this.NewAppointmentSBKatastima.Name = "NewAppointmentSBKatastima";
-            this.NewAppointmentSBKatastima.Size = new System.Drawing.Size(200, 21);
-            this.NewAppointmentSBKatastima.TabIndex = 2;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Κανονισμένη ημ/νια:";
             // 
-            // NewAppointmentTbOnomateponimo
+            // label2
             // 
-            this.NewAppointmentTbOnomateponimo.Location = new System.Drawing.Point(123, 40);
-            this.NewAppointmentTbOnomateponimo.Name = "NewAppointmentTbOnomateponimo";
-            this.NewAppointmentTbOnomateponimo.Size = new System.Drawing.Size(200, 20);
-            this.NewAppointmentTbOnomateponimo.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(49, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Κατάστημα:";
             // 
-            // NewAppointmentChbDate
+            // label1
             // 
-            this.NewAppointmentChbDate.Location = new System.Drawing.Point(123, 140);
-            this.NewAppointmentChbDate.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            this.NewAppointmentChbDate.Name = "NewAppointmentChbDate";
-            this.NewAppointmentChbDate.Size = new System.Drawing.Size(200, 20);
-            this.NewAppointmentChbDate.TabIndex = 3;
-            // 
-            // NewAppointmentRTbSxolia
-            // 
-            this.NewAppointmentRTbSxolia.Location = new System.Drawing.Point(123, 180);
-            this.NewAppointmentRTbSxolia.Name = "NewAppointmentRTbSxolia";
-            this.NewAppointmentRTbSxolia.Size = new System.Drawing.Size(200, 96);
-            this.NewAppointmentRTbSxolia.TabIndex = 4;
-            this.NewAppointmentRTbSxolia.Text = "";
-            // 
-            // NewAppointmentBtnOloklirwsi
-            // 
-            this.NewAppointmentBtnOloklirwsi.Location = new System.Drawing.Point(92, 289);
-            this.NewAppointmentBtnOloklirwsi.Name = "NewAppointmentBtnOloklirwsi";
-            this.NewAppointmentBtnOloklirwsi.Size = new System.Drawing.Size(147, 23);
-            this.NewAppointmentBtnOloklirwsi.TabIndex = 5;
-            this.NewAppointmentBtnOloklirwsi.Text = "Ολοκλήρωση";
-            this.NewAppointmentBtnOloklirwsi.UseVisualStyleBackColor = true;
-            this.NewAppointmentBtnOloklirwsi.Click += new System.EventHandler(this.NewAppointmentBtnOloklirwsi_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(65, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Username";
             // 
             // myGarage_NewAppointment
             // 
@@ -146,6 +146,7 @@
             this.Text = "Δημιουργία νέου ραντεβού";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.myGarage_NewAppointment_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.myGarage_NewAppointment_FormClosed);
+            this.Load += new System.EventHandler(this.myGarage_NewAppointment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
