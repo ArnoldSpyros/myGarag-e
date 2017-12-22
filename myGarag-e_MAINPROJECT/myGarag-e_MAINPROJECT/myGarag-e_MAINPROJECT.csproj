@@ -106,7 +106,9 @@
     <Compile Include="myGarage_SystemAdminMain.Designer.cs">
       <DependentUpon>myGarage_SystemAdminMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pelatis.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Proion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Display_Insert_Update_Delete_Search_Image_In_MySQL_Database.resx">
       <DependentUpon>Display_Insert_Update_Delete_Search_Image_In_MySQL_Database.cs</DependentUpon>

@@ -31,7 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(myGarage_ConsumerMain));
             this.ApplicationLOGO = new System.Windows.Forms.Label();
             this.UserPanel = new System.Windows.Forms.Panel();
+            this.cartCount = new System.Windows.Forms.Label();
             this.ConsumerMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.ProductsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AppointmentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CartMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MessagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,9 +46,9 @@
             this.SearchBtn = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.PartsShopPanel = new System.Windows.Forms.Panel();
+            this.deleteFromCart = new System.Windows.Forms.Button();
+            this.addtoCart = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IconColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.BuyItemColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.UserPanel.SuspendLayout();
             this.ConsumerMenuStrip.SuspendLayout();
             this.SearchPanel.SuspendLayout();
@@ -63,18 +65,31 @@
             // UserPanel
             // 
             resources.ApplyResources(this.UserPanel, "UserPanel");
+            this.UserPanel.Controls.Add(this.cartCount);
             this.UserPanel.Controls.Add(this.ConsumerMenuStrip);
             this.UserPanel.Name = "UserPanel";
+            // 
+            // cartCount
+            // 
+            resources.ApplyResources(this.cartCount, "cartCount");
+            this.cartCount.Name = "cartCount";
             // 
             // ConsumerMenuStrip
             // 
             resources.ApplyResources(this.ConsumerMenuStrip, "ConsumerMenuStrip");
             this.ConsumerMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ProductsMenuItem,
             this.AppointmentsMenuItem,
             this.CartMenuItem,
             this.MessagesMenuItem,
             this.AccountMenuItem});
             this.ConsumerMenuStrip.Name = "ConsumerMenuStrip";
+            // 
+            // ProductsMenuItem
+            // 
+            this.ProductsMenuItem.Name = "ProductsMenuItem";
+            resources.ApplyResources(this.ProductsMenuItem, "ProductsMenuItem");
+            this.ProductsMenuItem.Click += new System.EventHandler(this.ProductsMenuItem_Click);
             // 
             // AppointmentsMenuItem
             // 
@@ -85,6 +100,7 @@
             // 
             this.CartMenuItem.Name = "CartMenuItem";
             resources.ApplyResources(this.CartMenuItem, "CartMenuItem");
+            this.CartMenuItem.Click += new System.EventHandler(this.CartMenuItem_Click);
             // 
             // MessagesMenuItem
             // 
@@ -144,35 +160,33 @@
             // PartsShopPanel
             // 
             resources.ApplyResources(this.PartsShopPanel, "PartsShopPanel");
+            this.PartsShopPanel.Controls.Add(this.deleteFromCart);
+            this.PartsShopPanel.Controls.Add(this.addtoCart);
             this.PartsShopPanel.Controls.Add(this.dataGridView1);
             this.PartsShopPanel.Name = "PartsShopPanel";
+            // 
+            // deleteFromCart
+            // 
+            resources.ApplyResources(this.deleteFromCart, "deleteFromCart");
+            this.deleteFromCart.Name = "deleteFromCart";
+            this.deleteFromCart.UseVisualStyleBackColor = true;
+            this.deleteFromCart.Click += new System.EventHandler(this.deleteFromCart_Click);
+            // 
+            // addtoCart
+            // 
+            resources.ApplyResources(this.addtoCart, "addtoCart");
+            this.addtoCart.Name = "addtoCart";
+            this.addtoCart.UseVisualStyleBackColor = true;
+            this.addtoCart.Click += new System.EventHandler(this.addtoCart_Click);
             // 
             // dataGridView1
             // 
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IconColumn,
-            this.BuyItemColumn});
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            // 
-            // IconColumn
-            // 
-            resources.ApplyResources(this.IconColumn, "IconColumn");
-            this.IconColumn.Name = "IconColumn";
-            this.IconColumn.ReadOnly = true;
-            this.IconColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // BuyItemColumn
-            // 
-            resources.ApplyResources(this.BuyItemColumn, "BuyItemColumn");
-            this.BuyItemColumn.Name = "BuyItemColumn";
-            this.BuyItemColumn.ReadOnly = true;
-            this.BuyItemColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.BuyItemColumn.Text = "Αγορά";
-            this.BuyItemColumn.UseColumnTextForButtonValue = true;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // myGarage_ConsumerMain
             // 
@@ -183,7 +197,9 @@
             this.Controls.Add(this.UserPanel);
             this.Controls.Add(this.ApplicationLOGO);
             this.Name = "myGarage_ConsumerMain";
+            this.Load += new System.EventHandler(this.myGarage_ConsumerMain_Load);
             this.UserPanel.ResumeLayout(false);
+            this.UserPanel.PerformLayout();
             this.ConsumerMenuStrip.ResumeLayout(false);
             this.ConsumerMenuStrip.PerformLayout();
             this.SearchPanel.ResumeLayout(false);
@@ -212,8 +228,10 @@
         private System.Windows.Forms.ToolStripMenuItem AppointmentsMenuItem;
         private System.Windows.Forms.Panel PartsShopPanel;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn IconColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn BuyItemColumn;
+        private System.Windows.Forms.Label cartCount;
+        private System.Windows.Forms.Button addtoCart;
+        private System.Windows.Forms.Button deleteFromCart;
+        private System.Windows.Forms.ToolStripMenuItem ProductsMenuItem;
     }
 }
 
