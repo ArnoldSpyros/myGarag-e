@@ -33,21 +33,19 @@
             this.UserPanel = new System.Windows.Forms.Panel();
             this.ConsumerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.AppointmentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            
+            this.newappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CartMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MessagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.εισερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.εξερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.πληροφορίεςToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.επεξεργασίαΠροφίλToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchPanel = new System.Windows.Forms.Panel();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.PartsShopPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.newappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UserPanel.SuspendLayout();
             this.ConsumerMenuStrip.SuspendLayout();
             this.SearchPanel.SuspendLayout();
@@ -85,9 +83,17 @@
             this.AppointmentsMenuItem.Name = "AppointmentsMenuItem";
             resources.ApplyResources(this.AppointmentsMenuItem, "AppointmentsMenuItem");
             // 
-            // newAppointmentToolStripMenuItem
+            // newappointmentMenuStripItem
             // 
-            
+            this.newappointmentMenuStripItem.Name = "newappointmentMenuStripItem";
+            resources.ApplyResources(this.newappointmentMenuStripItem, "newappointmentMenuStripItem");
+            this.newappointmentMenuStripItem.Click += new System.EventHandler(this.newappointmentMenuStripItem_Click);
+            // 
+            // listappointmentMenuStripItem
+            // 
+            this.listappointmentMenuStripItem.Name = "listappointmentMenuStripItem";
+            resources.ApplyResources(this.listappointmentMenuStripItem, "listappointmentMenuStripItem");
+            this.listappointmentMenuStripItem.Click += new System.EventHandler(this.listappointmentMenuStripItem_Click);
             // 
             // CartMenuItem
             // 
@@ -115,20 +121,15 @@
             // AccountMenuItem
             // 
             this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.πληροφορίεςToolStripMenuItem,
-            this.επεξεργασίαΠροφίλToolStripMenuItem});
+            this.infoToolStripMenuItem});
             this.AccountMenuItem.Name = "AccountMenuItem";
             resources.ApplyResources(this.AccountMenuItem, "AccountMenuItem");
             // 
-            // πληροφορίεςToolStripMenuItem
+            // infoToolStripMenuItem
             // 
-            this.πληροφορίεςToolStripMenuItem.Name = "πληροφορίεςToolStripMenuItem";
-            resources.ApplyResources(this.πληροφορίεςToolStripMenuItem, "πληροφορίεςToolStripMenuItem");
-            // 
-            // επεξεργασίαΠροφίλToolStripMenuItem
-            // 
-            this.επεξεργασίαΠροφίλToolStripMenuItem.Name = "επεξεργασίαΠροφίλToolStripMenuItem";
-            resources.ApplyResources(this.επεξεργασίαΠροφίλToolStripMenuItem, "επεξεργασίαΠροφίλToolStripMenuItem");
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            resources.ApplyResources(this.infoToolStripMenuItem, "infoToolStripMenuItem");
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // SearchPanel
             // 
@@ -163,18 +164,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             // 
-            // newappointmentMenuStripItem
-            // 
-            this.newappointmentMenuStripItem.Name = "newappointmentMenuStripItem";
-            resources.ApplyResources(this.newappointmentMenuStripItem, "newappointmentMenuStripItem");
-            this.newappointmentMenuStripItem.Click += new System.EventHandler(this.newappointmentMenuStripItem_Click);
-            // 
-            // listappointmentMenuStripItem
-            // 
-            this.listappointmentMenuStripItem.Name = "listappointmentMenuStripItem";
-            resources.ApplyResources(this.listappointmentMenuStripItem, "listappointmentMenuStripItem");
-            this.listappointmentMenuStripItem.Click += new System.EventHandler(this.listappointmentMenuStripItem_Click);
-            // 
             // myGarage_ConsumerMain
             // 
             resources.ApplyResources(this, "$this");
@@ -184,6 +173,7 @@
             this.Controls.Add(this.UserPanel);
             this.Controls.Add(this.ApplicationLOGO);
             this.Name = "myGarage_ConsumerMain";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.myGarage_ConsumerMain_FormClosed);
             this.UserPanel.ResumeLayout(false);
             this.ConsumerMenuStrip.ResumeLayout(false);
             this.ConsumerMenuStrip.PerformLayout();
@@ -201,8 +191,7 @@
         private System.Windows.Forms.Panel UserPanel;
         private System.Windows.Forms.MenuStrip ConsumerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem πληροφορίεςToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem επεξεργασίαΠροφίλToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MessagesMenuItem;
         private System.Windows.Forms.ToolStripMenuItem εισερχόμεναToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem εξερχόμεναToolStripMenuItem;

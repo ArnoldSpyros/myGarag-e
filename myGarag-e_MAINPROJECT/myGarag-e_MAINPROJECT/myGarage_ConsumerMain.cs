@@ -49,5 +49,24 @@ namespace myGarag_e_MAINPROJECT
                 myGarage_NewAppointment.ActiveForm.Focus();
             }
         }
+
+        public static bool infoMenuItemShown = false;
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!infoMenuItemShown)
+            {
+                mygarage_UserInfo newuserinfo = new mygarage_UserInfo();
+                newuserinfo.Show();
+                newuserinfo.Focus();
+                infoMenuItemShown = true;
+            }
+        }
+
+        private void myGarage_ConsumerMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //τερματισμός του προγράμματος
+            myGarage_StartingPage.stPage.Close();
+        }
     }
 }

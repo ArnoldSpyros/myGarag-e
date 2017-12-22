@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace myGarag_e_MAINPROJECT.Classes
 {
-    class Pelatis : RolosUser
+     public class Pelatis : RolosUser
     {
+        public Pelatis()
+        {
+            rolosname = "Pelatis";
+        }
     }
 }

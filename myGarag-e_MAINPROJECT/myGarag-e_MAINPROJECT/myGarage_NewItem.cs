@@ -21,5 +21,32 @@ namespace myGarag_e_MAINPROJECT
         {
             myGarage_ShopMain.newItemFormShown = false;
         }
+
+        private void uploadProductImgB_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Choose Image(*.JPG;*.PNG;*.GIF)|*.jpg;*.png;*.gif";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                productImgPB.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+
+        }
+
+        private void insertProductB_Click(object sender, EventArgs e)
+        {
+            string productID = ItemTbKodikosProiontos.Text;
+            string productName = ItemTbPerigrafi.Text;
+            string productPrice = ItemTbTimi.Text;
+            string productCompany = ItemTbKataskeuastis.Text;
+            string productCountry = ItemTbXoraKataskeuis.Text;
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            productImgPB.Image.Save(ms, productImgPB.Image.RawFormat);
+            byte[] img = ms.ToArray();
+
+            int insertedRows = DbFiles.DbMethods.insertProduct(productID, productName, img, productPrice, productCompany, productCountry);
+            MessageBox.Show("Inserted " + insertedRows + " products in the database", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }
