@@ -26,9 +26,44 @@ namespace myGarag_e_MAINPROJECT
 
             string kodikosKatastimatarxi = "";
 
-            //βρες το ID του πελάτη
+            string pelatisID = "";
+
+            //Generate a random ID -> WILL DELETE LATER
+            Random rnd = new Random();
+            string ID = rnd.Next(1000, 9999).ToString();
+
+            //βρες το ID του πελάτη -- ΕΝΕΡΓΟΠΟΙΗΣΕ ΜΟΛΙΣ ΟΛΟΚΛΗΡΩΘΕΙ ΤΟ LOGIN ΣΩΣΤΑ
+            /*
+            DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", DbFiles.DbMethods.user.getUsername());
+            DataTable dtPelatis = dsPelatisID.Tables["pelatis"];
+            foreach (DataRow dr in dtPelatis.Rows)
+            {
+                pelatisID = dr["ID"].ToString();
+            }
+            */
+
+            //βρες το ID του πελάτη -- ΠΡΟΣΩΡΙΝΟ
+            DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", NewAppointmentTbOnomateponimo.Text);
+            DataTable dtPelatis = dsPelatisID.Tables["pelatis"];
+            if (dtPelatis.Rows.Count == 0)
+            {
+                MessageBox.Show("Δεν βρέθηκε ο πελάτης!");
+            }
+            else
+            {
+                foreach (DataRow dr in dtPelatis.Rows)
+                {
+
+                    if (dr["kodikosPelati"].ToString() != null)
+                    {
+                        pelatisID = dr["kodikosPelati"].ToString();
+                    }
+
+                }
+            }
             
 
+            
             //βρες το ID του καταστηματάρχη από το κατάστημα
             DataSet dsStoreID = DbFiles.DbMethods.getTableData("katastima", "odos", katastima);
             DataTable dt = dsStoreID.Tables["katastima"]; 
@@ -43,8 +78,8 @@ namespace myGarag_e_MAINPROJECT
             string date = NewAppointmentChbDate.Value.ToString("yyyy'-'MM'-'dd");
             datetime += date + " " + time;
 
-            //Insert method -> Needs ID, IDPelatis
-            int rows = neoRantevou("", "", kodikosKatastimatarxi, description, datetime, "0");
+            //Insert method
+            int rows = neoRantevou(ID, pelatisID, kodikosKatastimatarxi, description, datetime, "0");
             if (rows == 1)
             {
                 MessageBox.Show("Η αίτηση ολοκληρώθηκε!");
@@ -64,8 +99,8 @@ namespace myGarag_e_MAINPROJECT
                 MySqlCommand command = new MySqlCommand(query, dbConnection);
 
                 //Add parameters
-                command.Parameters.AddWithValue("@ID", 10);
-                command.Parameters.AddWithValue("@IDPelati", 100);
+                command.Parameters.AddWithValue("@ID", ID);
+                command.Parameters.AddWithValue("@IDPelati", IDPelatis);
                 command.Parameters.AddWithValue("@kodikosKatastimatarxi", kodikosKatastimatarxi);
                 command.Parameters.AddWithValue("@description", description);
                 command.Parameters.AddWithValue("@date", datetime);

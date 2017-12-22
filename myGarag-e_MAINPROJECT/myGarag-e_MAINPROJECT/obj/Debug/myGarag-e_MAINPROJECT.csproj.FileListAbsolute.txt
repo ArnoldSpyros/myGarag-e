@@ -108,3 +108,4 @@ C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPRO
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.Entity.EF6.xml
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el-GR\myGarag-e_MAINPROJECT.resources.dll
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el\myGarag-e_MAINPROJECT.resources.dll
+C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.mygarage_UserInfo.resources

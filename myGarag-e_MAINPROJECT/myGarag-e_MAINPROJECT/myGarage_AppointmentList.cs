@@ -43,13 +43,14 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_AppointmentList_Load(object sender, EventArgs e)
         {
-            DataSet ds = DbFiles.DbMethods.getTableData("rantevou");
-            AppointmentListGridView.DataSource = ds.Tables["rantevou"];
+            //Φόρτωμα πίνακα
+            DataSet ds = loadAppointmentList();
+            AppointmentListGridView.DataSource = ds.Tables["pelatis"];
         }
 
         private void AppointmentBtnAnaneosi_Click(object sender, EventArgs e)
         {
-            DataSet ds = DbFiles.DbMethods.getTableData("rantevou");
+            DataSet ds = loadAppointmentList();
             AppointmentListGridView.DataSource = ds.Tables["rantevou"];
         }
 
@@ -73,8 +74,8 @@ namespace myGarag_e_MAINPROJECT
                     if (rows == 1)
                     {
                         MessageBox.Show("Το ραντεβού επιβεβαιώθηκε!");
-                        DataSet ds = DbFiles.DbMethods.getTableData("rantevou");
-                        AppointmentListGridView.DataSource = ds.Tables["rantevou"];
+                        DataSet ds = loadAppointmentList();
+                        AppointmentListGridView.DataSource = ds.Tables["pelatis"];
                     }
                 }
             }
@@ -133,6 +134,27 @@ namespace myGarag_e_MAINPROJECT
             }
 
 
+        }
+
+        private DataSet loadAppointmentList()
+        {
+            string sql = "SELECT R.ID,P.onoma,P.epitheto,P.kodikosPelati,R.description,R.Date,R.confirmed FROM Pelatis P JOIN Rantevou R WHERE P.kodikosPelati=R.IDpelati";
+            try
+            {
+                MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+                DataSet ds = new DataSet();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con);
+                adapter.Fill(ds, "pelatis");
+
+                con.Close();
+                return ds;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return null;
+            }
+            
         }
         
     }
