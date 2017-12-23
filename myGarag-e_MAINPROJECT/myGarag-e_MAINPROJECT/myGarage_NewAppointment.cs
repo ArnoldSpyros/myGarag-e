@@ -21,28 +21,28 @@ namespace myGarag_e_MAINPROJECT
         {
             //string name = NewAppointmentTbOnomateponimo.Text;
             string katastima = NewAppointmentSBKatastima.Text;
-            
+
             string description = NewAppointmentRTbSxolia.Text;
 
             string kodikosKatastimatarxi = "";
 
             string pelatisID = "";
 
-            //Generate a random ID -> WILL DELETE LATER
+            //Generate a random userID -> WILL DELETE LATER
             Random rnd = new Random();
             string ID = rnd.Next(1000, 9999).ToString();
 
-            //βρες το ID του πελάτη -- ΕΝΕΡΓΟΠΟΙΗΣΕ ΜΟΛΙΣ ΟΛΟΚΛΗΡΩΘΕΙ ΤΟ LOGIN ΣΩΣΤΑ
+            //βρες το userID του πελάτη -- ΕΝΕΡΓΟΠΟΙΗΣΕ ΜΟΛΙΣ ΟΛΟΚΛΗΡΩΘΕΙ ΤΟ LOGIN ΣΩΣΤΑ
             /*
             DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", DbFiles.DbMethods.user.getUsername());
             DataTable dtPelatis = dsPelatisID.Tables["pelatis"];
             foreach (DataRow dr in dtPelatis.Rows)
             {
-                pelatisID = dr["ID"].ToString();
+                pelatisID = dr["userID"].ToString();
             }
             */
 
-            //βρες το ID του πελάτη -- ΠΡΟΣΩΡΙΝΟ
+            //βρες το userID του πελάτη -- ΠΡΟΣΩΡΙΝΟ
             DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", NewAppointmentTbOnomateponimo.Text);
             DataTable dtPelatis = dsPelatisID.Tables["pelatis"];
             if (dtPelatis.Rows.Count == 0)
@@ -61,12 +61,12 @@ namespace myGarag_e_MAINPROJECT
 
                 }
             }
-            
 
-            
-            //βρες το ID του καταστηματάρχη από το κατάστημα
+
+
+            //βρες το userID του καταστηματάρχη από το κατάστημα
             DataSet dsStoreID = DbFiles.DbMethods.getTableData("katastima", "odos", katastima);
-            DataTable dt = dsStoreID.Tables["katastima"]; 
+            DataTable dt = dsStoreID.Tables["katastima"];
             foreach (DataRow dr in dt.Rows)
             {
                 kodikosKatastimatarxi = dr["idioktitis"].ToString();
@@ -85,7 +85,7 @@ namespace myGarag_e_MAINPROJECT
                 MessageBox.Show("Η αίτηση ολοκληρώθηκε!");
             }
             (this as Form).Close();
-            
+
         }
 
         public static int neoRantevou(string ID, string IDPelatis, string kodikosKatastimatarxi, string description, string datetime, string confirmed)
@@ -93,13 +93,13 @@ namespace myGarag_e_MAINPROJECT
             try
             {
                 MySqlConnection dbConnection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
-                string query = String.Format("INSERT INTO rantevou (ID,IDpelati,IDkatastimatarxi,Description,Date,Confirmed) VALUES (@ID,@IDPelati,@kodikosKatastimatarxi,@description,@date,@confirmed)"); // SQL query
+                string query = String.Format("INSERT INTO rantevou (userID,IDpelati,IDkatastimatarxi,Description,Date,Confirmed) VALUES (@userID,@IDPelati,@kodikosKatastimatarxi,@description,@date,@confirmed)"); // SQL query
 
 
                 MySqlCommand command = new MySqlCommand(query, dbConnection);
 
                 //Add parameters
-                command.Parameters.AddWithValue("@ID", ID);
+                command.Parameters.AddWithValue("@userID", ID);
                 command.Parameters.AddWithValue("@IDPelati", IDPelatis);
                 command.Parameters.AddWithValue("@kodikosKatastimatarxi", kodikosKatastimatarxi);
                 command.Parameters.AddWithValue("@description", description);
@@ -151,7 +151,7 @@ namespace myGarag_e_MAINPROJECT
 
             //set Date Time picker to Time Format
             NewAppointmentChbDate.Format = DateTimePickerFormat.Time;
-            
+
         }
     }
 }

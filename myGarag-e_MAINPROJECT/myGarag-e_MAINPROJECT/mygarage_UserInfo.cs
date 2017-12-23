@@ -92,7 +92,7 @@ namespace myGarag_e_MAINPROJECT
             }
             else
             {
-                fillrevertFunction();  
+                fillrevertFunction();
             }
             //στο No είναι σίγουρος ότι θέλει απλά να κλείσει την ερώτηση
         }
@@ -109,10 +109,10 @@ namespace myGarag_e_MAINPROJECT
             //γέμισμα στοιχείων χρήστη κάθε φορά που ανοίγει την φόρμα
             try
             {
-                UserInfoTbEpitheto.Text = DbFiles.DbMethods.user.getLastname();
-                UserInfoTbOnoma.Text = DbFiles.DbMethods.user.getName();
-                UserInfoTbPseudonumo.Text = DbFiles.DbMethods.user.getUsername();
-                UserInfoTbTilefono.Text = DbFiles.DbMethods.user.getPhonenumber();
+                UserInfoTbEpitheto.Text = DbFiles.DbMethods.user.Lastname;
+                UserInfoTbOnoma.Text = DbFiles.DbMethods.user.Name;
+                UserInfoTbPseudonumo.Text = DbFiles.DbMethods.user.Username;
+                UserInfoTbTilefono.Text = DbFiles.DbMethods.user.Phonenumber;
             }
             catch (Exception e)
             {

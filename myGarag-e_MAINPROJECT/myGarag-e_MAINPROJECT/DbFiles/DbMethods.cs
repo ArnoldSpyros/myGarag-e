@@ -133,11 +133,11 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             {
                 MySqlConnection dbConnection = setMySqlConnection(connectionString); // set connection with the database.
                 string dbCommandStr = String.Format("INSERT INTO pelatis (kodikosPelati,onoma,epitheto,tilefono,password)" +
-                    " VALUES (@ID,@name,@lastName,@phoneNumber,@password)");
+                    " VALUES (@userID,@name,@lastName,@phoneNumber,@password)");
                 MySqlCommand command = new MySqlCommand(dbCommandStr, dbConnection);
 
                 // adding the parameters
-                command.Parameters.AddWithValue("@ID", ID);
+                command.Parameters.AddWithValue("@userID", ID);
                 command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@lastName", lastName);
                 command.Parameters.AddWithValue("@phoneNumber", phoneNumber);
@@ -164,7 +164,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                 DataSet dataset = getTableData("pelatis", "username", username); // get clients data from the 'pelatis' table 
                 DataRow tableRow = dataset.Tables["pelatis"].Rows[0]; // instantiate a DataRow object containing client's info
 
-                string ID = tableRow[0].ToString(); // get client's ID
+                string ID = tableRow[0].ToString(); // get client's userID
                 string name = tableRow[1].ToString(); // get client's name
                 string lastName = tableRow[2].ToString(); // get client's last  name
                 string phoneNumber = tableRow[3].ToString(); // get client's phoneNumber

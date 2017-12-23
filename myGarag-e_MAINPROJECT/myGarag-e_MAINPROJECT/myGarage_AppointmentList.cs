@@ -24,7 +24,7 @@ namespace myGarag_e_MAINPROJECT
             if (res == DialogResult.Yes)
             {
                 //Update πίνακα
-                string columnID = AppointmentListGridView.CurrentRow.Cells["ID"].Value.ToString();
+                string columnID = AppointmentListGridView.CurrentRow.Cells["userID"].Value.ToString();
                 int rows = deleteRantevou(columnID);
                 if (rows >= 1)
                 {
@@ -68,7 +68,7 @@ namespace myGarag_e_MAINPROJECT
                 }
                 else
                 {
-                    string columnId = AppointmentListGridView.CurrentRow.Cells["ID"].Value.ToString();
+                    string columnId = AppointmentListGridView.CurrentRow.Cells["userID"].Value.ToString();
 
                     int rows = confirmRantebou(columnId);
                     if (rows == 1)
@@ -87,7 +87,7 @@ namespace myGarag_e_MAINPROJECT
             try
             {
                 MySqlConnection connection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
-                string mySql = "DELETE FROM rantevou WHERE ID=@columnID";
+                string mySql = "DELETE FROM rantevou WHERE userID=@columnID";
 
                 MySqlCommand command = new MySqlCommand(mySql, connection);
 
@@ -114,7 +114,7 @@ namespace myGarag_e_MAINPROJECT
             try
             {
                 MySqlConnection connection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
-                string mySql = "UPDATE rantevou SET Confirmed=1 WHERE ID=@columnID";
+                string mySql = "UPDATE rantevou SET Confirmed=1 WHERE userID=@columnID";
 
                 MySqlCommand command = new MySqlCommand(mySql, connection);
 
@@ -138,7 +138,7 @@ namespace myGarag_e_MAINPROJECT
 
         private DataSet loadAppointmentList()
         {
-            string sql = "SELECT R.ID,P.onoma,P.epitheto,P.kodikosPelati,R.description,R.Date,R.confirmed FROM Pelatis P JOIN Rantevou R WHERE P.kodikosPelati=R.IDpelati";
+            string sql = "SELECT R.userID,P.onoma,P.epitheto,P.kodikosPelati,R.description,R.Date,R.confirmed FROM Pelatis P JOIN Rantevou R WHERE P.kodikosPelati=R.IDpelati";
             try
             {
                 MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
@@ -154,8 +154,8 @@ namespace myGarag_e_MAINPROJECT
                 MessageBox.Show(exc.Message);
                 return null;
             }
-            
+
         }
-        
+
     }
 }

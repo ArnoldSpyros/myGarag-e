@@ -24,7 +24,7 @@ namespace myGarag_e_MAINPROJECT
             string password = PassTB.Text;
             if (DbFiles.DbMethods.findCustomer(username))
             {
-                if (DbFiles.DbMethods.user.getRolosUser() == "Pelatis")
+                if (DbFiles.DbMethods.user.FirstRole == "Pelatis")
                 {
                     myGarage_ConsumerMain nConsumer = new myGarage_ConsumerMain();
                     nConsumer.Show();
