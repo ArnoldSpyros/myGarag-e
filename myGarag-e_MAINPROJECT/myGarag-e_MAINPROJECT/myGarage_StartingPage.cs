@@ -11,7 +11,7 @@ namespace myGarag_e_MAINPROJECT
 {
     public partial class myGarage_StartingPage : Form
     {
-        public static myGarage_StartingPage stPage = new myGarage_StartingPage();
+        public static myGarage_StartingPage stPage ;
         public myGarage_StartingPage()
         {
             InitializeComponent();
@@ -28,6 +28,7 @@ namespace myGarag_e_MAINPROJECT
                     myGarage_ConsumerMain nConsumer = new myGarage_ConsumerMain();
                     nConsumer.Show();
                     nConsumer.Focus();
+                    stPage = this;
                     this.Visible = false;
                 }
             }
@@ -38,6 +39,7 @@ namespace myGarag_e_MAINPROJECT
         {
             myGarage_NewUser nUser = new myGarage_NewUser();
             nUser.Show();
+            stPage = this;
             this.Visible = false;
         }
     }

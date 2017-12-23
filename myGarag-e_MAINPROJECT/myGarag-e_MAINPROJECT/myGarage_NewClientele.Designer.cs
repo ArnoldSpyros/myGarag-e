@@ -48,7 +48,7 @@
             this.NewClienteleEdit.Controls.Add(this.ClienteleTbKodikosPelatologiou);
             this.NewClienteleEdit.Location = new System.Drawing.Point(2, 82);
             this.NewClienteleEdit.Name = "NewClienteleEdit";
-            this.NewClienteleEdit.Size = new System.Drawing.Size(408, 164);
+            this.NewClienteleEdit.Size = new System.Drawing.Size(259, 164);
             this.NewClienteleEdit.TabIndex = 1;
             this.NewClienteleEdit.TabStop = false;
             this.NewClienteleEdit.Text = "Επεξεργασία";
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 249);
+            this.ClientSize = new System.Drawing.Size(262, 249);
             this.Controls.Add(this.NewClienteleEdit);
             this.Name = "myGarage_NewClientele";
             this.Text = "Εισαγωγή νέου πελατολογίου";

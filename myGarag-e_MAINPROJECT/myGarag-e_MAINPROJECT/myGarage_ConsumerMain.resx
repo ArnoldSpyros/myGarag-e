@@ -159,14 +159,89 @@
   <data name="&gt;&gt;ApplicationLOGO.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="ConsumerMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>15, 17</value>
-  </metadata>
   <data name="UserPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="UserPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <metadata name="ConsumerMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>15, 17</value>
+  </metadata>
+  <data name="ConsumerMenuStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ConsumerMenuStrip.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ConsumerMenuStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="newappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="newappointmentMenuStripItem.Text" xml:space="preserve">
+    <value>Νέο</value>
+  </data>
+  <data name="listappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="listappointmentMenuStripItem.Text" xml:space="preserve">
+    <value>Λίστα</value>
+  </data>
+  <data name="AppointmentsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 21</value>
+  </data>
+  <data name="AppointmentsMenuItem.Text" xml:space="preserve">
+    <value>Ραντεβού</value>
+  </data>
+  <data name="CartMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 21</value>
+  </data>
+  <data name="CartMenuItem.Text" xml:space="preserve">
+    <value>Καλάθι αγορών</value>
+  </data>
+  <data name="εισερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="εισερχόμεναToolStripMenuItem.Text" xml:space="preserve">
+    <value>Εισερχόμενα</value>
+  </data>
+  <data name="εξερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="εξερχόμεναToolStripMenuItem.Text" xml:space="preserve">
+    <value>Εξερχόμενα</value>
+  </data>
+  <data name="MessagesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="MessagesMenuItem.Text" xml:space="preserve">
+    <value>Μηνύματα</value>
+  </data>
+  <data name="infoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
+  </data>
+  <data name="infoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Πληροφορίες προφίλ</value>
+  </data>
+  <data name="AccountMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 21</value>
+  </data>
+  <data name="AccountMenuItem.Text" xml:space="preserve">
+    <value>Ο λογαριασμός μου</value>
+  </data>
+  <data name="ConsumerMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ConsumerMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>385, 25</value>
+  </data>
+  <data name="ConsumerMenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ConsumerMenuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
   </data>
   <data name="&gt;&gt;ConsumerMenuStrip.Name" xml:space="preserve">
     <value>ConsumerMenuStrip</value>
@@ -201,143 +276,8 @@
   <data name="&gt;&gt;UserPanel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="ConsumerMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>15, 17</value>
-  </metadata>
-  <data name="ConsumerMenuStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ConsumerMenuStrip.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ConsumerMenuStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ConsumerMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ConsumerMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 25</value>
-  </data>
-  <data name="ConsumerMenuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ConsumerMenuStrip.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;ConsumerMenuStrip.Name" xml:space="preserve">
-    <value>ConsumerMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;ConsumerMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ConsumerMenuStrip.Parent" xml:space="preserve">
-    <value>UserPanel</value>
-  </data>
-  <data name="&gt;&gt;ConsumerMenuStrip.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AppointmentsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 21</value>
-  </data>
-  <data name="AppointmentsMenuItem.Text" xml:space="preserve">
-    <value>Ραντεβού</value>
-  </data>
-  <data name="newappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 22</value>
-  </data>
-  <data name="newappointmentMenuStripItem.Text" xml:space="preserve">
-    <value>Νέο</value>
-  </data>
-  <data name="listappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 22</value>
-  </data>
-  <data name="listappointmentMenuStripItem.Text" xml:space="preserve">
-    <value>Λίστα</value>
-  </data>
-  <data name="CartMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 21</value>
-  </data>
-  <data name="CartMenuItem.Text" xml:space="preserve">
-    <value>Καλάθι αγορών</value>
-  </data>
-  <data name="MessagesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 21</value>
-  </data>
-  <data name="MessagesMenuItem.Text" xml:space="preserve">
-    <value>Μηνύματα</value>
-  </data>
-  <data name="εισερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="εισερχόμεναToolStripMenuItem.Text" xml:space="preserve">
-    <value>Εισερχόμενα</value>
-  </data>
-  <data name="εξερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="εξερχόμεναToolStripMenuItem.Text" xml:space="preserve">
-    <value>Εξερχόμενα</value>
-  </data>
-  <data name="AccountMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 21</value>
-  </data>
-  <data name="AccountMenuItem.Text" xml:space="preserve">
-    <value>Ο λογαριασμός μου</value>
-  </data>
-  <data name="infoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
-  <data name="infoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Πληροφορίες προφίλ</value>
-  </data>
   <data name="SearchPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;SearchBtn.Name" xml:space="preserve">
-    <value>SearchBtn</value>
-  </data>
-  <data name="&gt;&gt;SearchBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SearchBtn.Parent" xml:space="preserve">
-    <value>SearchPanel</value>
-  </data>
-  <data name="&gt;&gt;SearchBtn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.Name" xml:space="preserve">
-    <value>SearchTextBox</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.Parent" xml:space="preserve">
-    <value>SearchPanel</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SearchPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 43</value>
-  </data>
-  <data name="SearchPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>391, 49</value>
-  </data>
-  <data name="SearchPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;SearchPanel.Name" xml:space="preserve">
-    <value>SearchPanel</value>
-  </data>
-  <data name="&gt;&gt;SearchPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SearchPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SearchPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="SearchBtn.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -393,11 +333,44 @@
   <data name="&gt;&gt;SearchTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="SearchPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 43</value>
+  </data>
+  <data name="SearchPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 49</value>
+  </data>
+  <data name="SearchPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.Name" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="PartsShopPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="PartsShopPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>779, 458</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
     <value>dataGridView1</value>
@@ -430,30 +403,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PartsShopPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>779, 458</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>PartsShopPanel</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -35,20 +35,22 @@
             this.OrderCheckBOloklirwthike = new System.Windows.Forms.CheckBox();
             this.OrderTbPelatologioKatastimatarxisKatID = new System.Windows.Forms.TextBox();
             this.OrderTbPelatologioPeID = new System.Windows.Forms.TextBox();
+            this.NewOrderBtnProsthiki = new System.Windows.Forms.Button();
             this.NewOrderEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // NewOrderEdit
             // 
+            this.NewOrderEdit.Controls.Add(this.NewOrderBtnProsthiki);
             this.NewOrderEdit.Controls.Add(this.label4);
             this.NewOrderEdit.Controls.Add(this.label3);
             this.NewOrderEdit.Controls.Add(this.label2);
             this.NewOrderEdit.Controls.Add(this.OrderCheckBOloklirwthike);
             this.NewOrderEdit.Controls.Add(this.OrderTbPelatologioKatastimatarxisKatID);
             this.NewOrderEdit.Controls.Add(this.OrderTbPelatologioPeID);
-            this.NewOrderEdit.Location = new System.Drawing.Point(2, 65);
+            this.NewOrderEdit.Location = new System.Drawing.Point(2, 12);
             this.NewOrderEdit.Name = "NewOrderEdit";
-            this.NewOrderEdit.Size = new System.Drawing.Size(275, 182);
+            this.NewOrderEdit.Size = new System.Drawing.Size(275, 235);
             this.NewOrderEdit.TabIndex = 0;
             this.NewOrderEdit.TabStop = false;
             this.NewOrderEdit.Text = "Επεξεργασία";
@@ -104,8 +106,18 @@
             this.OrderTbPelatologioPeID.Size = new System.Drawing.Size(48, 20);
             this.OrderTbPelatologioPeID.TabIndex = 1;
             // 
+            // NewOrderBtnProsthiki
+            // 
+            this.NewOrderBtnProsthiki.Location = new System.Drawing.Point(48, 180);
+            this.NewOrderBtnProsthiki.Name = "NewOrderBtnProsthiki";
+            this.NewOrderBtnProsthiki.Size = new System.Drawing.Size(156, 23);
+            this.NewOrderBtnProsthiki.TabIndex = 8;
+            this.NewOrderBtnProsthiki.Text = "Προσθήκη";
+            this.NewOrderBtnProsthiki.UseVisualStyleBackColor = true;
+            // 
             // myGarage_NewOrder
             // 
+            this.AcceptButton = this.NewOrderBtnProsthiki;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 257);
@@ -128,5 +140,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button NewOrderBtnProsthiki;
     }
 }
