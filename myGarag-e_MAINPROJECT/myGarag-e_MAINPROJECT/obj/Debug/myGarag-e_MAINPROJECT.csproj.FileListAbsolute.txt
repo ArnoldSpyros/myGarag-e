@@ -82,5 +82,3 @@ C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJ
 C:\Users\Loco\Desktop\gittest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csproj.myGarag-e_MAINPROJECT.exe.config
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_AppointmentList.resources
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewAppointment.resources
-C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csprojResolveAssemblyReference.cache
-C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.mygarage_UserInfo.resources

@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.KatastimaChbMeRantevou = new System.Windows.Forms.CheckBox();
+            this.KatastimaBtnEisagogi = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.KatastimaTbPerioxi = new System.Windows.Forms.TextBox();
+            this.KatastimaTbOdos = new System.Windows.Forms.TextBox();
+            this.KatastimaTbIdioktitis = new System.Windows.Forms.TextBox();
             this.ClientChbKatastimatarxis = new System.Windows.Forms.CheckBox();
             this.ClientTbEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,15 +52,6 @@
             this.ClientTbTilefono = new System.Windows.Forms.TextBox();
             this.ClientTbEpitheto = new System.Windows.Forms.TextBox();
             this.ClientTbOnoma = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.KatastimaChbMeRantevou = new System.Windows.Forms.CheckBox();
-            this.KatastimaBtnEisagogi = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.KatastimaTbPerioxi = new System.Windows.Forms.TextBox();
-            this.KatastimaTbOdos = new System.Windows.Forms.TextBox();
-            this.KatastimaTbIdioktitis = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +78,99 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Εισαγωγή στοιχείων";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.KatastimaChbMeRantevou);
+            this.groupBox2.Controls.Add(this.KatastimaBtnEisagogi);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.KatastimaTbPerioxi);
+            this.groupBox2.Controls.Add(this.KatastimaTbOdos);
+            this.groupBox2.Controls.Add(this.KatastimaTbIdioktitis);
+            this.groupBox2.Location = new System.Drawing.Point(1, 39);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(323, 315);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Εισαγωγή καταστήματος";
+            this.groupBox2.Visible = false;
+            // 
+            // KatastimaChbMeRantevou
+            // 
+            this.KatastimaChbMeRantevou.AutoSize = true;
+            this.KatastimaChbMeRantevou.Location = new System.Drawing.Point(162, 178);
+            this.KatastimaChbMeRantevou.Name = "KatastimaChbMeRantevou";
+            this.KatastimaChbMeRantevou.Size = new System.Drawing.Size(98, 17);
+            this.KatastimaChbMeRantevou.TabIndex = 13;
+            this.KatastimaChbMeRantevou.Text = "Με ραντεβού?";
+            this.KatastimaChbMeRantevou.UseVisualStyleBackColor = true;
+            // 
+            // KatastimaBtnEisagogi
+            // 
+            this.KatastimaBtnEisagogi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.KatastimaBtnEisagogi.Location = new System.Drawing.Point(49, 218);
+            this.KatastimaBtnEisagogi.Name = "KatastimaBtnEisagogi";
+            this.KatastimaBtnEisagogi.Size = new System.Drawing.Size(221, 23);
+            this.KatastimaBtnEisagogi.TabIndex = 12;
+            this.KatastimaBtnEisagogi.Text = "Εισαγωγή";
+            this.KatastimaBtnEisagogi.UseVisualStyleBackColor = true;
+            this.KatastimaBtnEisagogi.Click += new System.EventHandler(this.katastimaBtnEisagogi_Click);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(103, 120);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Περιοχή:";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(118, 80);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 13);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Οδός:";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(91, 42);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Ιδιοκτήτης:";
+            // 
+            // KatastimaTbPerioxi
+            // 
+            this.KatastimaTbPerioxi.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.KatastimaTbPerioxi.Location = new System.Drawing.Point(167, 113);
+            this.KatastimaTbPerioxi.Name = "KatastimaTbPerioxi";
+            this.KatastimaTbPerioxi.Size = new System.Drawing.Size(150, 20);
+            this.KatastimaTbPerioxi.TabIndex = 3;
+            // 
+            // KatastimaTbOdos
+            // 
+            this.KatastimaTbOdos.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.KatastimaTbOdos.Location = new System.Drawing.Point(167, 73);
+            this.KatastimaTbOdos.Name = "KatastimaTbOdos";
+            this.KatastimaTbOdos.Size = new System.Drawing.Size(150, 20);
+            this.KatastimaTbOdos.TabIndex = 2;
+            // 
+            // KatastimaTbIdioktitis
+            // 
+            this.KatastimaTbIdioktitis.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.KatastimaTbIdioktitis.Location = new System.Drawing.Point(167, 35);
+            this.KatastimaTbIdioktitis.Name = "KatastimaTbIdioktitis";
+            this.KatastimaTbIdioktitis.Size = new System.Drawing.Size(150, 20);
+            this.KatastimaTbIdioktitis.TabIndex = 1;
             // 
             // ClientChbKatastimatarxis
             // 
@@ -212,102 +305,8 @@
             this.ClientTbOnoma.Size = new System.Drawing.Size(150, 20);
             this.ClientTbOnoma.TabIndex = 1;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.KatastimaChbMeRantevou);
-            this.groupBox2.Controls.Add(this.KatastimaBtnEisagogi);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.KatastimaTbPerioxi);
-            this.groupBox2.Controls.Add(this.KatastimaTbOdos);
-            this.groupBox2.Controls.Add(this.KatastimaTbIdioktitis);
-            this.groupBox2.Location = new System.Drawing.Point(1, 39);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(323, 315);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Εισαγωγή καταστήματος";
-            this.groupBox2.Visible = false;
-            // 
-            // KatastimaChbMeRantevou
-            // 
-            this.KatastimaChbMeRantevou.AutoSize = true;
-            this.KatastimaChbMeRantevou.Location = new System.Drawing.Point(162, 178);
-            this.KatastimaChbMeRantevou.Name = "KatastimaChbMeRantevou";
-            this.KatastimaChbMeRantevou.Size = new System.Drawing.Size(98, 17);
-            this.KatastimaChbMeRantevou.TabIndex = 13;
-            this.KatastimaChbMeRantevou.Text = "Με ραντεβού?";
-            this.KatastimaChbMeRantevou.UseVisualStyleBackColor = true;
-            // 
-            // KatastimaBtnEisagogi
-            // 
-            this.KatastimaBtnEisagogi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.KatastimaBtnEisagogi.Location = new System.Drawing.Point(49, 218);
-            this.KatastimaBtnEisagogi.Name = "KatastimaBtnEisagogi";
-            this.KatastimaBtnEisagogi.Size = new System.Drawing.Size(221, 23);
-            this.KatastimaBtnEisagogi.TabIndex = 12;
-            this.KatastimaBtnEisagogi.Text = "Εισαγωγή";
-            this.KatastimaBtnEisagogi.UseVisualStyleBackColor = true;
-            this.KatastimaBtnEisagogi.Click += new System.EventHandler(this.katastimaBtnEisagogi_Click);
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(103, 120);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Περιοχή:";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(118, 80);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 13);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Οδός:";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(91, 42);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Ιδιοκτήτης:";
-            // 
-            // KatastimaTbPerioxi
-            // 
-            this.KatastimaTbPerioxi.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.KatastimaTbPerioxi.Location = new System.Drawing.Point(167, 113);
-            this.KatastimaTbPerioxi.Name = "KatastimaTbPerioxi";
-            this.KatastimaTbPerioxi.Size = new System.Drawing.Size(150, 20);
-            this.KatastimaTbPerioxi.TabIndex = 3;
-            // 
-            // KatastimaTbOdos
-            // 
-            this.KatastimaTbOdos.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.KatastimaTbOdos.Location = new System.Drawing.Point(167, 73);
-            this.KatastimaTbOdos.Name = "KatastimaTbOdos";
-            this.KatastimaTbOdos.Size = new System.Drawing.Size(150, 20);
-            this.KatastimaTbOdos.TabIndex = 2;
-            // 
-            // KatastimaTbIdioktitis
-            // 
-            this.KatastimaTbIdioktitis.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.KatastimaTbIdioktitis.Location = new System.Drawing.Point(167, 35);
-            this.KatastimaTbIdioktitis.Name = "KatastimaTbIdioktitis";
-            this.KatastimaTbIdioktitis.Size = new System.Drawing.Size(150, 20);
-            this.KatastimaTbIdioktitis.TabIndex = 1;
-            // 
             // myGarage_NewUser
             // 
-            this.AcceptButton = this.ClientBtnRegister;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 372);

@@ -18,49 +18,49 @@ namespace myGarag_e_MAINPROJECT
             
         }
 
-        //public static bool appointmentmenuitemshown = false;
+        public static bool appointmentmenuitemshown = false;
 
         private void newappointmentMenuStripItem_Click(object sender, EventArgs e)
         {
-            //if (!appointmentmenuitemshown)
-            //{
+            if (!appointmentmenuitemshown)
+            {
                 myGarage_NewAppointment newappo = new myGarage_NewAppointment();
-                newappo.ShowDialog();
-                //appointmentmenuitemshown = true;
-            //}
-            //else
-            //{
-                //MessageBox.Show("Έχετε ήδη ανοιχτό ένα ραντεβού!");
-                //myGarage_NewAppointment.ActiveForm.Focus();
-            //}
+                newappo.Show();
+                appointmentmenuitemshown = true;
+            }
+            else
+            {
+                MessageBox.Show("Έχετε ήδη ανοιχτό ένα ραντεβού!");
+                myGarage_NewAppointment.ActiveForm.Focus();
+            }
         }
 
         private void listappointmentMenuStripItem_Click(object sender, EventArgs e)
         {
-            //if (!appointmentmenuitemshown)
-            //{
+            if (!appointmentmenuitemshown)
+            {
                 myGarage_AppointmentList newappo = new myGarage_AppointmentList();
-                newappo.ShowDialog();
-                //appointmentmenuitemshown = true;
-            //}
-            //else
-            //{
-               // MessageBox.Show("Έχετε ήδη ανοιχτό ένα ραντεβού!");
-                //myGarage_NewAppointment.ActiveForm.Focus();
-            //}
+                newappo.Show();
+                appointmentmenuitemshown = true;
+            }
+            else
+            {
+                MessageBox.Show("Έχετε ήδη ανοιχτό ένα ραντεβού!");
+                myGarage_NewAppointment.ActiveForm.Focus();
+            }
         }
 
-        //public static bool infoMenuItemShown = false;
+        public static bool infoMenuItemShown = false;
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //if (!infoMenuItemShown)
-            //{
+            if (!infoMenuItemShown)
+            {
                 mygarage_UserInfo newuserinfo = new mygarage_UserInfo();
-                newuserinfo.ShowDialog();
+                newuserinfo.Show();
                 newuserinfo.Focus();
-                //infoMenuItemShown = true;
-            //}
+                infoMenuItemShown = true;
+            }
         }
 
         private void myGarage_ConsumerMain_FormClosed(object sender, FormClosedEventArgs e)

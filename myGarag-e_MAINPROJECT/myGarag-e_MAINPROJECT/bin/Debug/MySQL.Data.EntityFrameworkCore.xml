@@ -49,20 +49,20 @@
             <param name="typeName">MySQL column type as string.</param>
             <returns>Property builder of the auto-increment column.</returns>
         </member>
-        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.String)">
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasDefaultValueSql(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.String)">
             <summary>
-            Defines a column data type.
+            Defines a column default value expression.
             </summary>
             <param name="propertyBuilder">Entity property to be set.</param>
-            <param name="typeName">MySQL column type as string.</param>
-            <returns>Property builder of a MySQL column data type.</returns>
+            <param name="sql">Default value expression.</param>
+            <returns>Property builder of a MySQL column with a default value.</returns>
         </member>
-        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasDefaultValue(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.String)">
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasDefaultValue(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Object)">
             <summary>
             Defines a column default value.
             </summary>
             <param name="propertyBuilder">Entity property to be set.</param>
-            <param name="sql">Default value expression.</param>
+            <param name="sql">Default value.</param>
             <returns>Property builder of a MySQL column with a default value.</returns>
         </member>
         <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasCharset(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.String)">
@@ -109,24 +109,26 @@
             <param name="services">Collection of service descriptors.</param>
             <returns>Collection of MySQL services descriptors.</returns>
         </member>
-        <member name="T:MySql.Data.EntityFrameworkCore.Infraestructure.Internal.MySQLOptionsExtension">
-            <summary>
-            Represents the <see cref="T:Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension"/> implemented for MySQL.
-            </summary>
-        </member>
         <member name="T:MySql.Data.EntityFrameworkCore.Infraestructure.MySQLDbContextOptionsBuilder">
             <summary>
             Represents the <see cref="T:Microsoft.EntityFrameworkCore.Infrastructure.RelationalDbContextOptionsBuilder`2" /> implemented for MySQL.
             </summary>
-        </member>
-        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Internal.MySQLAnnotationNames">
             <summary>
-            Annotations for MySQL specifics
+            Represents the <see cref="T:Microsoft.EntityFrameworkCore.Infrastructure.RelationalDbContextOptionsBuilder`2" /> implementation for MySQL.
             </summary>
         </member>
-        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Internal.MySQLFullAnnotationNames">
+        <member name="T:MySql.Data.EntityFrameworkCore.Infraestructure.MySQLOptionsExtension">
             <summary>
-            RelationalFullAnnotationNames for MySQL
+            Represents the <see cref="T:Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension"/> implementation for MySQL.
+            </summary>
+            <summary>
+            Represents the <see cref="T:Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension"/> implementation for MySQL.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Infraestructure.MySQLOptionsExtension.ApplyServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                This method supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This method may change or be removed in future releases.
             </summary>
         </member>
         <member name="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLAnnotationProvider">
@@ -134,7 +136,20 @@
             Annotation Provider implementation
             </summary>
         </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Internal.MySQLFullAnnotationNames">
+            <summary>
+            RelationalFullAnnotationNames for MySQL
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Internal.MySQLAnnotationNames">
+            <summary>
+            Names for MySQL annotations.
+            </summary>
+        </member>
         <member name="T:MySql.Data.EntityFrameworkCore.Migrations.MySQLMigrationsSqlGenerator">
+            <summary>
+            MigrationSqlGenerator implementation for MySQL
+            </summary>
             <summary>
             MigrationSqlGenerator implementation for MySQL
             </summary>
@@ -149,12 +164,10 @@
             Drop database operation for migrations.
             </summary>
         </member>
-        <member name="T:MySql.Data.EntityFrameworkCore.MySQLCompositeMemberTranslator">
-            <summary>
-            RelationalCompositeMemberTranslator implementation for MySQL
-            </summary>
-        </member>
         <member name="T:MySql.Data.EntityFrameworkCore.MySQLCompositeMethodCallTranslator">
+            <summary>
+            RelationalCompositeMethodCallTranslator implementation for MySQL
+            </summary>
             <summary>
             RelationalCompositeMethodCallTranslator implementation for MySQL
             </summary>
@@ -180,10 +193,18 @@
             <summary>
             Relational Database creator implementation in MySQL
             </summary>
+            <summary>
+            Relational Database creator implementation in MySQL
+            </summary>
         </member>
         <member name="T:MySql.Data.EntityFrameworkCore.MySQLDatabaseProviderServices">
             <summary>
             RelationalDatabaseProviderServices implementation for MySQL 
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.MySQLCompositeMemberTranslator">
+            <summary>
+            RelationalCompositeMemberTranslator implementation for MySQL
             </summary>
         </member>
         <member name="T:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch">

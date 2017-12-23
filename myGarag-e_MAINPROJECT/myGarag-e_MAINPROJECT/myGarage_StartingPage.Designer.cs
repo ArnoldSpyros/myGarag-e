@@ -101,6 +101,7 @@
             this.LoginBtn.TabIndex = 3;
             this.LoginBtn.Text = "Είσοδος";
             this.LoginBtn.UseVisualStyleBackColor = true;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // RegisterBtn
             // 
@@ -116,10 +117,8 @@
             // 
             // myGarage_StartingPage
             // 
-            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.RegisterBtn;
             this.ClientSize = new System.Drawing.Size(364, 302);
             this.Controls.Add(this.RegisterBtn);
             this.Controls.Add(this.LoginBtn);

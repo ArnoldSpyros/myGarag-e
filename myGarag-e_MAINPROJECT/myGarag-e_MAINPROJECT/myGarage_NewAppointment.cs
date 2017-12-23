@@ -42,7 +42,7 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_NewAppointment_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //myGarage_ConsumerMain.appointmentmenuitemshown = false;
+            myGarage_ConsumerMain.appointmentmenuitemshown = false;
         }
     }
 }
