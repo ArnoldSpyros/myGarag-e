@@ -95,6 +95,12 @@
     <Compile Include="myGarage_NewClientele.Designer.cs">
       <DependentUpon>myGarage_NewClientele.cs</DependentUpon>
     </Compile>
+    <Compile Include="myGarage_NewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myGarage_NewMessage.Designer.cs">
+      <DependentUpon>myGarage_NewMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="myGarage_NewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="myGarage_ConsumerMain.resx">
       <DependentUpon>myGarage_ConsumerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myGarage_NewMessage.resx">
+      <DependentUpon>myGarage_NewMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myGarage_NewUser.resx">
       <DependentUpon>myGarage_NewUser.cs</DependentUpon>

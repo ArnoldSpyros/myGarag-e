@@ -26,6 +26,7 @@ namespace myGarag_e_MAINPROJECT.Classes
         {
             this.userID = ID;
             this.roles[0] = rolos;
+            this.roles[0].rolosname = "Pelatis";
             this.username = username;
             this.name = name;
             this.lastName = lastName;
@@ -34,43 +35,43 @@ namespace myGarag_e_MAINPROJECT.Classes
         }
 
 
-        public String UserID
+        public string UserID
         {
             get { return userID; }
             set { userID = value; }
         }
 
-        public String FirstRole
+        public string FirstRole
         {
             get { return roles[0].rolosname; }
             set { roles[0].rolosname = value; }
         }
 
-        public String SecondRole
+        public string SecondRole
         {
             get { return roles[1].rolosname; }
             set { roles[1].rolosname = value; }
         }
 
-        public String Username
+        public string Username
         {
             get { return username; }
             set { username = value; }
         }
 
-        public String Name
+        public string Name
         {
             get { return name; }
             set { name = value; }
         }
 
-        public String Lastname
+        public string Lastname
         {
             get { return lastName; }
             set { lastName = value; }
         }
 
-        public String Phonenumber
+        public string Phonenumber
         {
             get { return phoneNumber; }
             set { phoneNumber = value; }

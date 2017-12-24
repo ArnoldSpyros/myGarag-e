@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(myGarage_ConsumerMain));
             this.ApplicationLOGO = new System.Windows.Forms.Label();
-            this.UserPanel = new System.Windows.Forms.Panel();
             this.ConsumerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.AppointmentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +38,7 @@
             this.MessagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.εισερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.εξερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.σύνταξηΝέουΜηνύματοςToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchPanel = new System.Windows.Forms.Panel();
@@ -46,11 +46,13 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.PartsShopPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.UserPanel.SuspendLayout();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.ConsumerMenuStrip.SuspendLayout();
             this.SearchPanel.SuspendLayout();
             this.PartsShopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ApplicationLOGO
@@ -58,12 +60,6 @@
             this.ApplicationLOGO.CausesValidation = false;
             resources.ApplyResources(this.ApplicationLOGO, "ApplicationLOGO");
             this.ApplicationLOGO.Name = "ApplicationLOGO";
-            // 
-            // UserPanel
-            // 
-            resources.ApplyResources(this.UserPanel, "UserPanel");
-            this.UserPanel.Controls.Add(this.ConsumerMenuStrip);
-            this.UserPanel.Name = "UserPanel";
             // 
             // ConsumerMenuStrip
             // 
@@ -74,6 +70,7 @@
             this.MessagesMenuItem,
             this.AccountMenuItem});
             this.ConsumerMenuStrip.Name = "ConsumerMenuStrip";
+            this.ConsumerMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ConsumerMenuStrip_ItemClicked);
             // 
             // AppointmentsMenuItem
             // 
@@ -104,7 +101,8 @@
             // 
             this.MessagesMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.εισερχόμεναToolStripMenuItem,
-            this.εξερχόμεναToolStripMenuItem});
+            this.εξερχόμεναToolStripMenuItem,
+            this.σύνταξηΝέουΜηνύματοςToolStripMenuItem});
             this.MessagesMenuItem.Name = "MessagesMenuItem";
             resources.ApplyResources(this.MessagesMenuItem, "MessagesMenuItem");
             // 
@@ -117,6 +115,12 @@
             // 
             this.εξερχόμεναToolStripMenuItem.Name = "εξερχόμεναToolStripMenuItem";
             resources.ApplyResources(this.εξερχόμεναToolStripMenuItem, "εξερχόμεναToolStripMenuItem");
+            // 
+            // σύνταξηΝέουΜηνύματοςToolStripMenuItem
+            // 
+            this.σύνταξηΝέουΜηνύματοςToolStripMenuItem.Name = "σύνταξηΝέουΜηνύματοςToolStripMenuItem";
+            resources.ApplyResources(this.σύνταξηΝέουΜηνύματοςToolStripMenuItem, "σύνταξηΝέουΜηνύματοςToolStripMenuItem");
+            this.σύνταξηΝέουΜηνύματοςToolStripMenuItem.Click += new System.EventHandler(this.σύνταξηΝέουΜηνύματοςToolStripMenuItem_Click);
             // 
             // AccountMenuItem
             // 
@@ -144,6 +148,7 @@
             resources.ApplyResources(this.SearchBtn, "SearchBtn");
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.UseVisualStyleBackColor = true;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // SearchTextBox
             // 
@@ -164,23 +169,38 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.ConsumerMenuStrip);
+            // 
             // myGarage_ConsumerMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.PartsShopPanel);
             this.Controls.Add(this.SearchPanel);
-            this.Controls.Add(this.UserPanel);
             this.Controls.Add(this.ApplicationLOGO);
+            this.Controls.Add(this.toolStripContainer1);
             this.Name = "myGarage_ConsumerMain";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.myGarage_ConsumerMain_FormClosed);
-            this.UserPanel.ResumeLayout(false);
             this.ConsumerMenuStrip.ResumeLayout(false);
             this.ConsumerMenuStrip.PerformLayout();
             this.SearchPanel.ResumeLayout(false);
             this.SearchPanel.PerformLayout();
             this.PartsShopPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -188,7 +208,6 @@
         #endregion
 
         private System.Windows.Forms.Label ApplicationLOGO;
-        private System.Windows.Forms.Panel UserPanel;
         private System.Windows.Forms.MenuStrip ConsumerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
@@ -204,6 +223,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem newappointmentMenuStripItem;
         private System.Windows.Forms.ToolStripMenuItem listappointmentMenuStripItem;
+        private System.Windows.Forms.ToolStripMenuItem σύνταξηΝέουΜηνύματοςToolStripMenuItem;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
     }
 }
 

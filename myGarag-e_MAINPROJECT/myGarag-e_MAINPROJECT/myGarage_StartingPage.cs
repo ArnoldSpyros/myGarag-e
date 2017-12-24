@@ -22,9 +22,10 @@ namespace myGarag_e_MAINPROJECT
         {
             string username = UserTB.Text;
             string password = PassTB.Text;
-            if (DbFiles.DbMethods.findCustomer(username))
+
+            if (DbFiles.DbMethods.findCustomer(username,password)) // if a user with the given username and passwrd was found
             {
-                if (DbFiles.DbMethods.user.FirstRole == "Pelatis")
+                if (DbFiles.DbMethods.user.FirstRole.Equals("Pelatis"))
                 {
                     myGarage_ConsumerMain nConsumer = new myGarage_ConsumerMain();
                     nConsumer.Show();
@@ -32,6 +33,8 @@ namespace myGarag_e_MAINPROJECT
                     this.Visible = false;
                 }
             }
+
+            //uncoment the line below to use the software as a user
             //DbFiles.DbMethods.connectionString = "server=jabc.zapto.org;uid=" + username + ";pwd=" + password + ";database=adopse";
         }
 

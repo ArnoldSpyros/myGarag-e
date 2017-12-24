@@ -140,3 +140,4 @@ C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPRO
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.Entity.EF6.xml
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el-GR\myGarag-e_MAINPROJECT.resources.dll
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el\myGarag-e_MAINPROJECT.resources.dll
+C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewMessage.resources
