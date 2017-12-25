@@ -75,6 +75,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Autokinito.cs" />
+    <Compile Include="Classes\KatAntalaktikon.cs" />
+    <Compile Include="Classes\Katastima.cs" />
+    <Compile Include="Classes\Katastimatarxis.cs" />
+    <Compile Include="Classes\Minima.cs" />
+    <Compile Include="Classes\RolosUser.cs" />
+    <Compile Include="Classes\Sinergio.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="DbFiles\DbMethods.cs" />
     <Compile Include="Display_Insert_Update_Delete_Search_Image_In_MySQL_Database.cs">
       <SubType>Form</SubType>
@@ -106,9 +114,9 @@
     <Compile Include="myGarage_SystemAdminMain.Designer.cs">
       <DependentUpon>myGarage_SystemAdminMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pelatis.cs" />
+    <Compile Include="Classes\Pelatis.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Proion.cs" />
+    <Compile Include="Classes\Proion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Display_Insert_Update_Delete_Search_Image_In_MySQL_Database.resx">
       <DependentUpon>Display_Insert_Update_Delete_Search_Image_In_MySQL_Database.cs</DependentUpon>

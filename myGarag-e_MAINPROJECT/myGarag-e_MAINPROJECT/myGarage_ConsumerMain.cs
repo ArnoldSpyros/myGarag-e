@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using myGarag_e_MAINPROJECT.DbFiles;
 using MySql.Data.MySqlClient;
 using System.IO;
+using myGarag_e_MAINPROJECT.Classes;
 
 namespace myGarag_e_MAINPROJECT
 {

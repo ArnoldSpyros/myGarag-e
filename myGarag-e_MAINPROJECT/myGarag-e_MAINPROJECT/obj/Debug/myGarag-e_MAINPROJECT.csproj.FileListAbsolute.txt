@@ -72,3 +72,16 @@ C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGa
 C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.exe
 C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.pdb
 C:\Users\res\Desktop\adopse project\project\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.Display_Insert_Update_Delete_Search_Image_In_MySQL_Database.resources
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csprojResolveAssemblyReference.cache
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.Display_Insert_Update_Delete_Search_Image_In_MySQL_Database.resources
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.resources
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_ShopMain.resources
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_StartingPage.resources
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_SystemAdminMain.resources
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.Properties.Resources.resources
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.el-GR.resources
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.el.resources
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csproj.GenerateResource.Cache
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csproj.CoreCompileInputs.cache
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.exe
+C:\Users\simos\Desktop\Juliano\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.pdb

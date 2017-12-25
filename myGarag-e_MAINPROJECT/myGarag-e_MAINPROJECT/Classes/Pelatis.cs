@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace myGarag_e_MAINPROJECT
+namespace myGarag_e_MAINPROJECT.Classes
 {
-    class Pelatis
+    internal class Pelatis : RolosUser
     {
         private BindingList<Proion> cart = new BindingList<Proion>();
         private ArrayList rantebou = new ArrayList();
