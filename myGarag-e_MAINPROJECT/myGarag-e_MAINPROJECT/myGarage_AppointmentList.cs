@@ -38,20 +38,36 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_AppointmentList_FormClosed(object sender, FormClosedEventArgs e)
         {
-            myGarage_ConsumerMain.appointmentmenuitemshown = false;
+            //myGarage_ConsumerMain.appointmentmenuitemshown = false;
         }
 
         private void myGarage_AppointmentList_Load(object sender, EventArgs e)
         {
-            //Φόρτωμα πίνακα
-            DataSet ds = loadAppointmentList();
-            AppointmentListGridView.DataSource = ds.Tables["pelatis"];
+            try
+            {
+                //Φόρτωμα πίνακα
+                DataSet ds = loadAppointmentList();
+                AppointmentListGridView.DataSource = ds.Tables["pelatis"];
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AppointmentBtnAnaneosi_Click(object sender, EventArgs e)
         {
-            DataSet ds = loadAppointmentList();
-            AppointmentListGridView.DataSource = ds.Tables["rantevou"];
+            try
+            {
+                DataSet ds = loadAppointmentList();
+                AppointmentListGridView.DataSource = ds.Tables["rantevou"];
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AppointmentBtnEpibebaiosi_Click(object sender, EventArgs e)

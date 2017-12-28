@@ -20,6 +20,7 @@ namespace myGarag_e_MAINPROJECT
         
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+
             string username = UserTB.Text;
             string password = PassTB.Text;
 
@@ -30,7 +31,8 @@ namespace myGarag_e_MAINPROJECT
                     myGarage_ConsumerMain nConsumer = new myGarage_ConsumerMain();
                     nConsumer.Show();
                     nConsumer.Focus();
-                    this.Visible = false;
+                    stPage = this;
+                    stPage.Visible = false;
                 }
             }
 
@@ -42,7 +44,8 @@ namespace myGarag_e_MAINPROJECT
         {
             myGarage_NewUser nUser = new myGarage_NewUser();
             nUser.Show();
-            this.Visible = false;
+            stPage = this;
+            stPage.Visible = false;
         }
     }
 }

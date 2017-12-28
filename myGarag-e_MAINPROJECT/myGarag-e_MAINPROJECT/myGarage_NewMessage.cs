@@ -69,12 +69,11 @@ namespace myGarag_e_MAINPROJECT
 
             catch (MySqlException obj)
             {
-                MessageBox.Show("Error sending the message!", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error); // error message
+                MessageBox.Show("Error sending the message!", "An error occurred:" + obj.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); // error message
             }
 
 
         }
 
     }
-}
 }

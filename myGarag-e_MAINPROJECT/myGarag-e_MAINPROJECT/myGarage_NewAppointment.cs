@@ -124,7 +124,7 @@ namespace myGarag_e_MAINPROJECT
             if (NewAppointmentTbOnomateponimo.Text != "" || NewAppointmentRTbSxolia.Text != "")
             {
                 var msg = MessageBox.Show("Θέλετε να αποθηκεύσετε τις αλλαγές σας;", "Ειδοποίηση", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                if (msg == DialogResult.OK)
+                if (msg == DialogResult.Yes)
                 {
                     //Αποθηκεύει τις αλλαγές με κλήση μεθόδων της βάσης και κλείνει την φόρμα
                 }
@@ -139,7 +139,7 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_NewAppointment_FormClosed(object sender, FormClosedEventArgs e)
         {
-            myGarage_ConsumerMain.appointmentmenuitemshown = false;
+            //myGarage_ConsumerMain.appointmentmenuitemshown = false;
         }
 
         private void myGarage_NewAppointment_Load(object sender, EventArgs e)
