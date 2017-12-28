@@ -68,5 +68,21 @@ namespace myGarag_e_MAINPROJECT
             //τερματισμός του προγράμματος
             myGarage_StartingPage.stPage.Close();
         }
+
+        private void σύνταξηΝέουΜηνύματοςToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            myGarage_NewMessage form = new myGarage_NewMessage();
+            form.ShowDialog();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConsumerMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
