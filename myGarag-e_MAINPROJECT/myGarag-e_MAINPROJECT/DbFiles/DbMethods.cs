@@ -12,8 +12,8 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 {
     class DbMethods
     {
-
-        public static string connectionString = "server=jabc.zapto.org;uid=BaKa;pwd=A6dB.K2a;database=adopse"; // database connection string.
+        //"server=jabc.zapto.org;uid=BaKa;pwd=A6dB.K2a;database=adopse"; // database connection string.
+        public static string connectionString = "server=localhost;uid=root;pwd=;database=adopse"; // database connection string.
         public static User user; // logged in user object.
 
         public static MySqlConnection setMySqlConnection(string connectionString) // method that sets the connection with the database.

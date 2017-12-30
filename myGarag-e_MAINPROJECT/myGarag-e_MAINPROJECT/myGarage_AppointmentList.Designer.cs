@@ -38,14 +38,15 @@
             // AppointmentListGridView
             // 
             this.AppointmentListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AppointmentListGridView.Location = new System.Drawing.Point(13, 116);
+            this.AppointmentListGridView.Location = new System.Drawing.Point(13, 86);
             this.AppointmentListGridView.Name = "AppointmentListGridView";
-            this.AppointmentListGridView.Size = new System.Drawing.Size(349, 238);
+            this.AppointmentListGridView.ReadOnly = true;
+            this.AppointmentListGridView.Size = new System.Drawing.Size(481, 319);
             this.AppointmentListGridView.TabIndex = 0;
             // 
             // AppointmentBtnDiagrafi
             // 
-            this.AppointmentBtnDiagrafi.Location = new System.Drawing.Point(287, 24);
+            this.AppointmentBtnDiagrafi.Location = new System.Drawing.Point(419, 24);
             this.AppointmentBtnDiagrafi.Name = "AppointmentBtnDiagrafi";
             this.AppointmentBtnDiagrafi.Size = new System.Drawing.Size(75, 23);
             this.AppointmentBtnDiagrafi.TabIndex = 1;
@@ -65,7 +66,7 @@
             // 
             // AppointmentBtnEpibebaiosi
             // 
-            this.AppointmentBtnEpibebaiosi.Location = new System.Drawing.Point(144, 24);
+            this.AppointmentBtnEpibebaiosi.Location = new System.Drawing.Point(202, 24);
             this.AppointmentBtnEpibebaiosi.Name = "AppointmentBtnEpibebaiosi";
             this.AppointmentBtnEpibebaiosi.Size = new System.Drawing.Size(97, 23);
             this.AppointmentBtnEpibebaiosi.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 366);
+            this.ClientSize = new System.Drawing.Size(506, 430);
             this.Controls.Add(this.AppointmentBtnEpibebaiosi);
             this.Controls.Add(this.AppointmentBtnAnaneosi);
             this.Controls.Add(this.AppointmentBtnDiagrafi);

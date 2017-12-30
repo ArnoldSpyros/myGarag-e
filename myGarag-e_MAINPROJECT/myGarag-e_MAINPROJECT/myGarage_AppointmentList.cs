@@ -20,18 +20,26 @@ namespace myGarag_e_MAINPROJECT
 
         private void AppointmentBtnDiagrafi_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Είστε σίγουρος πως θέλετε να διαγράψετε το επιλεγμένο ραντεβού;", "Διαγραφή", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Είστε σίγουρος πως θέλετε να διαγράψετε το επιλεγμένο ραντεβού;", "Διαγραφή", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
             if (res == DialogResult.Yes)
             {
-                //Update πίνακα
-                string columnID = AppointmentListGridView.CurrentRow.Cells["ID"].Value.ToString();
-                int rows = deleteRantevou(columnID);
-                if (rows >= 1)
+                try
                 {
-                    MessageBox.Show("Το ραντεβού διαγράφηκε!");
-                    DataSet ds = DbFiles.DbMethods.getTableData("rantevou");
-                    AppointmentListGridView.DataSource = ds.Tables["rantevou"];
+                    //Update table
+                    string columnID = AppointmentListGridView.CurrentRow.Cells["ID"].Value.ToString();
+                    int rows = deleteRantevou(columnID);
+                    if (rows >= 1)
+                    {
+                        MessageBox.Show("Το ραντεβού διαγράφηκε!","Διαγραφή Ραντεβού",MessageBoxButtons.OK);
+                        DataSet ds = DbFiles.DbMethods.getTableData("rantevou");
+                        AppointmentListGridView.DataSource = ds.Tables["rantevou"];
+                    }
                 }
+                catch(Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+                
             }
 
         }
@@ -43,40 +51,57 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_AppointmentList_Load(object sender, EventArgs e)
         {
-            //Φόρτωμα πίνακα
-            DataSet ds = loadAppointmentList();
-            AppointmentListGridView.DataSource = ds.Tables["pelatis"];
+            try
+            {
+                //Load table
+                DataSet ds = loadAppointmentList();
+                AppointmentListGridView.DataSource = ds.Tables["pelatis"];
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            
         }
 
         private void AppointmentBtnAnaneosi_Click(object sender, EventArgs e)
         {
+            //Load table
             DataSet ds = loadAppointmentList();
-            AppointmentListGridView.DataSource = ds.Tables["rantevou"];
+            AppointmentListGridView.DataSource = ds.Tables["pelatis"];
         }
 
         private void AppointmentBtnEpibebaiosi_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Είσται σίγουρος πως θέλετε να επιβεβαιώσετε το επιλεγμένο ραντεβού;", "Επιβεβαίωση", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Είστε σίγουρος πως θέλετε να επιβεβαιώσετε το επιλεγμένο ραντεβού;", "Επιβεβαίωση", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
             if (res == DialogResult.Yes)
             {
-                //Επιβεβαίωση ραντεβού
-                //Αν είναι ήδη επιβεβαιωμένο, γράψε μήνυμα
+                //Confirm rantevou
+                //If already confirmed, show message
 
                 if (AppointmentListGridView.CurrentRow.Cells["Confirmed"].Value.ToString() == "1")
                 {
-                    MessageBox.Show("Το ραντεβού έχει ήδη επιβεβαιωθεί! Δεν έγινε καμμία αλλαγή.");
+                    MessageBox.Show("Το ραντεβού έχει ήδη επιβεβαιωθεί! Δεν έγινε καμμία αλλαγή.","Επιβεβαίωση",MessageBoxButtons.OK);
                 }
                 else
                 {
-                    string columnId = AppointmentListGridView.CurrentRow.Cells["ID"].Value.ToString();
-
-                    int rows = confirmRantebou(columnId);
-                    if (rows == 1)
+                    try
                     {
-                        MessageBox.Show("Το ραντεβού επιβεβαιώθηκε!");
-                        DataSet ds = loadAppointmentList();
-                        AppointmentListGridView.DataSource = ds.Tables["pelatis"];
+                        string columnId = AppointmentListGridView.CurrentRow.Cells["ID"].Value.ToString();
+
+                        int rows = confirmRantebou(columnId);
+                        if (rows == 1)
+                        {
+                            MessageBox.Show("Το ραντεβού επιβεβαιώθηκε!","Επιτυχία!",MessageBoxButtons.OK);
+                            DataSet ds = loadAppointmentList();
+                            AppointmentListGridView.DataSource = ds.Tables["pelatis"];
+                        }
                     }
+                    catch(Exception exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                    
                 }
             }
 

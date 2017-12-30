@@ -12,6 +12,9 @@ namespace myGarag_e_MAINPROJECT
 {
     public partial class myGarage_NewAppointment : Form
     {
+        //Variables to save text, store and datetime stuff
+        private static string storeBackup = "", sxoliaBackup = "";
+
         public myGarage_NewAppointment()
         {
             InitializeComponent();
@@ -19,74 +22,62 @@ namespace myGarag_e_MAINPROJECT
 
         private void NewAppointmentBtnOloklirwsi_Click(object sender, EventArgs e)
         {
-            //string name = NewAppointmentTbOnomateponimo.Text;
             string katastima = NewAppointmentSBKatastima.Text;
-            
+
             string description = NewAppointmentRTbSxolia.Text;
 
             string kodikosKatastimatarxi = "";
 
             string pelatisID = "";
 
-            //Generate a random ID -> WILL DELETE LATER
-            Random rnd = new Random();
-            string ID = rnd.Next(1000, 9999).ToString();
+            try
+            {
+                //Generate a random ID -> WILL DELETE LATER
+                Random rnd = new Random();
+                string ID = rnd.Next(1000, 9999).ToString();
 
-            //βρες το ID του πελάτη -- ΕΝΕΡΓΟΠΟΙΗΣΕ ΜΟΛΙΣ ΟΛΟΚΛΗΡΩΘΕΙ ΤΟ LOGIN ΣΩΣΤΑ
-            /*
-            DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", DbFiles.DbMethods.user.getUsername());
-            DataTable dtPelatis = dsPelatisID.Tables["pelatis"];
-            foreach (DataRow dr in dtPelatis.Rows)
-            {
-                pelatisID = dr["ID"].ToString();
-            }
-            */
+                //find pelatisID
+                DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", DbFiles.DbMethods.user.getUsername());
+                DataTable dtPelatis = dsPelatisID.Tables["pelatis"];
 
-            //βρες το ID του πελάτη -- ΠΡΟΣΩΡΙΝΟ
-            DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", NewAppointmentTbOnomateponimo.Text);
-            DataTable dtPelatis = dsPelatisID.Tables["pelatis"];
-            if (dtPelatis.Rows.Count == 0)
-            {
-                MessageBox.Show("Δεν βρέθηκε ο πελάτης!");
-            }
-            else
-            {
                 foreach (DataRow dr in dtPelatis.Rows)
                 {
-
                     if (dr["kodikosPelati"].ToString() != null)
                     {
                         pelatisID = dr["kodikosPelati"].ToString();
                     }
-
                 }
-            }
-            
 
-            
-            //βρες το ID του καταστηματάρχη από το κατάστημα
-            DataSet dsStoreID = DbFiles.DbMethods.getTableData("katastima", "odos", katastima);
-            DataTable dt = dsStoreID.Tables["katastima"]; 
-            foreach (DataRow dr in dt.Rows)
+                //find katastimatarxisID from Katastima
+                DataSet dsStoreID = DbFiles.DbMethods.getTableData("katastima", "odos", katastima);
+                DataTable dt = dsStoreID.Tables["katastima"];
+                foreach (DataRow dr in dt.Rows)
+                {
+                    kodikosKatastimatarxi = dr["idioktitis"].ToString();
+                }
+
+                //Date and Time
+                string datetime = "";
+                string time = NewAppointmentChbDate.Value.ToString("HH':'mm':'00");
+                string date = NewAppointmentChbDate.Value.ToString("yyyy'-'MM'-'dd");
+                datetime += date + " " + time;
+
+                //Insert method
+                int rows = neoRantevou(ID, pelatisID, kodikosKatastimatarxi, description, datetime, "0");
+                if (rows == 1)
+                {
+                    MessageBox.Show("Η αίτηση ολοκληρώθηκε!", "Επιτυχία", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception exc)
             {
-                kodikosKatastimatarxi = dr["idioktitis"].ToString();
+                MessageBox.Show(exc.Message);
             }
-
-            //Date και Time
-            string datetime = "";
-            string time = NewAppointmentChbDate.Value.ToString("HH':'mm':'00");
-            string date = NewAppointmentChbDate.Value.ToString("yyyy'-'MM'-'dd");
-            datetime += date + " " + time;
-
-            //Insert method
-            int rows = neoRantevou(ID, pelatisID, kodikosKatastimatarxi, description, datetime, "0");
-            if (rows == 1)
-            {
-                MessageBox.Show("Η αίτηση ολοκληρώθηκε!");
-            }
-            (this as Form).Close();
-            
         }
+
+
+
 
         public static int neoRantevou(string ID, string IDPelatis, string kodikosKatastimatarxi, string description, string datetime, string confirmed)
         {
@@ -119,24 +110,6 @@ namespace myGarag_e_MAINPROJECT
             }
         }
 
-        private void myGarage_NewAppointment_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (NewAppointmentTbOnomateponimo.Text != "" || NewAppointmentRTbSxolia.Text != "")
-            {
-                var msg = MessageBox.Show("Θέλετε να αποθηκεύσετε τις αλλαγές σας;", "Ειδοποίηση", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                if (msg == DialogResult.OK)
-                {
-                    //Αποθηκεύει τις αλλαγές με κλήση μεθόδων της βάσης και κλείνει την φόρμα
-                }
-                else if (msg == DialogResult.Cancel)
-                {
-                    //ακυρώνει το close event γιατί ο χρήστης μπορεί να το έκανε καταλάθος
-                    e.Cancel = true;
-                }
-                //στο No είναι σίγουρος ότι θέλει απλά να κλείσει την εφαρμογή
-            }
-        }
-
         private void myGarage_NewAppointment_FormClosed(object sender, FormClosedEventArgs e)
         {
             myGarage_ConsumerMain.appointmentmenuitemshown = false;
@@ -144,14 +117,57 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_NewAppointment_Load(object sender, EventArgs e)
         {
-            //Φόρτωσε τα καταστήματα στο combobox
-            DataSet ds = DbFiles.DbMethods.getTableData("katastima");
-            NewAppointmentSBKatastima.DataSource = ds.Tables["katastima"];
-            NewAppointmentSBKatastima.DisplayMember = "odos";
+            //Load the shops in the combobox
+            try
+            {
+                DataSet ds = DbFiles.DbMethods.getTableData("katastima");
+                NewAppointmentSBKatastima.DataSource = ds.Tables["katastima"];
+                NewAppointmentSBKatastima.DisplayMember = "odos";
 
-            //set Date Time picker to Time Format
-            NewAppointmentChbDate.Format = DateTimePickerFormat.Time;
-            
+                //set Date Time picker to Time Format
+                NewAppointmentChbDate.Format = DateTimePickerFormat.Time;
+
+                //If the user saved his changes previously, load them into their respective controls
+                if (sxoliaBackup != "")
+                {
+                    NewAppointmentRTbSxolia.Text = sxoliaBackup;
+                }
+                if (storeBackup != "")
+                {
+                    NewAppointmentSBKatastima.Text = storeBackup;
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
+        }
+
+        private void myGarage_NewAppointment_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (NewAppointmentSBKatastima.Text != "" || NewAppointmentRTbSxolia.Text != "")
+            {
+                var msg = MessageBox.Show("Θέλετε να αποθηκεύσετε τις αλλαγές σας πριν κλείσει η φόρμα;", "Ειδοποίηση", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (msg == DialogResult.Yes)
+                {
+                    //Save changes and shut down form
+                    storeBackup = NewAppointmentSBKatastima.Text;
+                    sxoliaBackup = NewAppointmentRTbSxolia.Text;
+                    
+                }
+                else if(msg == DialogResult.No)
+                {
+                    //Quit without saving anything
+                    
+                }
+                else if (msg == DialogResult.Cancel)
+                {
+                    //cancel close event
+                    e.Cancel = true;
+                }
+
+            }
         }
     }
 }
