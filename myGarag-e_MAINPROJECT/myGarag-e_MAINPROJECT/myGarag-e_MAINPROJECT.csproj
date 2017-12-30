@@ -66,7 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Autokinito.cs" />
-    <Compile Include="Classes\KatastasiUI.cs" />
     <Compile Include="Classes\Minima.cs" />
     <Compile Include="Classes\Pelatis.cs" />
     <Compile Include="Classes\RolosUser.cs" />
@@ -84,11 +83,11 @@
     <Compile Include="myGarage_BanOrDeleteStore.Designer.cs">
       <DependentUpon>myGarage_BanOrDeleteStore.cs</DependentUpon>
     </Compile>
-    <Compile Include="myGarage_genericTerminateOrLogoutForm.cs">
+    <Compile Include="myGarage_Inbox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="myGarage_genericTerminateOrLogoutForm.Designer.cs">
-      <DependentUpon>myGarage_genericTerminateOrLogoutForm.cs</DependentUpon>
+    <Compile Include="myGarage_Inbox.Designer.cs">
+      <DependentUpon>myGarage_Inbox.cs</DependentUpon>
     </Compile>
     <Compile Include="myGarage_NewAppointment.cs">
       <SubType>Form</SubType>
@@ -164,8 +163,8 @@
     <EmbeddedResource Include="myGarage_BanOrDeleteStore.resx">
       <DependentUpon>myGarage_BanOrDeleteStore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="myGarage_genericTerminateOrLogoutForm.resx">
-      <DependentUpon>myGarage_genericTerminateOrLogoutForm.cs</DependentUpon>
+    <EmbeddedResource Include="myGarage_Inbox.resx">
+      <DependentUpon>myGarage_Inbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myGarage_NewAppointment.resx">
       <DependentUpon>myGarage_NewAppointment.cs</DependentUpon>
