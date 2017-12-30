@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using myGarag_e_MAINPROJECT.Classes;
 
 
 namespace myGarag_e_MAINPROJECT
@@ -89,8 +90,8 @@ namespace myGarag_e_MAINPROJECT
 
             //if (newClientFormShown == false)
             //{
-                myGarage_NewUser newclientform = new myGarage_NewUser();
-                newclientform.ShowDialog();
+            myGarage_NewUser newclientform = new myGarage_NewUser();
+            KatastasiUI.openThis(newclientform, true);
                 //newClientFormShown = true;
             //}
         }
@@ -101,9 +102,9 @@ namespace myGarag_e_MAINPROJECT
         {
             //if (newClienteleFormShown == false)
             //{
-                myGarage_NewClientele newclienteleform = new myGarage_NewClientele();
-                newclienteleform.ShowDialog();
-                //newClienteleFormShown = true;
+            myGarage_NewClientele newclienteleform = new myGarage_NewClientele();
+            KatastasiUI.openThis(newclienteleform, true);
+            //newClienteleFormShown = true;
             //}
         }
 
@@ -113,9 +114,9 @@ namespace myGarag_e_MAINPROJECT
         {
             //if (newItemFormShown == false)
             //{
-                myGarage_NewItem newitemform = new myGarage_NewItem();
-                newitemform.ShowDialog();
-                //newItemFormShown = true;
+            myGarage_NewItem newitemform = new myGarage_NewItem();
+            KatastasiUI.openThis(newitemform, true);
+            //newItemFormShown = true;
             //}
         }
 
@@ -124,7 +125,7 @@ namespace myGarag_e_MAINPROJECT
         private void NewOrderBtn_Click(object sender, EventArgs e)
         {
             myGarage_NewOrder neworderform = new myGarage_NewOrder();
-            neworderform.ShowDialog();
+            KatastasiUI.openThis(neworderform, true);
             //newOrderFormShown = true;
         }
 
@@ -132,14 +133,14 @@ namespace myGarag_e_MAINPROJECT
         {
             //if (!myGarage_ConsumerMain.appointmentmenuitemshown)
             //{
-                myGarage_NewAppointment newappo = new myGarage_NewAppointment();
-                newappo.ShowDialog();
-                //myGarage_ConsumerMain.appointmentmenuitemshown = true;
+            myGarage_NewAppointment newappo = new myGarage_NewAppointment();
+            KatastasiUI.openThis(newappo, true);
+            //myGarage_ConsumerMain.appointmentmenuitemshown = true;
             //}
             //else
             //{
-               // MessageBox.Show("Έχετε ήδη ένα ραντεβού ανοιχτό!");
-                //myGarage_NewAppointment.ActiveForm.Focus();
+            // MessageBox.Show("Έχετε ήδη ένα ραντεβού ανοιχτό!");
+            //myGarage_NewAppointment.ActiveForm.Focus();
             //}
 
         }
@@ -188,6 +189,25 @@ namespace myGarag_e_MAINPROJECT
             {
                 MessageBox.Show(exc.Message);
                 return 0;
+            }
+        }
+
+        private void myGarage_ShopMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            myGarage_genericTerminateOrLogoutForm newgentermform = new myGarage_genericTerminateOrLogoutForm();
+            var diag = newgentermform.ShowDialog();
+            if (diag == DialogResult.No)
+            {
+                DbFiles.DbMethods.user.logout();
+                KatastasiUI.openStarting();
+            }
+            else if (diag == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                KatastasiUI.terminateProgram();
             }
         }
     }

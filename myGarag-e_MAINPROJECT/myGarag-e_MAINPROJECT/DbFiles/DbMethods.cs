@@ -14,7 +14,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
     {
 
         public static string connectionString = "server=localhost;uid=root;pwd=;database=adopse"; // database connection string.
-        public static User user; // logged in user object.
+        public static User user = null; // logged in user object.
 
         public static MySqlConnection setMySqlConnection(string connectionString) // method that sets the connection with the database.
         {
@@ -156,8 +156,9 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 
         }
 
-
-        public static bool findCustomer(string username, string password)
+        //Αλλαγή του findCustomer σε loginCustomer γιατί στο loginCustomer όντως κάνει login ο χρήστης αν βρεθεί
+        //ενώ στο findCustomer ρωτάει απλά τη βάση αν υπάρχει κάποιος με τα ίδια στοιχεία
+        public static bool loginCustomer(string username, string password)
         {
             try
             {
@@ -197,6 +198,43 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             catch (MySqlException obj)
             {
                 MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // could not find customer
+            }
+
+        }
+
+        //ερώτηση στη βάση αν υπάρχει πελάτης με το ίδιο username, δεν θέλουμε δύο ραντεβουδάκηδες
+        public static bool findCustomer(string username, string password)
+        {
+            try
+            {
+                MySqlConnection dbConnection = setMySqlConnection(connectionString);
+                string query = "SELECT * FROM pelatis WHERE username = @username OR password = @password";
+                MySqlCommand command = new MySqlCommand(query, dbConnection);
+
+                command.Parameters.AddWithValue("@username", username);
+                command.Prepare();
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
+                DataSet dataset = new DataSet();
+                dataAdapter.Fill(dataset, "pelatis");
+
+                //DataSet dataset = getTableData("pelatis", "username", username); // get clients data from the 'pelatis' table 
+
+                if (dataset.Tables["pelatis"].Rows.Count > 0)
+                {
+                    dbConnection.Close(); // close database connection
+                    return true; // found customer
+                }
+                else
+                {
+                    //MessageBox.Show("User with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false; // if no user found then return false
+                }
+            }
+            catch (MySqlException obj)
+            {
+                //MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false; // could not find customer
             }
 

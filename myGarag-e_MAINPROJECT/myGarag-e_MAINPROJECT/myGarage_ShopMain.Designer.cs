@@ -45,6 +45,7 @@
             this.NewOrderBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ClienteleTab = new System.Windows.Forms.TabPage();
+            this.diagrafiPelatiB = new System.Windows.Forms.Button();
             this.NewClienteleBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.StocksTab = new System.Windows.Forms.TabPage();
@@ -60,7 +61,6 @@
             this.OrdersContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DeleteOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.InfoOrder = new System.Windows.Forms.ToolStripMenuItem();
-            this.diagrafiPelatiB = new System.Windows.Forms.Button();
             this.ShopUserMenuStrip.SuspendLayout();
             this.ShopUserPanel.SuspendLayout();
             this.AdministrativePanel.SuspendLayout();
@@ -231,6 +231,16 @@
             this.ClienteleTab.Text = "Πελατολόγιο";
             this.ClienteleTab.UseVisualStyleBackColor = true;
             // 
+            // diagrafiPelatiB
+            // 
+            this.diagrafiPelatiB.Location = new System.Drawing.Point(295, 6);
+            this.diagrafiPelatiB.Name = "diagrafiPelatiB";
+            this.diagrafiPelatiB.Size = new System.Drawing.Size(190, 23);
+            this.diagrafiPelatiB.TabIndex = 3;
+            this.diagrafiPelatiB.Text = "Διαγραφή Πελάτη";
+            this.diagrafiPelatiB.UseVisualStyleBackColor = true;
+            this.diagrafiPelatiB.Click += new System.EventHandler(this.diagrafiPelatiB_Click);
+            // 
             // NewClienteleBtn
             // 
             this.NewClienteleBtn.Location = new System.Drawing.Point(7, 6);
@@ -356,16 +366,6 @@
             this.InfoOrder.Size = new System.Drawing.Size(219, 22);
             this.InfoOrder.Text = "Πληροφορίες Παραγγελίας";
             // 
-            // diagrafiPelatiB
-            // 
-            this.diagrafiPelatiB.Location = new System.Drawing.Point(295, 6);
-            this.diagrafiPelatiB.Name = "diagrafiPelatiB";
-            this.diagrafiPelatiB.Size = new System.Drawing.Size(190, 23);
-            this.diagrafiPelatiB.TabIndex = 3;
-            this.diagrafiPelatiB.Text = "Διαγραφή Πελάτη";
-            this.diagrafiPelatiB.UseVisualStyleBackColor = true;
-            this.diagrafiPelatiB.Click += new System.EventHandler(this.diagrafiPelatiB_Click);
-            // 
             // myGarage_ShopMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +378,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "myGarage_ShopMain";
             this.Text = "Διαχείρηση Καταστήματος";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.myGarage_ShopMain_FormClosing);
             this.ShopUserMenuStrip.ResumeLayout(false);
             this.ShopUserMenuStrip.PerformLayout();
             this.ShopUserPanel.ResumeLayout(false);

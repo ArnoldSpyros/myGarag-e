@@ -191,7 +191,7 @@
             this.Controls.Add(this.ApplicationLOGO);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "myGarage_ConsumerMain";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.myGarage_ConsumerMain_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.myGarage_ConsumerMain_FormClosing);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();

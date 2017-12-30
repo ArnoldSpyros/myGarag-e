@@ -196,13 +196,13 @@
     <value>None</value>
   </data>
   <data name="newappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>105, 22</value>
   </data>
   <data name="newappointmentMenuStripItem.Text" xml:space="preserve">
     <value>Νέο</value>
   </data>
   <data name="listappointmentMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>105, 22</value>
   </data>
   <data name="listappointmentMenuStripItem.Text" xml:space="preserve">
     <value>Λίστα</value>
