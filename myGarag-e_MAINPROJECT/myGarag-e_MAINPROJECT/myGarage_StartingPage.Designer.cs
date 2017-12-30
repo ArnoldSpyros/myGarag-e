@@ -117,7 +117,6 @@
             // 
             // myGarage_StartingPage
             // 
-            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 302);
@@ -133,7 +132,6 @@
             this.Name = "myGarage_StartingPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Είσοδος χρήστη";
-            this.EnabledChanged += new System.EventHandler(this.myGarage_StartingPage_EnabledChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

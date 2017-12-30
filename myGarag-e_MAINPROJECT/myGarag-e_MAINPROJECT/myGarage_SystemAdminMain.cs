@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using myGarag_e_MAINPROJECT.Classes;
 
 namespace myGarag_e_MAINPROJECT
 {
@@ -26,24 +25,5 @@ namespace myGarag_e_MAINPROJECT
             bandeletebtn.Enabled = false;
         }
         public static Button bandeletebtn;
-
-        private void myGarage_SystemAdminMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            myGarage_genericTerminateOrLogoutForm newgentermform = new myGarage_genericTerminateOrLogoutForm();
-            var diag = newgentermform.ShowDialog();
-            if (diag == DialogResult.No)
-            {
-                DbFiles.DbMethods.user.logout();
-                KatastasiUI.openStarting();
-            }
-            else if (diag == DialogResult.Cancel)
-            {
-                e.Cancel = true;
-            }
-            else
-            {
-                KatastasiUI.terminateProgram();
-            }
-        }
     }
 }

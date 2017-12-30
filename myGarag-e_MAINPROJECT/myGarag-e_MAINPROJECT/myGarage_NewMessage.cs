@@ -15,9 +15,15 @@ namespace myGarag_e_MAINPROJECT
 {
     public partial class myGarage_NewMessage : Form
     {
+
+        int messageID = 900;
+
         public myGarage_NewMessage()
         {
             InitializeComponent();
+            DataSet dataset = DbMethods.getTableData("katastima");
+            receiverCB.DataSource = dataset.Tables["katastima"];
+            receiverCB.DisplayMember = "onomasiaKatastimatos";
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -27,17 +33,17 @@ namespace myGarag_e_MAINPROJECT
 
         private void sendMesageB_Click(object sender, EventArgs e)
         {
-            string senderID = DbMethods.user.UserID;
-            string receiverStore = receiverTB.Text;
-            string messageContent = messageTB.Text;
-            DateTime timeSent = DateTime.Now;
-            string receiverID = "";
+            string senderID = DbMethods.user.UserID; // message sender ID
+            string receiverStore = receiverCB.Text; // receiver store name
+            string messageContent = messageTB.Text; // message content
+            DateTime timeSent = DateTime.Now; // time the message was sent
+            string receiverID = ""; // message receiver ID (store owner)
 
-            DataSet ds = DbMethods.getTableData("katastima", "onomasiaKatastimatos", receiverStore);
+            DataSet dataset = DbMethods.getTableData("katastima", "onomasiaKatastimatos", receiverStore);
 
-            if (ds.Tables["katastima"].Rows.Count > 0)
+            if (dataset.Tables["katastima"].Rows.Count > 0)
             {
-                receiverID = ds.Tables["katastima"].Rows[0][0].ToString(); // get the owner (receiver) ID of the target store
+                receiverID = dataset.Tables["katastima"].Rows[0][0].ToString(); // get the owner (receiverID) ID of the target store
                 Minima minima = new Minima(senderID, receiverID, messageContent, timeSent); // instantiate a Minima object
 
                 sendMessage(minima.Sender, minima.Receiver, minima.TimeSent, minima.Content); // call the sendMessage method to send the message
@@ -51,9 +57,10 @@ namespace myGarag_e_MAINPROJECT
             try
             {
                 MySqlConnection dbConnection = DbMethods.setMySqlConnection(DbMethods.connectionString);
-                string query = "INSERT INTO minimata (sender,receiver,date,message,seen) VALUES (@sender,@receiver,@date,@message,@seen)";
+                string query = "INSERT INTO minimata (kodikosMinimatos,sender,receiver,date,message,seen) VALUES (@kodikosMinimatos,@sender,@receiver,@date,@message,@seen)";
 
                 MySqlCommand command = new MySqlCommand(query, dbConnection);
+                command.Parameters.AddWithValue("@kodikosMinimatos", messageID);
                 command.Parameters.AddWithValue("@sender", sender);
                 command.Parameters.AddWithValue("@receiver", receiver);
                 command.Parameters.AddWithValue("@date", timeSent);
@@ -61,19 +68,32 @@ namespace myGarag_e_MAINPROJECT
                 command.Parameters.AddWithValue("@seen", 0);
 
                 command.Prepare();
-                int insertedRows = command.ExecuteNonQuery();
+                int insertedRows = command.ExecuteNonQuery(); // exexute the SQL command and get the number of inserted rows
                 dbConnection.Close();
-                MessageBox.Show("Message sent!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information); // info message
-                this.Close();
-            }
 
+                if (insertedRows > 0) // if message sent
+                {
+                    MessageBox.Show("Message sent!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    messageID++;
+                    this.Close();
+                }
+
+                else // if message not sent
+                {
+                    MessageBox.Show("Something went wrong", "Message not sent", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
             catch (MySqlException obj)
             {
-                MessageBox.Show("Error sending the message!", "An error occurred:" + obj.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); // error message
+                MessageBox.Show("Error sending the message!", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error); // error message
             }
-
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
