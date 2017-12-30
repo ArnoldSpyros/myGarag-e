@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using myGarag_e_MAINPROJECT.Classes;
 
 
 namespace myGarag_e_MAINPROJECT
@@ -83,64 +84,64 @@ namespace myGarag_e_MAINPROJECT
         }
 
         //By default this is set to false, it's enabled when a new client form is shown and switches back and forth
-        public static Boolean newClientFormShown = false;
+        //public static Boolean newClientFormShown = false;
         private void NewClientBtn_Click(object sender, EventArgs e)
         {
 
-            if (newClientFormShown == false)
-            {
-                myGarage_NewUser newclientform = new myGarage_NewUser();
-                newclientform.Show();
-                newClientFormShown = true;
-            }
+            //if (newClientFormShown == false)
+            //{
+            myGarage_NewUser newclientform = new myGarage_NewUser();
+            KatastasiUI.openThis(newclientform, true);
+                //newClientFormShown = true;
+            //}
         }
 
         //By defautl this is set to false, it's enabled when a new clientele form is shown and switches back and forth
-        public static Boolean newClienteleFormShown = false;
+        //public static Boolean newClienteleFormShown = false;
         private void NewClienteleBtn_Click(object sender, EventArgs e)
         {
-            if (newClienteleFormShown == false)
-            {
-                myGarage_NewClientele newclienteleform = new myGarage_NewClientele();
-                newclienteleform.Show();
-                newClienteleFormShown = true;
-            }
+            //if (newClienteleFormShown == false)
+            //{
+            myGarage_NewClientele newclienteleform = new myGarage_NewClientele();
+            KatastasiUI.openThis(newclienteleform, true);
+            //newClienteleFormShown = true;
+            //}
         }
 
         //By defautl this is set to false, it's enabled when a new item form is shown and switches back and forth
-        public static Boolean newItemFormShown = false;
+        //public static Boolean newItemFormShown = false;
         private void AddItemBtn_Click(object sender, EventArgs e)
         {
-            if (newItemFormShown == false)
-            {
-                myGarage_NewItem newitemform = new myGarage_NewItem();
-                newitemform.Show();
-                newItemFormShown = true;
-            }
+            //if (newItemFormShown == false)
+            //{
+            myGarage_NewItem newitemform = new myGarage_NewItem();
+            KatastasiUI.openThis(newitemform, true);
+            //newItemFormShown = true;
+            //}
         }
 
         //By defautl this is set to false, it's enabled when a new order form is shown and switches back and forth
-        public static Boolean newOrderFormShown = false;
+        //public static Boolean newOrderFormShown = false;
         private void NewOrderBtn_Click(object sender, EventArgs e)
         {
             myGarage_NewOrder neworderform = new myGarage_NewOrder();
-            neworderform.Show();
-            newOrderFormShown = true;
+            KatastasiUI.openThis(neworderform, true);
+            //newOrderFormShown = true;
         }
 
         private void NewAppointmentBtn_Click(object sender, EventArgs e)
         {
-            if (!myGarage_ConsumerMain.appointmentmenuitemshown)
-            {
-                myGarage_NewAppointment newappo = new myGarage_NewAppointment();
-                newappo.Show();
-                myGarage_ConsumerMain.appointmentmenuitemshown = true;
-            }
-            else
-            {
-                MessageBox.Show("Έχετε ήδη ένα ραντεβού ανοιχτό!");
-                myGarage_NewAppointment.ActiveForm.Focus();
-            }
+            //if (!myGarage_ConsumerMain.appointmentmenuitemshown)
+            //{
+            myGarage_NewAppointment newappo = new myGarage_NewAppointment();
+            KatastasiUI.openThis(newappo, true);
+            //myGarage_ConsumerMain.appointmentmenuitemshown = true;
+            //}
+            //else
+            //{
+            // MessageBox.Show("Έχετε ήδη ένα ραντεβού ανοιχτό!");
+            //myGarage_NewAppointment.ActiveForm.Focus();
+            //}
 
         }
 
@@ -188,6 +189,25 @@ namespace myGarag_e_MAINPROJECT
             {
                 MessageBox.Show(exc.Message);
                 return 0;
+            }
+        }
+
+        private void myGarage_ShopMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            myGarage_genericTerminateOrLogoutForm newgentermform = new myGarage_genericTerminateOrLogoutForm();
+            var diag = newgentermform.ShowDialog();
+            if (diag == DialogResult.No)
+            {
+                DbFiles.DbMethods.user.logout();
+                KatastasiUI.openStarting();
+            }
+            else if (diag == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                KatastasiUI.terminateProgram();
             }
         }
     }

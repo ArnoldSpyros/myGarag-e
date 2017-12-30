@@ -16,6 +16,9 @@ namespace myGarag_e_MAINPROJECT.DbFiles
         public static string connectionString = "server=localhost;uid=root;pwd=;database=adopse"; // database connection string.
         public static User user; // logged in user object.
 
+        public static string connectionString = "server=localhost;uid=root;pwd=;database=adopse"; // database connection string.
+        public static User user = null; // logged in user object.
+
         public static MySqlConnection setMySqlConnection(string connectionString) // method that sets the connection with the database.
         {
             MySqlConnection dbConnection;
@@ -133,11 +136,11 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             {
                 MySqlConnection dbConnection = setMySqlConnection(connectionString); // set connection with the database.
                 string dbCommandStr = String.Format("INSERT INTO pelatis (kodikosPelati,onoma,epitheto,tilefono,password)" +
-                    " VALUES (@ID,@name,@lastName,@phoneNumber,@password)");
+                    " VALUES (@userID,@name,@lastName,@phoneNumber,@password)");
                 MySqlCommand command = new MySqlCommand(dbCommandStr, dbConnection);
 
                 // adding the parameters
-                command.Parameters.AddWithValue("@ID", ID);
+                command.Parameters.AddWithValue("@userID", ID);
                 command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@lastName", lastName);
                 command.Parameters.AddWithValue("@phoneNumber", phoneNumber);
@@ -156,25 +159,85 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 
         }
 
-
-        public static bool findCustomer(string username)
+        //Αλλαγή του findCustomer σε loginCustomer γιατί στο loginCustomer όντως κάνει login ο χρήστης αν βρεθεί
+        //ενώ στο findCustomer ρωτάει απλά τη βάση αν υπάρχει κάποιος με τα ίδια στοιχεία
+        public static bool loginCustomer(string username, string password)
         {
             try
             {
-                DataSet dataset = getTableData("pelatis", "username", username); // get clients data from the 'pelatis' table 
-                DataRow tableRow = dataset.Tables["pelatis"].Rows[0]; // instantiate a DataRow object containing client's info
+                MySqlConnection dbConnection = setMySqlConnection(connectionString);
+                string query = "SELECT * FROM pelatis WHERE username = @username AND password = @password";
+                MySqlCommand command = new MySqlCommand(query, dbConnection);
 
-                string ID = tableRow[0].ToString(); // get client's ID
-                string name = tableRow[1].ToString(); // get client's name
-                string lastName = tableRow[2].ToString(); // get client's last  name
-                string phoneNumber = tableRow[3].ToString(); // get client's phoneNumber
-                user = new User(ID, new Pelatis(), username, name, lastName, phoneNumber, "Unknown address");
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+                command.Prepare();
 
-                return true; // found customer
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
+                DataSet dataset = new DataSet();
+                dataAdapter.Fill(dataset, "pelatis");
+
+                //DataSet dataset = getTableData("pelatis", "username", username); // get clients data from the 'pelatis' table 
+
+                if (dataset.Tables["pelatis"].Rows.Count > 0)
+                {
+                    DataRow tableRow = dataset.Tables["pelatis"].Rows[0]; // instantiate a DataRow object containing client's info
+
+                    string ID = tableRow[0].ToString(); // get client's userID
+                    string name = tableRow[1].ToString(); // get client's name
+                    string lastName = tableRow[2].ToString(); // get client's last  name
+                    string phoneNumber = tableRow[3].ToString(); // get client's phoneNumber
+                    user = new User(ID, new Pelatis(), username, name, lastName, phoneNumber, "Unknown address");
+
+                    dbConnection.Close(); // close database connection
+                    return true; // found customer
+                }
+                else
+                {
+                    MessageBox.Show("User with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false; // if no user found then return false
+                }
             }
             catch (MySqlException obj)
             {
                 MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // could not find customer
+            }
+
+        }
+
+        //ερώτηση στη βάση αν υπάρχει πελάτης με το ίδιο username, δεν θέλουμε δύο ραντεβουδάκηδες
+        public static bool findCustomer(string username, string password)
+        {
+            try
+            {
+                MySqlConnection dbConnection = setMySqlConnection(connectionString);
+                string query = "SELECT * FROM pelatis WHERE username = @username OR password = @password";
+                MySqlCommand command = new MySqlCommand(query, dbConnection);
+
+                command.Parameters.AddWithValue("@username", username);
+                command.Prepare();
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
+                DataSet dataset = new DataSet();
+                dataAdapter.Fill(dataset, "pelatis");
+
+                //DataSet dataset = getTableData("pelatis", "username", username); // get clients data from the 'pelatis' table 
+
+                if (dataset.Tables["pelatis"].Rows.Count > 0)
+                {
+                    dbConnection.Close(); // close database connection
+                    return true; // found customer
+                }
+                else
+                {
+                    //MessageBox.Show("User with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false; // if no user found then return false
+                }
+            }
+            catch (MySqlException obj)
+            {
+                //MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false; // could not find customer
             }
 
