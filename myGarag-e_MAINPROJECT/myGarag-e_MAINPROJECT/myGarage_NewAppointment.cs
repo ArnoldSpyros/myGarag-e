@@ -120,9 +120,13 @@ namespace myGarag_e_MAINPROJECT
             //Load the shops in the combobox
             try
             {
-                DataSet ds = DbFiles.DbMethods.getTableData("katastima");
+
+                //DataSet ds = DbFiles.DbMethods.getTableData("katastima");
+                //NewAppointmentSBKatastima.DataSource = ds.Tables["katastima"];
+                //NewAppointmentSBKatastima.DisplayMember = "onomasiaKatastimatos";
+                DataSet ds = KatastimataLoad();
                 NewAppointmentSBKatastima.DataSource = ds.Tables["katastima"];
-                NewAppointmentSBKatastima.DisplayMember = "odos";
+                NewAppointmentSBKatastima.DisplayMember = "onomasiaKatastimatos";
 
                 //set Date Time picker to Time Format
                 NewAppointmentChbDate.Format = DateTimePickerFormat.Time;
@@ -169,5 +173,28 @@ namespace myGarag_e_MAINPROJECT
 
             }
         }
+
+        private DataSet KatastimataLoad()
+        {
+            try
+            {
+                string sql = "SELECT onomasiaKatastimatos FROM katastima WHERE meRantevou = 1";
+                MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sql, con);
+                DataSet dataset = new DataSet();
+
+                dataAdapter.Fill(dataset, "katastima");
+                con.Close();
+                return dataset; // return the dataset containg all data from the specified table.
+
+            }
+
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null; // if there was an error return null.
+            }
+        }
     }
 }
+

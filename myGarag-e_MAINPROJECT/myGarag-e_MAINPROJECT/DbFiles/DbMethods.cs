@@ -201,7 +201,47 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             }
 
         }
+        
+        public static bool loginShop(string username, string pass)
+        {
+            try
+            {
+                string sql = "SELECT * FROM katastimatarxis WHERE username=@username AND password=@password";
+                MySqlConnection con = setMySqlConnection(connectionString);
+                MySqlCommand command = new MySqlCommand(sql, con);
 
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", pass);
+                command.Prepare();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "katastimatarxis");
+                if (ds.Tables["katastimatarxis"].Rows.Count > 0)
+                {
+                    DataRow dr = ds.Tables["katastimatarxis"].Rows[0];
+
+                    string ID = dr[0].ToString(); // get client's userID
+                    string name = dr[1].ToString(); // get client's name
+                    string lastName = dr[2].ToString(); // get client's last  name
+                    string phoneNumber = dr[3].ToString(); // get client's phoneNumber
+                    user = new User(ID, new Katastimatarxis(), username, name, lastName, phoneNumber, "Unknown address");
+                    con.Close();
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Shop keeper with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false; // if no user found then return false
+                }
+            }
+            catch (MySqlException exc)
+            {
+                MessageBox.Show("Error! Could not find customer \n" + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // could not find customer
+            }
+        }
+        
         //ερώτηση στη βάση αν υπάρχει πελάτης με το ίδιο username, δεν θέλουμε δύο ραντεβουδάκηδες
         public static bool findCustomer(string username, string password)
         {

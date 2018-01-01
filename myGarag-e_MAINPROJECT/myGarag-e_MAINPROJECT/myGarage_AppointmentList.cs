@@ -31,8 +31,8 @@ namespace myGarag_e_MAINPROJECT
                     if (rows >= 1)
                     {
                         MessageBox.Show("Το ραντεβού διαγράφηκε!","Διαγραφή Ραντεβού",MessageBoxButtons.OK);
-                        DataSet ds = DbFiles.DbMethods.getTableData("rantevou");
-                        AppointmentListGridView.DataSource = ds.Tables["rantevou"];
+                        DataSet ds = loadAppointmentList();
+                        AppointmentListGridView.DataSource = ds.Tables["pelatis"];
                     }
                 }
                 catch(Exception exc)
