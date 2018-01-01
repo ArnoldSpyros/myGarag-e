@@ -39,14 +39,24 @@ namespace myGarag_e_MAINPROJECT
             DateTime timeSent = DateTime.Now; // time the message was sent
             string receiverID = ""; // message receiver ID (store owner)
 
-            DataSet dataset = DbMethods.getTableData("katastima", "onomasiaKatastimatos", receiverStore);
+            DialogResult result = MessageBox.Show("Send message to " + receiverStore, "Sending message", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-            if (dataset.Tables["katastima"].Rows.Count > 0)
+            if (result == DialogResult.OK) // if user pressed the OK button
             {
-                receiverID = dataset.Tables["katastima"].Rows[0][0].ToString(); // get the owner (receiverID) ID of the target store
-                Minima minima = new Minima(senderID, receiverID, messageContent, timeSent); // instantiate a Minima object
 
-                sendMessage(minima.Sender, minima.Receiver, minima.TimeSent, minima.Content); // call the sendMessage method to send the message
+                DataSet dataset = DbMethods.getTableData("katastima", "onomasiaKatastimatos", receiverStore);
+
+                if (dataset.Tables["katastima"].Rows.Count > 0)
+                {
+                    receiverID = dataset.Tables["katastima"].Rows[0][0].ToString(); // get the owner (receiverID) ID of the target store
+                    Minima minima = new Minima(senderID, receiverID, messageContent, timeSent); // instantiate a Minima object
+
+                    sendMessage(minima.Sender, minima.Receiver, minima.TimeSent, minima.Content); // call the sendMessage method to send the message
+                }
+            }
+            else // if user pressed the Cancel button
+            {
+                MessageBox.Show("Message sending canceled", "Sending canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
