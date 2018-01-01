@@ -46,7 +46,7 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_AppointmentList_FormClosed(object sender, FormClosedEventArgs e)
         {
-            myGarage_ConsumerMain.appointmentmenuitemshown = false;
+            //myGarage_ConsumerMain.appointmentmenuitemshown = false;
         }
 
         private void myGarage_AppointmentList_Load(object sender, EventArgs e)
@@ -123,8 +123,6 @@ namespace myGarag_e_MAINPROJECT
                 connection.Close();
 
                 return affectedRows;
-
-
             }
             catch (Exception exc)
             {
@@ -163,7 +161,7 @@ namespace myGarag_e_MAINPROJECT
 
         private DataSet loadAppointmentList()
         {
-            string sql = "SELECT R.ID,P.onoma,P.epitheto,P.kodikosPelati,R.description,R.Date,R.confirmed FROM Pelatis P JOIN Rantevou R WHERE P.kodikosPelati=R.IDpelati";
+            string sql = "SELECT R.ID,P.onoma,P.epitheto,P.kodikosPelati,R.description,R.Date,R.confirmed FROM Pelatis P JOIN Rantevou R WHERE P.kodikosPelati=R.IDpelati AND P.kodikosPelati="+DbFiles.DbMethods.user.UserID;
             try
             {
                 MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
@@ -181,6 +179,6 @@ namespace myGarag_e_MAINPROJECT
             }
             
         }
-        
+
     }
 }

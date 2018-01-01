@@ -37,7 +37,7 @@ namespace myGarag_e_MAINPROJECT
                 string ID = rnd.Next(1000, 9999).ToString();
 
                 //find pelatisID
-                DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", DbFiles.DbMethods.user.getUsername());
+                DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", DbFiles.DbMethods.user.Username);
                 DataTable dtPelatis = dsPelatisID.Tables["pelatis"];
 
                 foreach (DataRow dr in dtPelatis.Rows)
@@ -112,7 +112,7 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_NewAppointment_FormClosed(object sender, FormClosedEventArgs e)
         {
-            myGarage_ConsumerMain.appointmentmenuitemshown = false;
+            //myGarage_ConsumerMain.appointmentmenuitemshown = false;
         }
 
         private void myGarage_NewAppointment_Load(object sender, EventArgs e)
