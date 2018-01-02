@@ -18,32 +18,7 @@ namespace myGarag_e_MAINPROJECT
             InitializeComponent();
         }
 
-        private void AppointmentBtnDiagrafi_Click(object sender, EventArgs e)
-        {
-            DialogResult res = MessageBox.Show("Είστε σίγουρος πως θέλετε να διαγράψετε το επιλεγμένο ραντεβού;", "Διαγραφή", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
-            if (res == DialogResult.Yes)
-            {
-                try
-                {
-                    //Update table
-                    string columnID = AppointmentListGridView.CurrentRow.Cells["ID"].Value.ToString();
-                    int rows = deleteRantevou(columnID);
-                    if (rows >= 1)
-                    {
-                        MessageBox.Show("Το ραντεβού διαγράφηκε!","Διαγραφή Ραντεβού",MessageBoxButtons.OK);
-                        DataSet ds = loadAppointmentList();
-                        AppointmentListGridView.DataSource = ds.Tables["pelatis"];
-                    }
-                }
-                catch(Exception exc)
-                {
-                    MessageBox.Show(exc.Message);
-                }
-                
-            }
-
-        }
-
+        
         private void myGarage_AppointmentList_FormClosed(object sender, FormClosedEventArgs e)
         {
             //myGarage_ConsumerMain.appointmentmenuitemshown = false;
@@ -71,93 +46,7 @@ namespace myGarag_e_MAINPROJECT
             AppointmentListGridView.DataSource = ds.Tables["pelatis"];
         }
 
-        private void AppointmentBtnEpibebaiosi_Click(object sender, EventArgs e)
-        {
-            DialogResult res = MessageBox.Show("Είστε σίγουρος πως θέλετε να επιβεβαιώσετε το επιλεγμένο ραντεβού;", "Επιβεβαίωση", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
-            if (res == DialogResult.Yes)
-            {
-                //Confirm rantevou
-                //If already confirmed, show message
-
-                if (AppointmentListGridView.CurrentRow.Cells["Confirmed"].Value.ToString() == "1")
-                {
-                    MessageBox.Show("Το ραντεβού έχει ήδη επιβεβαιωθεί! Δεν έγινε καμμία αλλαγή.","Επιβεβαίωση",MessageBoxButtons.OK);
-                }
-                else
-                {
-                    try
-                    {
-                        string columnId = AppointmentListGridView.CurrentRow.Cells["ID"].Value.ToString();
-
-                        int rows = confirmRantebou(columnId);
-                        if (rows == 1)
-                        {
-                            MessageBox.Show("Το ραντεβού επιβεβαιώθηκε!","Επιτυχία!",MessageBoxButtons.OK);
-                            DataSet ds = loadAppointmentList();
-                            AppointmentListGridView.DataSource = ds.Tables["pelatis"];
-                        }
-                    }
-                    catch(Exception exc)
-                    {
-                        MessageBox.Show(exc.Message);
-                    }
-                    
-                }
-            }
-
-        }
-
-        private static int deleteRantevou(string columnID)
-        {
-            try
-            {
-                MySqlConnection connection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
-                string mySql = "DELETE FROM rantevou WHERE ID=@columnID";
-
-                MySqlCommand command = new MySqlCommand(mySql, connection);
-
-                command.Parameters.AddWithValue("@columnID", columnID);
-                command.Prepare();
-
-                int affectedRows = command.ExecuteNonQuery();
-                connection.Close();
-
-                return affectedRows;
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-                return 0;
-            }
-
-        }
-
-        private static int confirmRantebou(string columnID)
-        {
-            try
-            {
-                MySqlConnection connection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
-                string mySql = "UPDATE rantevou SET Confirmed=1 WHERE ID=@columnID";
-
-                MySqlCommand command = new MySqlCommand(mySql, connection);
-
-                command.Parameters.AddWithValue("@columnID", columnID);
-                command.Prepare();
-
-                int affectedRows = command.ExecuteNonQuery();
-                connection.Close();
-
-                return affectedRows;
-
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-                return 0;
-            }
-
-
-        }
+       
 
         private DataSet loadAppointmentList()
         {
@@ -181,4 +70,5 @@ namespace myGarag_e_MAINPROJECT
         }
 
     }
+
 }

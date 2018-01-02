@@ -36,8 +36,7 @@ namespace myGarag_e_MAINPROJECT
 
                     case 1:
                         //Κλήση της μεθόδου εμφάνισης πελατολόγιου
-                        //
-                        ds = loadPelatologio("1000");
+                        ds = loadPelatologio(DbFiles.DbMethods.user.UserID);
                         dataGridView2.DataSource = ds.Tables["pelatologio"];
                         break;
                     case 2:
@@ -45,7 +44,9 @@ namespace myGarag_e_MAINPROJECT
                         dataGridView3.DataSource = ds.Tables["proion"];
                         break;
 
-                    case 3: //
+                    case 3:
+                        ds = loadRantevou(DbFiles.DbMethods.user.UserID);
+                        dataGridView4.DataSource = ds.Tables["rantevou"];
                         break;
 
                     default: //
@@ -58,30 +59,7 @@ namespace myGarag_e_MAINPROJECT
             }
         }
 
-        private DataSet loadPelatologio(string kodikosKatastimatos)
-        {
-            try
-            {
-                //string sql = String.Format("SELECT * FROM {0}", "pelatologio");
-                string sql = String.Format("SELECT PEL.kodikosSinalagis, PEL.kodikosPelati, P.onoma, P.epitheto, P.tilefono from pelatologio PEL JOIN pelatis P WHERE PEL.kodikosPelati = P.kodikosPelati AND PEL.kodikosPelatologiou = {0}", kodikosKatastimatos);
-                MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
-
-                DataSet ds = new DataSet();
-                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con);
-
-                adapter.Fill(ds, "pelatologio");
-                con.Close();
-
-                return ds;
-
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-                return null;
-            }
-
-        }
+        
 
         //By default this is set to false, it's enabled when a new client form is shown and switches back and forth
         //public static Boolean newClientFormShown = false;
@@ -92,7 +70,7 @@ namespace myGarag_e_MAINPROJECT
             //{
             myGarage_NewUser newclientform = new myGarage_NewUser();
             KatastasiUI.openThis(newclientform, true);
-                //newClientFormShown = true;
+            //newClientFormShown = true;
             //}
         }
 
@@ -145,30 +123,64 @@ namespace myGarag_e_MAINPROJECT
 
         }
 
-        private void diagrafiPelatiB_Click(object sender, EventArgs e)
+        //STUFF FOR Pelatologio
+        private void ananeosiB_Click(object sender, EventArgs e)//Pelatologio refresh
         {
-            DialogResult res = MessageBox.Show("Είστε σίγουροι πως θέλετε να διαγράψετε τη συγκεκριμένη καταχώρηση; Αυτή η ενέργια δεν μπορεί να αναιρεθεί!","ΔΙΑΓΡΑΦΗ",MessageBoxButtons.YesNo);
-            if (res == DialogResult.Yes)
-            {
-                string code = dataGridView2.CurrentRow.Cells["kodikosSinalagis"].Value.ToString();
-                
-                if (diagrafiSinalagis(code) >= 1)
-                {
-                    MessageBox.Show("Η διαγραφή ολοκληρώθηκε!");
-                    //Ανανέωση του πίνακα
-                    DataSet ds = new DataSet();
-                    ds = loadPelatologio("1000");
-                    dataGridView2.DataSource = ds.Tables["pelatologio"];
-                }
-                else
-                {
-                    MessageBox.Show("Αποτυχία!");
-                }
-            }
-            
+            DataSet ds = new DataSet();
+            ds = loadPelatologio(DbFiles.DbMethods.user.UserID);
+            dataGridView2.DataSource = ds.Tables["pelatologio"];
         }
 
-        private int diagrafiSinalagis(string kodikosSinalagis)
+        private DataSet loadPelatologio(string kodikosKatastimatarxi)
+        {
+            try
+            {
+                string sql = String.Format("SELECT P.onoma, P.epitheto, P.tilefono, PEL.kodikosPelati, PEL.kodikosSinalagis FROM pelatologio PEL JOIN pelatis P WHERE PEL.kodikosPelati = P.kodikosPelati AND PEL.kodikosKatastimatarxi = {0}", kodikosKatastimatarxi);
+                MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+
+                DataSet ds = new DataSet();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con);
+
+                adapter.Fill(ds, "pelatologio");
+                con.Close();
+
+                return ds;
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return null;
+            }
+
+        }
+        private void diagrafiPelatiB_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Είστε σίγουροι πως θέλετε να διαγράψετε τη συγκεκριμένη καταχώρηση; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί!", "ΔΙΑΓΡΑΦΗ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (res == DialogResult.Yes)
+            {
+                try
+                {
+                    string code = dataGridView2.CurrentRow.Cells["kodikosSinalagis"].Value.ToString();
+
+                    if (diagrafiSinalagis(code))
+                    {
+                        MessageBox.Show("Η διαγραφή ολοκληρώθηκε!", "Επιτυχία", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Ανανέωση του πίνακα
+                        DataSet ds = new DataSet();
+                        ds = loadPelatologio(DbFiles.DbMethods.user.UserID);
+                        dataGridView2.DataSource = ds.Tables["pelatologio"];
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message, "Αποτυχία!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        private bool diagrafiSinalagis(string kodikosSinalagis)
         {
             //Διαγραφή επιλεγμένου πελάτη
             try
@@ -180,10 +192,101 @@ namespace myGarag_e_MAINPROJECT
                 command.Parameters.AddWithValue("@kodikosSinalagis", kodikosSinalagis);
                 command.Prepare();
 
-                int rowsAffected = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                 con.Close();
 
-                return rowsAffected;
+                return true;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return false;
+            }
+        }
+
+        
+
+        //FOR rantevou
+        private DataSet loadRantevou(string kodikosKatastimatarxi)
+        {
+            try
+            {
+                string sql = String.Format("SELECT R.ID,P.onoma,P.epitheto,P.tilefono,P.kodikosPelati,R.description,R.date,R.confirmed FROM Rantevou R INNER JOIN Pelatis P WHERE R.IDpelati = P.kodikosPelati AND R.IDkatastimatarxi = {0}", kodikosKatastimatarxi);
+                MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+
+                DataSet ds = new DataSet();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con);
+
+                adapter.Fill(ds, "rantevou");
+                con.Close();
+
+                return ds;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Αποτυχία!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        private void AnaneosiBtn_Click(object sender, EventArgs e)//Rantevou refresh
+        {
+            DataSet ds = loadRantevou(DbFiles.DbMethods.user.UserID);
+            dataGridView4.DataSource = ds.Tables["rantevou"];
+        }
+
+        private void confirmRantebouBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Είστε σίγουρος πως θέλετε να επιβεβαιώσετε το επιλεγμένο ραντεβού;", "Επιβεβαίωση", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (res == DialogResult.Yes)
+            {
+                //Confirm rantevou
+                //If already confirmed, show message
+
+                if (dataGridView4.CurrentRow.Cells["Confirmed"].Value.ToString() == "1")
+                {
+                    MessageBox.Show("Το ραντεβού έχει ήδη επιβεβαιωθεί! Δεν έγινε καμμία αλλαγή.", "Επιβεβαίωση", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    try
+                    {
+                        string id = dataGridView4.CurrentRow.Cells["ID"].Value.ToString();
+
+                        int rows = confirmRantebou(id);
+                        if (rows == 1)
+                        {
+                            MessageBox.Show("Το ραντεβού επιβεβαιώθηκε!", "Επιτυχία!", MessageBoxButtons.OK);
+                            DataSet ds = loadRantevou(DbFiles.DbMethods.user.UserID);
+                            dataGridView4.DataSource = ds.Tables["rantevou"];
+                        }
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+
+                }
+            }
+        }
+
+        private static int confirmRantebou(string id)
+        {
+            try
+            {
+                MySqlConnection connection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+                string mySql = "UPDATE rantevou SET Confirmed=1 WHERE ID=@columnID";
+
+                MySqlCommand command = new MySqlCommand(mySql, connection);
+
+                command.Parameters.AddWithValue("@columnID", id);
+                command.Prepare();
+
+                int affectedRows = command.ExecuteNonQuery();
+                connection.Close();
+
+                return affectedRows;
+
             }
             catch (Exception exc)
             {
@@ -191,6 +294,57 @@ namespace myGarag_e_MAINPROJECT
                 return 0;
             }
         }
+
+        private void deleteRantevouBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Είστε σίγουρος πως θέλετε να διαγράψετε το επιλεγμένο ραντεβού;", "Διαγραφή", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (res == DialogResult.Yes)
+            {
+                try
+                {
+                    string columnID = dataGridView4.CurrentRow.Cells["ID"].Value.ToString();
+                    int rows = deleteRantevou(columnID);
+                    if (rows >= 1)
+                    {
+                        MessageBox.Show("Το ραντεβού διαγράφηκε!", "Διαγραφή Ραντεβού", MessageBoxButtons.OK);
+                        //Update table
+                        DataSet ds = loadRantevou(DbFiles.DbMethods.user.UserID);
+                        dataGridView4.DataSource = ds.Tables["rantevou"];
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+
+            }
+        }
+
+        private static int deleteRantevou(string columnID)
+        {
+            try
+            {
+                MySqlConnection connection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+                string mySql = "DELETE FROM rantevou WHERE ID=@columnID";
+
+                MySqlCommand command = new MySqlCommand(mySql, connection);
+
+                command.Parameters.AddWithValue("@columnID", columnID);
+                command.Prepare();
+
+                int affectedRows = command.ExecuteNonQuery();
+                connection.Close();
+
+                return affectedRows;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return 0;
+            }
+
+        }
+
 
         private void myGarage_ShopMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -211,9 +365,4 @@ namespace myGarag_e_MAINPROJECT
             }
         }
     }
-
-    
-
-
-    
 }

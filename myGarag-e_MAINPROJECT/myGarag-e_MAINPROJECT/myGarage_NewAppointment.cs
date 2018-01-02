@@ -49,7 +49,7 @@ namespace myGarag_e_MAINPROJECT
                 }
 
                 //find katastimatarxisID from Katastima
-                DataSet dsStoreID = DbFiles.DbMethods.getTableData("katastima", "odos", katastima);
+                DataSet dsStoreID = DbFiles.DbMethods.getTableData("katastima", "onomasiaKatastimatos", katastima);
                 DataTable dt = dsStoreID.Tables["katastima"];
                 foreach (DataRow dr in dt.Rows)
                 {

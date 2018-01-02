@@ -50,7 +50,6 @@ namespace myGarag_e_MAINPROJECT
                     myGarage_ShopMain nShop = new myGarage_ShopMain();
                     KatastasiUI.hideStarting();
                     KatastasiUI.openThis(nShop);
-                
             }
         }
 
