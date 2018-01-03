@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(myGarage_ConsumerMain));
-            this.ApplicationLOGO = new System.Windows.Forms.Label();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.ConsumerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.AppointmentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,25 +41,32 @@
             this.σύνταξηΝέουΜηνύματοςToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ApplicationLOGO = new System.Windows.Forms.Label();
             this.SearchPanel = new System.Windows.Forms.Panel();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.PartsShopPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
             this.ConsumerMenuStrip.SuspendLayout();
             this.SearchPanel.SuspendLayout();
             this.PartsShopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ApplicationLOGO
+            // toolStripContainer1
             // 
-            this.ApplicationLOGO.CausesValidation = false;
-            resources.ApplyResources(this.ApplicationLOGO, "ApplicationLOGO");
-            this.ApplicationLOGO.Name = "ApplicationLOGO";
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.ConsumerMenuStrip);
             // 
             // ConsumerMenuStrip
             // 
@@ -135,6 +142,12 @@
             resources.ApplyResources(this.infoToolStripMenuItem, "infoToolStripMenuItem");
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
+            // ApplicationLOGO
+            // 
+            this.ApplicationLOGO.CausesValidation = false;
+            resources.ApplyResources(this.ApplicationLOGO, "ApplicationLOGO");
+            this.ApplicationLOGO.Name = "ApplicationLOGO";
+            // 
             // SearchPanel
             // 
             resources.ApplyResources(this.SearchPanel, "SearchPanel");
@@ -169,19 +182,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             // 
-            // toolStripContainer1
-            // 
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
-            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.ConsumerMenuStrip);
-            // 
             // myGarage_ConsumerMain
             // 
             resources.ApplyResources(this, "$this");
@@ -191,16 +191,16 @@
             this.Controls.Add(this.ApplicationLOGO);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "myGarage_ConsumerMain";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.myGarage_ConsumerMain_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.myGarage_ConsumerMain_FormClosing);
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
             this.ConsumerMenuStrip.ResumeLayout(false);
             this.ConsumerMenuStrip.PerformLayout();
             this.SearchPanel.ResumeLayout(false);
             this.SearchPanel.PerformLayout();
             this.PartsShopPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
 
         }

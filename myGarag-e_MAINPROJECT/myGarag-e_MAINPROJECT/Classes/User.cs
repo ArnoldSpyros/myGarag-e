@@ -76,5 +76,32 @@ namespace myGarag_e_MAINPROJECT.Classes
             get { return phoneNumber; }
             set { phoneNumber = value; }
         }
+
+        //Επιστρέφει true αν έχει γεμίσει ο user του dbfiles που χρησιμοποιείται ευρέως
+        //και είναι όντως ο ίδιος με αυτόν που εξετάζουμε
+        public Boolean isLoggedIn()
+        {
+            return (DbFiles.DbMethods.user != null && DbFiles.DbMethods.user == this);
+        }
+
+        //Συνδέει τον χρήστη και δίνει feedback για το αν πέτυχε ή όχι
+        public Boolean login(String username, String password)
+        {
+            return DbFiles.DbMethods.loginCustomer(username, password);
+        }
+
+        //αποσυνδέει τον χρήστη από το σύστημα
+        public Boolean logout()
+        {
+            if (this.isLoggedIn())
+            {
+                DbFiles.DbMethods.user = null;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

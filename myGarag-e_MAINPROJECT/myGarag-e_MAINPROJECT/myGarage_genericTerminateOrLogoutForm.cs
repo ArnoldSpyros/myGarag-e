@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace myGarag_e_MAINPROJECT
 {
-    public partial class myGarage_NewOrder : Form
+    public partial class myGarage_genericTerminateOrLogoutForm : Form
     {
-        public myGarage_NewOrder()
+        public myGarage_genericTerminateOrLogoutForm()
         {
             InitializeComponent();
-        }
-
-        private void myGarage_NewOrder_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //myGarage_ShopMain.newOrderFormShown = false;
         }
     }
 }

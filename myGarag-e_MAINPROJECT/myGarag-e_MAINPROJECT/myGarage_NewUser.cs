@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using myGarag_e_MAINPROJECT.Classes;
 
 namespace myGarag_e_MAINPROJECT
 {
@@ -19,8 +20,7 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_NewUser_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //myGarage_StartingPage stPage = new myGarage_StartingPage();
-            myGarage_StartingPage.stPage.Visible = true;
+            KatastasiUI.openStarting();
         }
 
         private void ClientBtnRegister_Click(object sender, EventArgs e)
@@ -39,6 +39,16 @@ namespace myGarag_e_MAINPROJECT
             else
             {
                 //Καλεί εγγραφή στοιχείων πελάτη, θεωρητικά πέτυχε και γυρνάμε στην αρχική φόρμα για login
+                String uname = ClientTbOnomaXristi.Text;
+                String pass = ClientTbPassword.Text;
+                if (!DbFiles.DbMethods.findCustomer(uname, pass))
+                {
+                    String onoma = ClientTbOnoma.Text;
+                    String epitheto = ClientTbEpitheto.Text;
+                    String tilefono = ClientTbTilefono.Text;
+                    String email = ClientTbEmail.Text;
+                    //DbFiles.DbMethods.registUser()
+                }
                 this.Close();
             }
         }
@@ -48,7 +58,7 @@ namespace myGarag_e_MAINPROJECT
             //Κουμπί για τον καταστηματάρχη μόνο!
             //Καλεί εισαγωγή των στοιχείων καταστήματος στη βάση και επιστρέφει στην αρχική φόρμα για login,
             //Θεωρητικά πέτυχε η εγγραφή του καταστηματάρχη
-            this.Close();
+            KatastasiUI.closeThis(this);
         }
     }
 }
