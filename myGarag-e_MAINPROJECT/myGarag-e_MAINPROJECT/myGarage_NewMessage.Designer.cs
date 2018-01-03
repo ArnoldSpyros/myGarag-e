@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.receiverTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.messageTB = new System.Windows.Forms.TextBox();
             this.sendMesageB = new System.Windows.Forms.Button();
-            this.receiverCB = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -43,6 +43,13 @@
             this.label1.Size = new System.Drawing.Size(23, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "To:";
+            // 
+            // receiverTB
+            // 
+            this.receiverTB.Location = new System.Drawing.Point(127, 49);
+            this.receiverTB.Name = "receiverTB";
+            this.receiverTB.Size = new System.Drawing.Size(277, 20);
+            this.receiverTB.TabIndex = 1;
             // 
             // label2
             // 
@@ -72,23 +79,15 @@
             this.sendMesageB.UseVisualStyleBackColor = true;
             this.sendMesageB.Click += new System.EventHandler(this.sendMesageB_Click);
             // 
-            // receiverCB
-            // 
-            this.receiverCB.FormattingEnabled = true;
-            this.receiverCB.Location = new System.Drawing.Point(126, 56);
-            this.receiverCB.Name = "receiverCB";
-            this.receiverCB.Size = new System.Drawing.Size(297, 21);
-            this.receiverCB.TabIndex = 5;
-            // 
             // myGarage_NewMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 371);
-            this.Controls.Add(this.receiverCB);
             this.Controls.Add(this.sendMesageB);
             this.Controls.Add(this.messageTB);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.receiverTB);
             this.Controls.Add(this.label1);
             this.Name = "myGarage_NewMessage";
             this.Text = "myGarage_NewMessage";
@@ -100,9 +99,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox receiverTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox messageTB;
         private System.Windows.Forms.Button sendMesageB;
-        private System.Windows.Forms.ComboBox receiverCB;
     }
 }

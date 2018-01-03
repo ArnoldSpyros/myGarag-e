@@ -141,6 +141,7 @@ C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPRO
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el-GR\myGarag-e_MAINPROJECT.resources.dll
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el\myGarag-e_MAINPROJECT.resources.dll
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewMessage.resources
+<<<<<<< HEAD
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_Inbox.resources
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csprojResolveAssemblyReference.cache
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_AppointmentList.resources
@@ -164,3 +165,7 @@ C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e\myGarag-e_MAINPROJECT\myGarag
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csproj.CoreCompileInputs.cache
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.exe
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.pdb
+=======
+C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_genericTerminateOrLogoutForm.resources
+C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewMessage.resources
+>>>>>>> 94a1725a5654f199eab4924e36317859e3c89238
