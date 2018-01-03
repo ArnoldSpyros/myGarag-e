@@ -66,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Autokinito.cs" />
+    <Compile Include="Classes\KatastasiUI.cs" />
+    <Compile Include="Classes\Katastimatarxis.cs" />
     <Compile Include="Classes\Minima.cs" />
     <Compile Include="Classes\Pelatis.cs" />
     <Compile Include="Classes\RolosUser.cs" />

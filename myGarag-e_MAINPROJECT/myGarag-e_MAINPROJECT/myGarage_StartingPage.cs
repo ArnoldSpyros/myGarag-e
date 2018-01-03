@@ -17,7 +17,7 @@ namespace myGarag_e_MAINPROJECT
             InitializeComponent();
         }
 
-        
+        //This is for the LoginCustomerBtn
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             string username = UserTB.Text;
@@ -38,11 +38,27 @@ namespace myGarag_e_MAINPROJECT
             //DbFiles.DbMethods.connectionString = "server=jabc.zapto.org;uid=" + username + ";pwd=" + password + ";database=adopse";
         }
 
+        //This is for the Shopkeepers trying to login
+        private void loginShopBtn_Click(object sender, EventArgs e)
+        {
+            string username = UserTB.Text;
+            string password = PassTB.Text;
+
+            if (DbFiles.DbMethods.loginShop(username, password))
+            {
+                    myGarage_ShopMain nShop = new myGarage_ShopMain();
+                    KatastasiUI.hideStarting();
+                    KatastasiUI.openThis(nShop);
+            }
+        }
+
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
             myGarage_NewUser nUser = new myGarage_NewUser();
             nUser.Show();
             this.Visible = false;
         }
+
+        
     }
 }

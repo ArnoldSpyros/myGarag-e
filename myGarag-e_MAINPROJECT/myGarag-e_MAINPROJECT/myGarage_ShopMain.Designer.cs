@@ -45,6 +45,7 @@
             this.NewOrderBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ClienteleTab = new System.Windows.Forms.TabPage();
+            this.ananeosiB = new System.Windows.Forms.Button();
             this.diagrafiPelatiB = new System.Windows.Forms.Button();
             this.NewClienteleBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -52,7 +53,9 @@
             this.AddItemBtn = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.AppointmentsTab = new System.Windows.Forms.TabPage();
-            this.NewAppointmentBtn = new System.Windows.Forms.Button();
+            this.deleteRantevouBtn = new System.Windows.Forms.Button();
+            this.confirmRantevouBtn = new System.Windows.Forms.Button();
+            this.AnaneosiBtn = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.ClientContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DetailsItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -222,6 +225,7 @@
             // 
             // ClienteleTab
             // 
+            this.ClienteleTab.Controls.Add(this.ananeosiB);
             this.ClienteleTab.Controls.Add(this.diagrafiPelatiB);
             this.ClienteleTab.Controls.Add(this.NewClienteleBtn);
             this.ClienteleTab.Controls.Add(this.dataGridView2);
@@ -232,6 +236,16 @@
             this.ClienteleTab.TabIndex = 1;
             this.ClienteleTab.Text = "Πελατολόγιο";
             this.ClienteleTab.UseVisualStyleBackColor = true;
+            // 
+            // ananeosiB
+            // 
+            this.ananeosiB.Location = new System.Drawing.Point(574, 6);
+            this.ananeosiB.Name = "ananeosiB";
+            this.ananeosiB.Size = new System.Drawing.Size(190, 23);
+            this.ananeosiB.TabIndex = 4;
+            this.ananeosiB.Text = "Ανανέωση Πίνακα";
+            this.ananeosiB.UseVisualStyleBackColor = true;
+            this.ananeosiB.Click += new System.EventHandler(this.ananeosiB_Click);
             // 
             // diagrafiPelatiB
             // 
@@ -258,6 +272,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(7, 48);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(757, 370);
             this.dataGridView2.TabIndex = 0;
             // 
@@ -293,7 +308,9 @@
             // 
             // AppointmentsTab
             // 
-            this.AppointmentsTab.Controls.Add(this.NewAppointmentBtn);
+            this.AppointmentsTab.Controls.Add(this.deleteRantevouBtn);
+            this.AppointmentsTab.Controls.Add(this.confirmRantevouBtn);
+            this.AppointmentsTab.Controls.Add(this.AnaneosiBtn);
             this.AppointmentsTab.Controls.Add(this.dataGridView4);
             this.AppointmentsTab.Location = new System.Drawing.Point(4, 22);
             this.AppointmentsTab.Name = "AppointmentsTab";
@@ -303,21 +320,42 @@
             this.AppointmentsTab.Text = "Ραντεβού";
             this.AppointmentsTab.UseVisualStyleBackColor = true;
             // 
-            // NewAppointmentBtn
+            // deleteRantevouBtn
             // 
-            this.NewAppointmentBtn.Location = new System.Drawing.Point(7, 7);
-            this.NewAppointmentBtn.Name = "NewAppointmentBtn";
-            this.NewAppointmentBtn.Size = new System.Drawing.Size(179, 23);
-            this.NewAppointmentBtn.TabIndex = 1;
-            this.NewAppointmentBtn.Text = "Νέο Ραντεβού";
-            this.NewAppointmentBtn.UseVisualStyleBackColor = true;
-            this.NewAppointmentBtn.Click += new System.EventHandler(this.NewAppointmentBtn_Click);
+            this.deleteRantevouBtn.Location = new System.Drawing.Point(585, 6);
+            this.deleteRantevouBtn.Name = "deleteRantevouBtn";
+            this.deleteRantevouBtn.Size = new System.Drawing.Size(179, 23);
+            this.deleteRantevouBtn.TabIndex = 3;
+            this.deleteRantevouBtn.Text = "Διαγραφή";
+            this.deleteRantevouBtn.UseVisualStyleBackColor = true;
+            this.deleteRantevouBtn.Click += new System.EventHandler(this.deleteRantevouBtn_Click);
+            // 
+            // confirmRantevouBtn
+            // 
+            this.confirmRantevouBtn.Location = new System.Drawing.Point(316, 7);
+            this.confirmRantevouBtn.Name = "confirmRantevouBtn";
+            this.confirmRantevouBtn.Size = new System.Drawing.Size(179, 23);
+            this.confirmRantevouBtn.TabIndex = 2;
+            this.confirmRantevouBtn.Text = "Επιβεβαίωση";
+            this.confirmRantevouBtn.UseVisualStyleBackColor = true;
+            this.confirmRantevouBtn.Click += new System.EventHandler(this.confirmRantebouBtn_Click);
+            // 
+            // AnaneosiBtn
+            // 
+            this.AnaneosiBtn.Location = new System.Drawing.Point(7, 7);
+            this.AnaneosiBtn.Name = "AnaneosiBtn";
+            this.AnaneosiBtn.Size = new System.Drawing.Size(179, 23);
+            this.AnaneosiBtn.TabIndex = 1;
+            this.AnaneosiBtn.Text = "Ανανέωση";
+            this.AnaneosiBtn.UseVisualStyleBackColor = true;
+            this.AnaneosiBtn.Click += new System.EventHandler(this.AnaneosiBtn_Click);
             // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(7, 51);
             this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
             this.dataGridView4.Size = new System.Drawing.Size(759, 370);
             this.dataGridView4.TabIndex = 0;
             // 
@@ -429,9 +467,12 @@
         private System.Windows.Forms.Button AddItemBtn;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.TabPage AppointmentsTab;
-        private System.Windows.Forms.Button NewAppointmentBtn;
+        private System.Windows.Forms.Button AnaneosiBtn;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Button NewClienteleBtn;
         private System.Windows.Forms.Button diagrafiPelatiB;
+        private System.Windows.Forms.Button ananeosiB;
+        private System.Windows.Forms.Button confirmRantevouBtn;
+        private System.Windows.Forms.Button deleteRantevouBtn;
     }
 }
