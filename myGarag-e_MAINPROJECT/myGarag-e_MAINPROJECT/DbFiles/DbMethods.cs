@@ -26,9 +26,14 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             }
             catch (MySqlException obj)
             {
+<<<<<<< HEAD
 
                 MessageBox.Show("Connection error! \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null; // if there was an error then return null.
+=======
+                System.Windows.Forms.MessageBox.Show("Σφάλμα σύνδεσης.\n" + obj.Message);
+                return null;
+>>>>>>> origin
             }
 
             return dbConnection; // return the MySqlConnection object.
