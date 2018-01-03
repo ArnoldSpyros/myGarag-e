@@ -6,32 +6,31 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using myGarag_e_MAINPROJECT.Classes;
 
 namespace myGarag_e_MAINPROJECT
 {
     public partial class myGarage_StartingPage : Form
     {
+        public static myGarage_StartingPage stPage = new myGarage_StartingPage();
         public myGarage_StartingPage()
         {
             InitializeComponent();
-            KatastasiUI.Initialize(false, this);
         }
 
         //This is for the LoginCustomerBtn
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-
             string username = UserTB.Text;
             string password = PassTB.Text;
 
-            if (DbFiles.DbMethods.loginCustomer(username,password)) // if a user with the given username and passwrd was found
+            if (DbFiles.DbMethods.findCustomer(username,password)) // if a user with the given username and passwrd was found
             {
                 if (DbFiles.DbMethods.user.FirstRole.Equals("Pelatis"))
                 {
                     myGarage_ConsumerMain nConsumer = new myGarage_ConsumerMain();
-                    KatastasiUI.hideStarting();
-                    KatastasiUI.openThis(nConsumer);
+                    nConsumer.Show();
+                    nConsumer.Focus();
+                    this.Visible = false;
                 }
             }
 
@@ -56,14 +55,8 @@ namespace myGarag_e_MAINPROJECT
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
             myGarage_NewUser nUser = new myGarage_NewUser();
-            KatastasiUI.hideStarting();
-            KatastasiUI.openThis(nUser);
-        }
-
-        private void myGarage_StartingPage_EnabledChanged(object sender, EventArgs e)
-        {
-                UserTB.Text = "";
-                PassTB.Text = "";
+            nUser.Show();
+            this.Visible = false;
         }
 
         

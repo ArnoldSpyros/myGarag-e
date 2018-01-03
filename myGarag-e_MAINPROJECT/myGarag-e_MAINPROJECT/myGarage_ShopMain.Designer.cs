@@ -33,8 +33,8 @@
             this.ShopPanel = new System.Windows.Forms.Panel();
             this.ShopUserMenuStrip = new System.Windows.Forms.MenuStrip();
             this.MessagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.εισερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.εξερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.πληροφορίεςToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.επεξεργασίαΠροφίλToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,23 +117,25 @@
             // MessagesMenuItem
             // 
             this.MessagesMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.εισερχόμεναToolStripMenuItem,
-            this.εξερχόμεναToolStripMenuItem});
+            this.inboxToolStripMenuItem,
+            this.sentToolStripMenuItem});
             this.MessagesMenuItem.Name = "MessagesMenuItem";
             this.MessagesMenuItem.Size = new System.Drawing.Size(77, 21);
             this.MessagesMenuItem.Text = "Μηνύματα";
+            this.MessagesMenuItem.Click += new System.EventHandler(this.MessagesMenuItem_Click);
             // 
-            // εισερχόμεναToolStripMenuItem
+            // inboxToolStripMenuItem
             // 
-            this.εισερχόμεναToolStripMenuItem.Name = "εισερχόμεναToolStripMenuItem";
-            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.εισερχόμεναToolStripMenuItem.Text = "Εισερχόμενα";
+            this.inboxToolStripMenuItem.Name = "inboxToolStripMenuItem";
+            this.inboxToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inboxToolStripMenuItem.Text = "Εισερχόμενα";
+            this.inboxToolStripMenuItem.Click += new System.EventHandler(this.inboxToolStripMenuItem_Click);
             // 
-            // εξερχόμεναToolStripMenuItem
+            // sentToolStripMenuItem
             // 
-            this.εξερχόμεναToolStripMenuItem.Name = "εξερχόμεναToolStripMenuItem";
-            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.εξερχόμεναToolStripMenuItem.Text = "Εξερχόμενα";
+            this.sentToolStripMenuItem.Name = "sentToolStripMenuItem";
+            this.sentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sentToolStripMenuItem.Text = "Εξερχόμενα";
             // 
             // AccountMenuItem
             // 
@@ -416,7 +418,6 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "myGarage_ShopMain";
             this.Text = "Διαχείρηση Καταστήματος";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.myGarage_ShopMain_FormClosing);
             this.ShopUserMenuStrip.ResumeLayout(false);
             this.ShopUserMenuStrip.PerformLayout();
             this.ShopUserPanel.ResumeLayout(false);
@@ -442,8 +443,8 @@
         private System.Windows.Forms.Panel ShopPanel;
         private System.Windows.Forms.MenuStrip ShopUserMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem MessagesMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem εισερχόμεναToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem εξερχόμεναToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inboxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
         private System.Windows.Forms.ToolStripMenuItem πληροφορίεςToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem επεξεργασίαΠροφίλToolStripMenuItem;

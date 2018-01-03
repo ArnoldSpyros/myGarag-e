@@ -88,6 +88,7 @@
             this.NewAppointmentSBKatastima.Name = "NewAppointmentSBKatastima";
             this.NewAppointmentSBKatastima.Size = new System.Drawing.Size(200, 21);
             this.NewAppointmentSBKatastima.TabIndex = 2;
+            this.NewAppointmentSBKatastima.SelectedIndexChanged += new System.EventHandler(this.NewAppointmentSBKatastima_SelectedIndexChanged);
             // 
             // label4
             // 

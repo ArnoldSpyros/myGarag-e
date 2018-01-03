@@ -19,7 +19,7 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_NewItem_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //myGarage_ShopMain.newItemFormShown = false;
+            myGarage_ShopMain.newItemFormShown = false;
         }
 
         private void uploadProductImgB_Click(object sender, EventArgs e)

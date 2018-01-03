@@ -329,7 +329,6 @@
             this.MinimumSize = new System.Drawing.Size(780, 600);
             this.Name = "myGarage_SystemAdminMain";
             this.Text = "Φόρμα διαχειριστή συστήματος";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.myGarage_SystemAdminMain_FormClosing);
             this.AdminPanel.ResumeLayout(false);
             this.AdminMenuStrip.ResumeLayout(false);
             this.AdminMenuStrip.PerformLayout();
