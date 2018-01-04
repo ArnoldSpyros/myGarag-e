@@ -126,13 +126,14 @@
             // εισερχόμεναToolStripMenuItem
             // 
             this.εισερχόμεναToolStripMenuItem.Name = "εισερχόμεναToolStripMenuItem";
-            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.εισερχόμεναToolStripMenuItem.Text = "Εισερχόμενα";
+            this.εισερχόμεναToolStripMenuItem.Click += new System.EventHandler(this.εισερχόμεναToolStripMenuItem_Click);
             // 
             // εξερχόμεναToolStripMenuItem
             // 
             this.εξερχόμεναToolStripMenuItem.Name = "εξερχόμεναToolStripMenuItem";
-            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.εξερχόμεναToolStripMenuItem.Text = "Εξερχόμενα";
             // 
             // AccountMenuItem

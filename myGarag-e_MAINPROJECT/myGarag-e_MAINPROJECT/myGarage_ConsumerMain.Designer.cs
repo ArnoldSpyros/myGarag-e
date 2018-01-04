@@ -117,6 +117,7 @@
             // 
             this.εισερχόμεναToolStripMenuItem.Name = "εισερχόμεναToolStripMenuItem";
             resources.ApplyResources(this.εισερχόμεναToolStripMenuItem, "εισερχόμεναToolStripMenuItem");
+            this.εισερχόμεναToolStripMenuItem.Click += new System.EventHandler(this.εισερχόμεναToolStripMenuItem_Click);
             // 
             // εξερχόμεναToolStripMenuItem
             // 
