@@ -38,6 +38,8 @@
             this.RegisterBtn = new System.Windows.Forms.Button();
             this.startingPageErrLabel = new System.Windows.Forms.Label();
             this.loginTimer = new System.Windows.Forms.Timer(this.components);
+            this.userErrLabel = new System.Windows.Forms.Label();
+            this.passErrLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // WelcomeLabel
@@ -68,7 +70,7 @@
             this.PassLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.PassLabel.AutoSize = true;
             this.PassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassLabel.Location = new System.Drawing.Point(103, 125);
+            this.PassLabel.Location = new System.Drawing.Point(103, 139);
             this.PassLabel.Name = "PassLabel";
             this.PassLabel.Size = new System.Drawing.Size(156, 20);
             this.PassLabel.TabIndex = 2;
@@ -83,22 +85,26 @@
             this.UserTB.Name = "UserTB";
             this.UserTB.Size = new System.Drawing.Size(252, 20);
             this.UserTB.TabIndex = 1;
+            this.UserTB.Validating += new System.ComponentModel.CancelEventHandler(this.UserTB_Validating);
+            this.UserTB.Validated += new System.EventHandler(this.UserTB_Validated);
             // 
             // PassTB
             // 
             this.PassTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.PassTB.Location = new System.Drawing.Point(61, 160);
+            this.PassTB.Location = new System.Drawing.Point(61, 174);
             this.PassTB.Name = "PassTB";
             this.PassTB.PasswordChar = '*';
             this.PassTB.Size = new System.Drawing.Size(252, 20);
             this.PassTB.TabIndex = 2;
             this.PassTB.UseSystemPasswordChar = true;
+            this.PassTB.Validating += new System.ComponentModel.CancelEventHandler(this.PassTB_Validating);
+            this.PassTB.Validated += new System.EventHandler(this.PassTB_Validated);
             // 
             // LoginCustomerBtn
             // 
             this.LoginCustomerBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LoginCustomerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.LoginCustomerBtn.Location = new System.Drawing.Point(107, 213);
+            this.LoginCustomerBtn.Location = new System.Drawing.Point(107, 225);
             this.LoginCustomerBtn.Name = "LoginCustomerBtn";
             this.LoginCustomerBtn.Size = new System.Drawing.Size(152, 23);
             this.LoginCustomerBtn.TabIndex = 3;
@@ -135,12 +141,32 @@
             this.loginTimer.Interval = 3000;
             this.loginTimer.Tick += new System.EventHandler(this.loginTimer_Tick);
             // 
+            // userErrLabel
+            // 
+            this.userErrLabel.AutoSize = true;
+            this.userErrLabel.ForeColor = System.Drawing.Color.Red;
+            this.userErrLabel.Location = new System.Drawing.Point(58, 113);
+            this.userErrLabel.Name = "userErrLabel";
+            this.userErrLabel.Size = new System.Drawing.Size(0, 13);
+            this.userErrLabel.TabIndex = 6;
+            // 
+            // passErrLabel
+            // 
+            this.passErrLabel.AutoSize = true;
+            this.passErrLabel.ForeColor = System.Drawing.Color.Red;
+            this.passErrLabel.Location = new System.Drawing.Point(58, 197);
+            this.passErrLabel.Name = "passErrLabel";
+            this.passErrLabel.Size = new System.Drawing.Size(0, 13);
+            this.passErrLabel.TabIndex = 7;
+            // 
             // myGarage_StartingPage
             // 
             this.AcceptButton = this.LoginCustomerBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 302);
+            this.Controls.Add(this.passErrLabel);
+            this.Controls.Add(this.userErrLabel);
             this.Controls.Add(this.startingPageErrLabel);
             this.Controls.Add(this.RegisterBtn);
             this.Controls.Add(this.LoginCustomerBtn);
@@ -171,5 +197,7 @@
         private System.Windows.Forms.Button RegisterBtn;
         private System.Windows.Forms.Label startingPageErrLabel;
         private System.Windows.Forms.Timer loginTimer;
+        private System.Windows.Forms.Label userErrLabel;
+        private System.Windows.Forms.Label passErrLabel;
     }
 }

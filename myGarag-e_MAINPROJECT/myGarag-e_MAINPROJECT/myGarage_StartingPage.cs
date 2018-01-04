@@ -74,5 +74,33 @@ namespace myGarag_e_MAINPROJECT
             loginTimer.Stop();
             startingPageErrLabel.Visible = false;
         }
+
+        private void UserTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (UserTB.Text.Equals(""))
+            {
+                userErrLabel.Text = "Το πεδίο δεν μπορεί να είναι κενό!";
+                e.Cancel = true;
+            }
+        }
+
+        private void UserTB_Validated(object sender, EventArgs e)
+        {
+            userErrLabel.Text = "";
+        }
+
+        private void PassTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (PassTB.Text.Equals(""))
+            {
+                passErrLabel.Text = "Το πεδίο δεν μπορεί να είναι κενό!";
+                e.Cancel = true;
+            }
+        }
+
+        private void PassTB_Validated(object sender, EventArgs e)
+        {
+            passErrLabel.Text = "";
+        }
     }
 }
