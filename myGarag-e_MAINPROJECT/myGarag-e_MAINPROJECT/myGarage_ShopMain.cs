@@ -36,8 +36,7 @@ namespace myGarag_e_MAINPROJECT
 
                     case 1:
                         //Κλήση της μεθόδου εμφάνισης πελατολόγιου
-                        //
-                        ds = loadPelatologio("1000");
+                        ds = loadPelatologio(DbFiles.DbMethods.user.UserID);
                         dataGridView2.DataSource = ds.Tables["pelatologio"];
                         break;
                     case 2:
@@ -45,7 +44,9 @@ namespace myGarag_e_MAINPROJECT
                         dataGridView3.DataSource = ds.Tables["proion"];
                         break;
 
-                    case 3: //
+                    case 3:
+                        ds = loadRantevou(DbFiles.DbMethods.user.UserID);
+                        dataGridView4.DataSource = ds.Tables["rantevou"];
                         break;
 
                     default: //
@@ -58,12 +59,83 @@ namespace myGarag_e_MAINPROJECT
             }
         }
 
-        private DataSet loadPelatologio(string kodikosKatastimatos)
+        
+
+        //By default this is set to false, it's enabled when a new client form is shown and switches back and forth
+        //public static Boolean newClientFormShown = false;
+        private void NewClientBtn_Click(object sender, EventArgs e)
+        {
+
+            //if (newClientFormShown == false)
+            //{
+            myGarage_NewUser newclientform = new myGarage_NewUser();
+            KatastasiUI.openThis(newclientform, true);
+            //newClientFormShown = true;
+            //}
+        }
+
+        //By defautl this is set to false, it's enabled when a new clientele form is shown and switches back and forth
+        //public static Boolean newClienteleFormShown = false;
+        private void NewClienteleBtn_Click(object sender, EventArgs e)
+        {
+            //if (newClienteleFormShown == false)
+            //{
+            myGarage_NewClientele newclienteleform = new myGarage_NewClientele();
+            KatastasiUI.openThis(newclienteleform, true);
+            //newClienteleFormShown = true;
+            //}
+        }
+
+        //By defautl this is set to false, it's enabled when a new item form is shown and switches back and forth
+        //public static Boolean newItemFormShown = false;
+        private void AddItemBtn_Click(object sender, EventArgs e)
+        {
+            //if (newItemFormShown == false)
+            //{
+            myGarage_NewItem newitemform = new myGarage_NewItem();
+            KatastasiUI.openThis(newitemform, true);
+            //newItemFormShown = true;
+            //}
+        }
+
+        //By defautl this is set to false, it's enabled when a new order form is shown and switches back and forth
+        //public static Boolean newOrderFormShown = false;
+        private void NewOrderBtn_Click(object sender, EventArgs e)
+        {
+            myGarage_NewOrder neworderform = new myGarage_NewOrder();
+            KatastasiUI.openThis(neworderform, true);
+            //newOrderFormShown = true;
+        }
+
+        private void NewAppointmentBtn_Click(object sender, EventArgs e)
+        {
+            //if (!myGarage_ConsumerMain.appointmentmenuitemshown)
+            //{
+            myGarage_NewAppointment newappo = new myGarage_NewAppointment();
+            KatastasiUI.openThis(newappo, true);
+            //myGarage_ConsumerMain.appointmentmenuitemshown = true;
+            //}
+            //else
+            //{
+            // MessageBox.Show("Έχετε ήδη ένα ραντεβού ανοιχτό!");
+            //myGarage_NewAppointment.ActiveForm.Focus();
+            //}
+
+        }
+
+        //STUFF FOR Pelatologio
+        private void ananeosiB_Click(object sender, EventArgs e)//Pelatologio refresh
+        {
+            DataSet ds = new DataSet();
+            ds = loadPelatologio(DbFiles.DbMethods.user.UserID);
+            dataGridView2.DataSource = ds.Tables["pelatologio"];
+        }
+
+        private DataSet loadPelatologio(string kodikosKatastimatarxi)
         {
             try
             {
-                //string sql = String.Format("SELECT * FROM {0}", "pelatologio");
-                string sql = String.Format("SELECT PEL.kodikosSinalagis, PEL.kodikosPelati, P.onoma, P.epitheto, P.tilefono from pelatologio PEL JOIN pelatis P WHERE PEL.kodikosPelati = P.kodikosPelati AND PEL.kodikosPelatologiou = {0}", kodikosKatastimatos);
+                string sql = String.Format("SELECT P.onoma, P.epitheto, P.tilefono, PEL.kodikosPelati, PEL.kodikosSinalagis FROM pelatologio PEL JOIN pelatis P WHERE PEL.kodikosPelati = P.kodikosPelati AND PEL.kodikosKatastimatarxi = {0}", kodikosKatastimatarxi);
                 MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
 
                 DataSet ds = new DataSet();
@@ -82,93 +154,33 @@ namespace myGarag_e_MAINPROJECT
             }
 
         }
-
-        //By default this is set to false, it's enabled when a new client form is shown and switches back and forth
-        public static Boolean newClientFormShown = false;
-        private void NewClientBtn_Click(object sender, EventArgs e)
-        {
-
-            if (newClientFormShown == false)
-            {
-                myGarage_NewUser newclientform = new myGarage_NewUser();
-                newclientform.Show();
-                newClientFormShown = true;
-            }
-        }
-
-        //By defautl this is set to false, it's enabled when a new clientele form is shown and switches back and forth
-        public static Boolean newClienteleFormShown = false;
-        private void NewClienteleBtn_Click(object sender, EventArgs e)
-        {
-            if (newClienteleFormShown == false)
-            {
-                myGarage_NewClientele newclienteleform = new myGarage_NewClientele();
-                newclienteleform.Show();
-                newClienteleFormShown = true;
-            }
-        }
-
-        //By defautl this is set to false, it's enabled when a new item form is shown and switches back and forth
-        public static Boolean newItemFormShown = false;
-        private void AddItemBtn_Click(object sender, EventArgs e)
-        {
-            if (newItemFormShown == false)
-            {
-                myGarage_NewItem newitemform = new myGarage_NewItem();
-                newitemform.Show();
-                newItemFormShown = true;
-            }
-        }
-
-        //By defautl this is set to false, it's enabled when a new order form is shown and switches back and forth
-        public static Boolean newOrderFormShown = false;
-        private void NewOrderBtn_Click(object sender, EventArgs e)
-        {
-            myGarage_NewOrder neworderform = new myGarage_NewOrder();
-            neworderform.Show();
-            newOrderFormShown = true;
-        }
-
-        private void NewAppointmentBtn_Click(object sender, EventArgs e)
-        {
-            if (!myGarage_ConsumerMain.appointmentmenuitemshown)
-            {
-                myGarage_NewAppointment newappo = new myGarage_NewAppointment();
-                newappo.Show();
-                myGarage_ConsumerMain.appointmentmenuitemshown = true;
-            }
-            else
-            {
-                MessageBox.Show("Έχετε ήδη ένα ραντεβού ανοιχτό!");
-                myGarage_NewAppointment.ActiveForm.Focus();
-            }
-
-        }
-
         private void diagrafiPelatiB_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Είστε σίγουροι πως θέλετε να διαγράψετε τη συγκεκριμένη καταχώρηση; Αυτή η ενέργια δεν μπορεί να αναιρεθεί!", "ΔΙΑΓΡΑΦΗ", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Είστε σίγουροι πως θέλετε να διαγράψετε τη συγκεκριμένη καταχώρηση; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί!", "ΔΙΑΓΡΑΦΗ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (res == DialogResult.Yes)
             {
-                string code = dataGridView2.CurrentRow.Cells["kodikosSinalagis"].Value.ToString();
+                try
+                {
+                    string code = dataGridView2.CurrentRow.Cells["kodikosSinalagis"].Value.ToString();
 
-                if (diagrafiSinalagis(code) >= 1)
-                {
-                    MessageBox.Show("Η διαγραφή ολοκληρώθηκε!");
-                    //Ανανέωση του πίνακα
-                    DataSet ds = new DataSet();
-                    ds = loadPelatologio("1000");
-                    dataGridView2.DataSource = ds.Tables["pelatologio"];
+                    if (diagrafiSinalagis(code))
+                    {
+                        MessageBox.Show("Η διαγραφή ολοκληρώθηκε!", "Επιτυχία", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Ανανέωση του πίνακα
+                        DataSet ds = new DataSet();
+                        ds = loadPelatologio(DbFiles.DbMethods.user.UserID);
+                        dataGridView2.DataSource = ds.Tables["pelatologio"];
+                    }
                 }
-                else
+                catch (Exception exc)
                 {
-                    MessageBox.Show("Αποτυχία!");
+                    MessageBox.Show(exc.Message, "Αποτυχία!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
         }
 
-        private int diagrafiSinalagis(string kodikosSinalagis)
+        private bool diagrafiSinalagis(string kodikosSinalagis)
         {
             //Διαγραφή επιλεγμένου πελάτη
             try
@@ -180,10 +192,101 @@ namespace myGarag_e_MAINPROJECT
                 command.Parameters.AddWithValue("@kodikosSinalagis", kodikosSinalagis);
                 command.Prepare();
 
-                int rowsAffected = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                 con.Close();
 
-                return rowsAffected;
+                return true;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return false;
+            }
+        }
+
+        
+
+        //FOR rantevou
+        private DataSet loadRantevou(string kodikosKatastimatarxi)
+        {
+            try
+            {
+                string sql = String.Format("SELECT R.ID,P.onoma,P.epitheto,P.tilefono,P.kodikosPelati,R.description,R.date,R.confirmed FROM Rantevou R INNER JOIN Pelatis P WHERE R.IDpelati = P.kodikosPelati AND R.IDkatastimatarxi = {0}", kodikosKatastimatarxi);
+                MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+
+                DataSet ds = new DataSet();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con);
+
+                adapter.Fill(ds, "rantevou");
+                con.Close();
+
+                return ds;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Αποτυχία!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        private void AnaneosiBtn_Click(object sender, EventArgs e)//Rantevou refresh
+        {
+            DataSet ds = loadRantevou(DbFiles.DbMethods.user.UserID);
+            dataGridView4.DataSource = ds.Tables["rantevou"];
+        }
+
+        private void confirmRantebouBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Είστε σίγουρος πως θέλετε να επιβεβαιώσετε το επιλεγμένο ραντεβού;", "Επιβεβαίωση", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (res == DialogResult.Yes)
+            {
+                //Confirm rantevou
+                //If already confirmed, show message
+
+                if (dataGridView4.CurrentRow.Cells["Confirmed"].Value.ToString() == "1")
+                {
+                    MessageBox.Show("Το ραντεβού έχει ήδη επιβεβαιωθεί! Δεν έγινε καμμία αλλαγή.", "Επιβεβαίωση", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    try
+                    {
+                        string id = dataGridView4.CurrentRow.Cells["ID"].Value.ToString();
+
+                        int rows = confirmRantebou(id);
+                        if (rows == 1)
+                        {
+                            MessageBox.Show("Το ραντεβού επιβεβαιώθηκε!", "Επιτυχία!", MessageBoxButtons.OK);
+                            DataSet ds = loadRantevou(DbFiles.DbMethods.user.UserID);
+                            dataGridView4.DataSource = ds.Tables["rantevou"];
+                        }
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+
+                }
+            }
+        }
+
+        private static int confirmRantebou(string id)
+        {
+            try
+            {
+                MySqlConnection connection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+                string mySql = "UPDATE rantevou SET Confirmed=1 WHERE ID=@columnID";
+
+                MySqlCommand command = new MySqlCommand(mySql, connection);
+
+                command.Parameters.AddWithValue("@columnID", id);
+                command.Prepare();
+
+                int affectedRows = command.ExecuteNonQuery();
+                connection.Close();
+
+                return affectedRows;
+
             }
             catch (Exception exc)
             {
@@ -192,54 +295,74 @@ namespace myGarag_e_MAINPROJECT
             }
         }
 
-
-        //NOT FINISHED!
-        private void inboxToolStripMenuItem_Click(object sender, EventArgs e)
+        private void deleteRantevouBtn_Click(object sender, EventArgs e)
         {
-            //string senderName;
-            //string senderLastName;
-            //int rowIndex = 0; // dataGridView row index variable;
+            DialogResult res = MessageBox.Show("Είστε σίγουρος πως θέλετε να διαγράψετε το επιλεγμένο ραντεβού;", "Διαγραφή", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (res == DialogResult.Yes)
+            {
+                try
+                {
+                    string columnID = dataGridView4.CurrentRow.Cells["ID"].Value.ToString();
+                    int rows = deleteRantevou(columnID);
+                    if (rows >= 1)
+                    {
+                        MessageBox.Show("Το ραντεβού διαγράφηκε!", "Διαγραφή Ραντεβού", MessageBoxButtons.OK);
+                        //Update table
+                        DataSet ds = loadRantevou(DbFiles.DbMethods.user.UserID);
+                        dataGridView4.DataSource = ds.Tables["rantevou"];
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
 
-            //myGarage_Inbox form = new myGarage_Inbox(); // instantiating the myGarage_Inbox object
-
-            //DataSet dataset = DbFiles.DbMethods.getTableData("minimata", "receiverID", "1000"); // MUST CHANGE to user.ID as the last parameter
-            //DataTable datatable = dataset.Tables["minimata"];
-            //DataColumn senderNameColumn = new DataColumn("Sender Name", typeof(string)); // instantiating a DataColumn to store and display the senderID's senderName in inbox's form dataGridView
-            //DataColumn senderLastNameColumn = new DataColumn("Sender Last Name", typeof(string)); // instantiating a DataColumn to store and display the senderID's senderName in inbox's form dataGridView
-            //datatable.Columns.Add(senderNameColumn);
-            //datatable.Columns.Add(senderLastNameColumn);
-            //form.inboxDGV.DataSource = dataset.Tables["minimata"];
-
-            //Minima message = new Minima();
-            
-            //foreach (DataRow row in dataset.Tables["minimata"].Rows) // for each row in the table minimata
-            //{
-            //    string senderID = row[0].ToString(); // get the senderID's ID
-            //    message.getSenderInfo(0, senderID, dataset); // call the getSenderInfo method of the message object to find senderID's first name and last name
-            //    senderName = message.SenderName;
-            //    senderLastName = message.SenderLastName;
-            //    form.inboxDGV.Rows[rowIndex].Cells[5].Value = senderName; // set the 'Sender Name' column value of the current row to senderName variable value
-            //    form.inboxDGV.Rows[rowIndex].Cells[6].Value = senderLastName; // set the 'Sender Last Name' column value of the current row to lastName variable value
-            //    rowIndex++; // increase the row index by 1
-            //}
-
-            //form.inboxDGV.Columns[0].Visible = false; // set the senderID column visible propertie to false
-            //form.inboxDGV.Columns[1].Visible = false; // set the receiverID column visible propertie to false
-            //form.inboxDGV.Columns[5].DisplayIndex = 0; // set the senderID senderName column as the first column in the dataGridView
-            //form.inboxDGV.Columns[6].DisplayIndex = 1; // set the senderID last senderName column as the second column in the dataGridView
-
-            //form.Owner = this;
-            //form.ShowDialog();
+            }
         }
 
-        private void MessagesMenuItem_Click(object sender, EventArgs e)
+        private static int deleteRantevou(string columnID)
         {
-            myGarage_Inbox form = new myGarage_Inbox();
-            form.ShowDialog();
+            try
+            {
+                MySqlConnection connection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+                string mySql = "DELETE FROM rantevou WHERE ID=@columnID";
+
+                MySqlCommand command = new MySqlCommand(mySql, connection);
+
+                command.Parameters.AddWithValue("@columnID", columnID);
+                command.Prepare();
+
+                int affectedRows = command.ExecuteNonQuery();
+                connection.Close();
+
+                return affectedRows;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return 0;
+            }
+
+        }
+
+
+        private void myGarage_ShopMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            myGarage_genericTerminateOrLogoutForm newgentermform = new myGarage_genericTerminateOrLogoutForm();
+            var diag = newgentermform.ShowDialog();
+            if (diag == DialogResult.No)
+            {
+                DbFiles.DbMethods.user.logout();
+                KatastasiUI.openStarting();
+            }
+            else if (diag == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                KatastasiUI.terminateProgram();
+            }
         }
     }
-
-
-
-
 }
