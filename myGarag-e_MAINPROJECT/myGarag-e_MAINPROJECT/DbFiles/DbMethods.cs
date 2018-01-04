@@ -12,8 +12,9 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 {
     class DbMethods
     {
-        public static string connectionString = "server=jabc.zapto.org;uid=BaKa;pwd=A6dB.K2a;database=adopse"; // database connection string.
-        public static User user = null; // logged in user object.
+
+        public static string connectionString = "server=localhost;uid=root;pwd=;database=adopse"; // database connection string.
+        public static User user; // logged in user object.
 
         public static MySqlConnection setMySqlConnection(string connectionString) // method that sets the connection with the database.
         {
@@ -155,9 +156,8 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 
         }
 
-        //Αλλαγή του findCustomer σε loginCustomer γιατί στο loginCustomer όντως κάνει login ο χρήστης αν βρεθεί
-        //ενώ στο findCustomer ρωτάει απλά τη βάση αν υπάρχει κάποιος με τα ίδια στοιχεία
-        public static bool loginCustomer(string username, string password)
+
+        public static bool findCustomer(string username, string password)
         {
             try
             {
@@ -197,83 +197,6 @@ namespace myGarag_e_MAINPROJECT.DbFiles
             catch (MySqlException obj)
             {
                 MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false; // could not find customer
-            }
-
-        }
-        
-        public static bool loginShop(string username, string pass)
-        {
-            try
-            {
-                string sql = "SELECT * FROM katastimatarxis WHERE username=@username AND password=@password";
-                MySqlConnection con = setMySqlConnection(connectionString);
-                MySqlCommand command = new MySqlCommand(sql, con);
-
-                command.Parameters.AddWithValue("@username", username);
-                command.Parameters.AddWithValue("@password", pass);
-                command.Prepare();
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds, "katastimatarxis");
-                if (ds.Tables["katastimatarxis"].Rows.Count > 0)
-                {
-                    DataRow dr = ds.Tables["katastimatarxis"].Rows[0];
-
-                    string ID = dr[0].ToString(); // get client's userID
-                    string name = dr[1].ToString(); // get client's name
-                    string lastName = dr[2].ToString(); // get client's last  name
-                    string phoneNumber = dr[3].ToString(); // get client's phoneNumber
-                    user = new User(ID, new Katastimatarxis(), username, name, lastName, phoneNumber, "Unknown address");
-                    con.Close();
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Shop keeper with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return false; // if no user found then return false
-                }
-            }
-            catch (MySqlException exc)
-            {
-                MessageBox.Show("Error! Could not find customer \n" + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false; // could not find customer
-            }
-        }
-        
-        //ερώτηση στη βάση αν υπάρχει πελάτης με το ίδιο username, δεν θέλουμε δύο ραντεβουδάκηδες
-        public static bool findCustomer(string username, string password)
-        {
-            try
-            {
-                MySqlConnection dbConnection = setMySqlConnection(connectionString);
-                string query = "SELECT * FROM pelatis WHERE username = @username OR password = @password";
-                MySqlCommand command = new MySqlCommand(query, dbConnection);
-
-                command.Parameters.AddWithValue("@username", username);
-                command.Prepare();
-
-                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
-                DataSet dataset = new DataSet();
-                dataAdapter.Fill(dataset, "pelatis");
-
-                //DataSet dataset = getTableData("pelatis", "username", username); // get clients data from the 'pelatis' table 
-
-                if (dataset.Tables["pelatis"].Rows.Count > 0)
-                {
-                    dbConnection.Close(); // close database connection
-                    return true; // found customer
-                }
-                else
-                {
-                    //MessageBox.Show("User with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return false; // if no user found then return false
-                }
-            }
-            catch (MySqlException obj)
-            {
-                //MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false; // could not find customer
             }
 
