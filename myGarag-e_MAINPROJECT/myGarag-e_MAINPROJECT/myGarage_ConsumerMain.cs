@@ -101,5 +101,11 @@ namespace myGarag_e_MAINPROJECT
         {
 
         }
+
+        private void εισερχόμεναToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            myGarage_Inbox inbox = new myGarage_Inbox();
+            KatastasiUI.openThis(inbox, true);
+        }
     }
 }

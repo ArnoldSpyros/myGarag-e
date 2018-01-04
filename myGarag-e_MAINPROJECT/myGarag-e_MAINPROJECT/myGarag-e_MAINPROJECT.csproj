@@ -91,6 +91,12 @@
     <Compile Include="myGarage_genericTerminateOrLogoutForm.Designer.cs">
       <DependentUpon>myGarage_genericTerminateOrLogoutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="mygarage_Inbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mygarage_Inbox.Designer.cs">
+      <DependentUpon>mygarage_Inbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="myGarage_NewAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
