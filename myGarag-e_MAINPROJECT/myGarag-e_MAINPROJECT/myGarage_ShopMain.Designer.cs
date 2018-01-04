@@ -33,8 +33,8 @@
             this.ShopPanel = new System.Windows.Forms.Panel();
             this.ShopUserMenuStrip = new System.Windows.Forms.MenuStrip();
             this.MessagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.εισερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.εξερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.πληροφορίεςToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.επεξεργασίαΠροφίλToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +45,6 @@
             this.NewOrderBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ClienteleTab = new System.Windows.Forms.TabPage();
-            this.ananeosiB = new System.Windows.Forms.Button();
             this.diagrafiPelatiB = new System.Windows.Forms.Button();
             this.NewClienteleBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -53,9 +52,7 @@
             this.AddItemBtn = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.AppointmentsTab = new System.Windows.Forms.TabPage();
-            this.deleteRantevouBtn = new System.Windows.Forms.Button();
-            this.confirmRantevouBtn = new System.Windows.Forms.Button();
-            this.AnaneosiBtn = new System.Windows.Forms.Button();
+            this.NewAppointmentBtn = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.ClientContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DetailsItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,23 +114,25 @@
             // MessagesMenuItem
             // 
             this.MessagesMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.εισερχόμεναToolStripMenuItem,
-            this.εξερχόμεναToolStripMenuItem});
+            this.inboxToolStripMenuItem,
+            this.sentToolStripMenuItem});
             this.MessagesMenuItem.Name = "MessagesMenuItem";
             this.MessagesMenuItem.Size = new System.Drawing.Size(77, 21);
             this.MessagesMenuItem.Text = "Μηνύματα";
+            this.MessagesMenuItem.Click += new System.EventHandler(this.MessagesMenuItem_Click);
             // 
-            // εισερχόμεναToolStripMenuItem
+            // inboxToolStripMenuItem
             // 
-            this.εισερχόμεναToolStripMenuItem.Name = "εισερχόμεναToolStripMenuItem";
-            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.εισερχόμεναToolStripMenuItem.Text = "Εισερχόμενα";
+            this.inboxToolStripMenuItem.Name = "inboxToolStripMenuItem";
+            this.inboxToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inboxToolStripMenuItem.Text = "Εισερχόμενα";
+            this.inboxToolStripMenuItem.Click += new System.EventHandler(this.inboxToolStripMenuItem_Click);
             // 
-            // εξερχόμεναToolStripMenuItem
+            // sentToolStripMenuItem
             // 
-            this.εξερχόμεναToolStripMenuItem.Name = "εξερχόμεναToolStripMenuItem";
-            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.εξερχόμεναToolStripMenuItem.Text = "Εξερχόμενα";
+            this.sentToolStripMenuItem.Name = "sentToolStripMenuItem";
+            this.sentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sentToolStripMenuItem.Text = "Εξερχόμενα";
             // 
             // AccountMenuItem
             // 
@@ -223,7 +222,6 @@
             // 
             // ClienteleTab
             // 
-            this.ClienteleTab.Controls.Add(this.ananeosiB);
             this.ClienteleTab.Controls.Add(this.diagrafiPelatiB);
             this.ClienteleTab.Controls.Add(this.NewClienteleBtn);
             this.ClienteleTab.Controls.Add(this.dataGridView2);
@@ -234,16 +232,6 @@
             this.ClienteleTab.TabIndex = 1;
             this.ClienteleTab.Text = "Πελατολόγιο";
             this.ClienteleTab.UseVisualStyleBackColor = true;
-            // 
-            // ananeosiB
-            // 
-            this.ananeosiB.Location = new System.Drawing.Point(574, 6);
-            this.ananeosiB.Name = "ananeosiB";
-            this.ananeosiB.Size = new System.Drawing.Size(190, 23);
-            this.ananeosiB.TabIndex = 4;
-            this.ananeosiB.Text = "Ανανέωση Πίνακα";
-            this.ananeosiB.UseVisualStyleBackColor = true;
-            this.ananeosiB.Click += new System.EventHandler(this.ananeosiB_Click);
             // 
             // diagrafiPelatiB
             // 
@@ -270,7 +258,6 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(7, 48);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(757, 370);
             this.dataGridView2.TabIndex = 0;
             // 
@@ -306,9 +293,7 @@
             // 
             // AppointmentsTab
             // 
-            this.AppointmentsTab.Controls.Add(this.deleteRantevouBtn);
-            this.AppointmentsTab.Controls.Add(this.confirmRantevouBtn);
-            this.AppointmentsTab.Controls.Add(this.AnaneosiBtn);
+            this.AppointmentsTab.Controls.Add(this.NewAppointmentBtn);
             this.AppointmentsTab.Controls.Add(this.dataGridView4);
             this.AppointmentsTab.Location = new System.Drawing.Point(4, 22);
             this.AppointmentsTab.Name = "AppointmentsTab";
@@ -318,42 +303,21 @@
             this.AppointmentsTab.Text = "Ραντεβού";
             this.AppointmentsTab.UseVisualStyleBackColor = true;
             // 
-            // deleteRantevouBtn
+            // NewAppointmentBtn
             // 
-            this.deleteRantevouBtn.Location = new System.Drawing.Point(585, 6);
-            this.deleteRantevouBtn.Name = "deleteRantevouBtn";
-            this.deleteRantevouBtn.Size = new System.Drawing.Size(179, 23);
-            this.deleteRantevouBtn.TabIndex = 3;
-            this.deleteRantevouBtn.Text = "Διαγραφή";
-            this.deleteRantevouBtn.UseVisualStyleBackColor = true;
-            this.deleteRantevouBtn.Click += new System.EventHandler(this.deleteRantevouBtn_Click);
-            // 
-            // confirmRantevouBtn
-            // 
-            this.confirmRantevouBtn.Location = new System.Drawing.Point(316, 7);
-            this.confirmRantevouBtn.Name = "confirmRantevouBtn";
-            this.confirmRantevouBtn.Size = new System.Drawing.Size(179, 23);
-            this.confirmRantevouBtn.TabIndex = 2;
-            this.confirmRantevouBtn.Text = "Επιβεβαίωση";
-            this.confirmRantevouBtn.UseVisualStyleBackColor = true;
-            this.confirmRantevouBtn.Click += new System.EventHandler(this.confirmRantebouBtn_Click);
-            // 
-            // AnaneosiBtn
-            // 
-            this.AnaneosiBtn.Location = new System.Drawing.Point(7, 7);
-            this.AnaneosiBtn.Name = "AnaneosiBtn";
-            this.AnaneosiBtn.Size = new System.Drawing.Size(179, 23);
-            this.AnaneosiBtn.TabIndex = 1;
-            this.AnaneosiBtn.Text = "Ανανέωση";
-            this.AnaneosiBtn.UseVisualStyleBackColor = true;
-            this.AnaneosiBtn.Click += new System.EventHandler(this.AnaneosiBtn_Click);
+            this.NewAppointmentBtn.Location = new System.Drawing.Point(7, 7);
+            this.NewAppointmentBtn.Name = "NewAppointmentBtn";
+            this.NewAppointmentBtn.Size = new System.Drawing.Size(179, 23);
+            this.NewAppointmentBtn.TabIndex = 1;
+            this.NewAppointmentBtn.Text = "Νέο Ραντεβού";
+            this.NewAppointmentBtn.UseVisualStyleBackColor = true;
+            this.NewAppointmentBtn.Click += new System.EventHandler(this.NewAppointmentBtn_Click);
             // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(7, 51);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
             this.dataGridView4.Size = new System.Drawing.Size(759, 370);
             this.dataGridView4.TabIndex = 0;
             // 
@@ -416,7 +380,6 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "myGarage_ShopMain";
             this.Text = "Διαχείρηση Καταστήματος";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.myGarage_ShopMain_FormClosing);
             this.ShopUserMenuStrip.ResumeLayout(false);
             this.ShopUserMenuStrip.PerformLayout();
             this.ShopUserPanel.ResumeLayout(false);
@@ -442,8 +405,8 @@
         private System.Windows.Forms.Panel ShopPanel;
         private System.Windows.Forms.MenuStrip ShopUserMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem MessagesMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem εισερχόμεναToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem εξερχόμεναToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inboxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
         private System.Windows.Forms.ToolStripMenuItem πληροφορίεςToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem επεξεργασίαΠροφίλToolStripMenuItem;
@@ -466,12 +429,9 @@
         private System.Windows.Forms.Button AddItemBtn;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.TabPage AppointmentsTab;
-        private System.Windows.Forms.Button AnaneosiBtn;
+        private System.Windows.Forms.Button NewAppointmentBtn;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Button NewClienteleBtn;
         private System.Windows.Forms.Button diagrafiPelatiB;
-        private System.Windows.Forms.Button ananeosiB;
-        private System.Windows.Forms.Button confirmRantevouBtn;
-        private System.Windows.Forms.Button deleteRantevouBtn;
     }
 }

@@ -19,7 +19,7 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_NewOrder_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //myGarage_ShopMain.newOrderFormShown = false;
+            myGarage_ShopMain.newOrderFormShown = false;
         }
     }
 }

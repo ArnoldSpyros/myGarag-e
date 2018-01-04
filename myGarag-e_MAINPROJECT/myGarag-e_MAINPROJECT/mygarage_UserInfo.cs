@@ -46,7 +46,7 @@ namespace myGarag_e_MAINPROJECT
         //Όταν η φόρμα κλείνει πρέπει να γυρίσει στην αρχική του κατάσταση η μεταβλητή infomenuitemshown.
         private void mygarage_UserInfo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //myGarage_ConsumerMain.infoMenuItemShown = false;
+            myGarage_ConsumerMain.infoMenuItemShown = false;
         }
 
         //πρίν κλείσει η φόρμα κάνει έλεγχο των στοιχείων, αν έχουμε ανοιχτό το edit τότε ρωτάει για αποθήκευση
