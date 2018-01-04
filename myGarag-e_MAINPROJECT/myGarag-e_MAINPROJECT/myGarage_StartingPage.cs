@@ -24,33 +24,36 @@ namespace myGarag_e_MAINPROJECT
 
             string username = UserTB.Text;
             string password = PassTB.Text;
-
-            if (DbFiles.DbMethods.loginCustomer(username,password)) // if a user with the given username and passwrd was found
+            //DbFiles.DbMethods.user = new User();
+            if (DbFiles.DbMethods.user.login(username, password)) // if a user with the given username and passwrd was found
             {
+                //This is for the customer trying to login
                 if (DbFiles.DbMethods.user.FirstRole.Equals("Pelatis"))
                 {
                     myGarage_ConsumerMain nConsumer = new myGarage_ConsumerMain();
                     KatastasiUI.hideStarting();
                     KatastasiUI.openThis(nConsumer);
                 }
+                //This is for the Shopkeepers trying to login
+                else if (DbFiles.DbMethods.user.FirstRole.Equals("Katastimatarxis"))
+                {
+                    myGarage_ShopMain nShop = new myGarage_ShopMain();
+                    KatastasiUI.hideStarting();
+                    KatastasiUI.openThis(nShop);
+                }
+            }
+            //else if (DbFiles.DbMethods.findShopkeeper(username, password))
+            //{
+                
+            //}
+            else
+            {
+                startingPageErrLabel.Visible = true;
+                loginTimer.Start(); 
             }
 
             //uncoment the line below to use the software as a user
             //DbFiles.DbMethods.connectionString = "server=jabc.zapto.org;uid=" + username + ";pwd=" + password + ";database=adopse";
-        }
-
-        //This is for the Shopkeepers trying to login
-        private void loginShopBtn_Click(object sender, EventArgs e)
-        {
-            string username = UserTB.Text;
-            string password = PassTB.Text;
-
-            if (DbFiles.DbMethods.loginShop(username, password))
-            {
-                    myGarage_ShopMain nShop = new myGarage_ShopMain();
-                    KatastasiUI.hideStarting();
-                    KatastasiUI.openThis(nShop);
-            }
         }
 
         private void RegisterBtn_Click(object sender, EventArgs e)
@@ -66,6 +69,10 @@ namespace myGarag_e_MAINPROJECT
                 PassTB.Text = "";
         }
 
-        
+        private void loginTimer_Tick(object sender, EventArgs e)
+        {
+            loginTimer.Stop();
+            startingPageErrLabel.Visible = false;
+        }
     }
 }

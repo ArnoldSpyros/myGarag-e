@@ -13,7 +13,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
     class DbMethods
     {
         public static string connectionString = "server=jabc.zapto.org;uid=BaKa;pwd=A6dB.K2a;database=adopse"; // database connection string.
-        public static User user = null; // logged in user object.
+        public static User user = new User(); // logged in user object.
 
         public static MySqlConnection setMySqlConnection(string connectionString) // method that sets the connection with the database.
         {
@@ -271,10 +271,48 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                     return false; // if no user found then return false
                 }
             }
-            catch (MySqlException obj)
+            catch (MySqlException)
             {
                 //MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false; // could not find customer
+            }
+
+        }
+
+        //ερώτηση στη βάση αν υπάρχει καταστηματάρχης με το ίδιο username, δεν θέλουμε δύο αυτοκινητακηδες
+        public static bool findShopkeeper(string username, string password)
+        {
+            try
+            {
+                MySqlConnection dbConnection = setMySqlConnection(connectionString);
+                string query = "SELECT * FROM katastimatarxis WHERE username = @username OR password = @password";
+                MySqlCommand command = new MySqlCommand(query, dbConnection);
+
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+                command.Prepare();
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
+                DataSet dataset = new DataSet();
+                dataAdapter.Fill(dataset, "katastimatarxis");
+
+                //DataSet dataset = getTableData("pelatis", "username", username); // get clients data from the 'pelatis' table 
+
+                if (dataset.Tables["katastimatarxis"].Rows.Count > 0)
+                {
+                    dbConnection.Close(); // close database connection
+                    return true; // found shopkeeper
+                }
+                else
+                {
+                    //MessageBox.Show("User with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false; // if no user found then return false
+                }
+            }
+            catch (MySqlException)
+            {
+                //MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // could not find shopkeeper
             }
 
         }

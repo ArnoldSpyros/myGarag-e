@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.UserLabel = new System.Windows.Forms.Label();
             this.PassLabel = new System.Windows.Forms.Label();
@@ -35,7 +36,8 @@
             this.PassTB = new System.Windows.Forms.TextBox();
             this.LoginCustomerBtn = new System.Windows.Forms.Button();
             this.RegisterBtn = new System.Windows.Forms.Button();
-            this.loginShopBtn = new System.Windows.Forms.Button();
+            this.startingPageErrLabel = new System.Windows.Forms.Label();
+            this.loginTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // WelcomeLabel
@@ -96,11 +98,11 @@
             // 
             this.LoginCustomerBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LoginCustomerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.LoginCustomerBtn.Location = new System.Drawing.Point(18, 213);
+            this.LoginCustomerBtn.Location = new System.Drawing.Point(107, 213);
             this.LoginCustomerBtn.Name = "LoginCustomerBtn";
             this.LoginCustomerBtn.Size = new System.Drawing.Size(152, 23);
             this.LoginCustomerBtn.TabIndex = 3;
-            this.LoginCustomerBtn.Text = "Είσοδος σαν Πελάτης";
+            this.LoginCustomerBtn.Text = "Είσοδος";
             this.LoginCustomerBtn.UseVisualStyleBackColor = true;
             this.LoginCustomerBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
@@ -108,7 +110,7 @@
             // 
             this.RegisterBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RegisterBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.RegisterBtn.Location = new System.Drawing.Point(18, 267);
+            this.RegisterBtn.Location = new System.Drawing.Point(107, 267);
             this.RegisterBtn.Name = "RegisterBtn";
             this.RegisterBtn.Size = new System.Drawing.Size(152, 23);
             this.RegisterBtn.TabIndex = 4;
@@ -116,17 +118,22 @@
             this.RegisterBtn.UseVisualStyleBackColor = true;
             this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
             // 
-            // loginShopBtn
+            // startingPageErrLabel
             // 
-            this.loginShopBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.loginShopBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.loginShopBtn.Location = new System.Drawing.Point(200, 213);
-            this.loginShopBtn.Name = "loginShopBtn";
-            this.loginShopBtn.Size = new System.Drawing.Size(136, 77);
-            this.loginShopBtn.TabIndex = 5;
-            this.loginShopBtn.Text = "Είσοδος σαν Καταστηματάρχης";
-            this.loginShopBtn.UseVisualStyleBackColor = true;
-            this.loginShopBtn.Click += new System.EventHandler(this.loginShopBtn_Click);
+            this.startingPageErrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.startingPageErrLabel.ForeColor = System.Drawing.Color.Red;
+            this.startingPageErrLabel.Location = new System.Drawing.Point(3, 34);
+            this.startingPageErrLabel.Name = "startingPageErrLabel";
+            this.startingPageErrLabel.Size = new System.Drawing.Size(349, 33);
+            this.startingPageErrLabel.TabIndex = 5;
+            this.startingPageErrLabel.Text = "Δεν βρέθηκε χρήστης με αυτόν τον συνδυασμό ονόματος και κωδικού";
+            this.startingPageErrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.startingPageErrLabel.Visible = false;
+            // 
+            // loginTimer
+            // 
+            this.loginTimer.Interval = 3000;
+            this.loginTimer.Tick += new System.EventHandler(this.loginTimer_Tick);
             // 
             // myGarage_StartingPage
             // 
@@ -134,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 302);
-            this.Controls.Add(this.loginShopBtn);
+            this.Controls.Add(this.startingPageErrLabel);
             this.Controls.Add(this.RegisterBtn);
             this.Controls.Add(this.LoginCustomerBtn);
             this.Controls.Add(this.PassTB);
@@ -162,6 +169,7 @@
         private System.Windows.Forms.TextBox PassTB;
         private System.Windows.Forms.Button LoginCustomerBtn;
         private System.Windows.Forms.Button RegisterBtn;
-        private System.Windows.Forms.Button loginShopBtn;
+        private System.Windows.Forms.Label startingPageErrLabel;
+        private System.Windows.Forms.Timer loginTimer;
     }
 }

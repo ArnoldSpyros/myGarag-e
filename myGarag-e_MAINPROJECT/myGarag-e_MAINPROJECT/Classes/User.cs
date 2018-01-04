@@ -20,13 +20,22 @@ namespace myGarag_e_MAINPROJECT.Classes
 
         public User()
         {
+            /*this.userID = null;
+            this.roles[0] = null;
+            this.roles[0].rolosname = null;
+            this.username = null;
+            this.name = null;
+            this.lastName = null;
+            this.phoneNumber = null;
+            this.address = null;
+            */
         }
 
         public User(string ID, RolosUser rolos, string username, string name, string lastName, string phoneNumber, string address)
         {
             this.userID = ID;
             this.roles[0] = rolos;
-            this.roles[0].rolosname = "Pelatis";
+            this.roles[0].rolosname = rolos.rolosname;
             this.username = username;
             this.name = name;
             this.lastName = lastName;
@@ -77,17 +86,23 @@ namespace myGarag_e_MAINPROJECT.Classes
             set { phoneNumber = value; }
         }
 
-        //Επιστρέφει true αν έχει γεμίσει ο user του dbfiles που χρησιμοποιείται ευρέως
+        //Μέθοδος που επιστρέφει true αν όλα τα πεδία του user ειναι null
+        public Boolean isDummy()
+        {
+            return userID == null & FirstRole == null & username == null & name == null & lastName == null & phoneNumber == null & address == null;
+        }
+
+        //Μέθοδος που επιστρέφει true αν έχει γεμίσει ο user του dbfiles που χρησιμοποιείται ευρέως
         //και είναι όντως ο ίδιος με αυτόν που εξετάζουμε
         public Boolean isLoggedIn()
         {
-            return (DbFiles.DbMethods.user != null && DbFiles.DbMethods.user == this);
+            return ((!DbFiles.DbMethods.user.isDummy()) && DbFiles.DbMethods.user == this);
         }
 
         //Συνδέει τον χρήστη και δίνει feedback για το αν πέτυχε ή όχι
         public Boolean login(String username, String password)
         {
-            return DbFiles.DbMethods.loginCustomer(username, password);
+            return DbFiles.DbMethods.loginCustomer(username, password) || DbFiles.DbMethods.loginShop(username, password);
         }
 
         //αποσυνδέει τον χρήστη από το σύστημα
@@ -95,7 +110,7 @@ namespace myGarag_e_MAINPROJECT.Classes
         {
             if (this.isLoggedIn())
             {
-                DbFiles.DbMethods.user = null;
+                DbFiles.DbMethods.user = new User();
                 return true;
             }
             else
