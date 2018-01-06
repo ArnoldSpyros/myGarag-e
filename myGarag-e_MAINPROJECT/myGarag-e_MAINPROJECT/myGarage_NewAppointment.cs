@@ -32,21 +32,12 @@ namespace myGarag_e_MAINPROJECT
 
             try
             {
-                //Generate a random ID -> WILL DELETE LATER
+                //Generate a random ID
                 Random rnd = new Random();
                 string ID = rnd.Next(1000, 9999).ToString();
 
                 //find pelatisID
-                DataSet dsPelatisID = DbFiles.DbMethods.getTableData("pelatis", "username", DbFiles.DbMethods.user.Username);
-                DataTable dtPelatis = dsPelatisID.Tables["pelatis"];
-
-                foreach (DataRow dr in dtPelatis.Rows)
-                {
-                    if (dr["kodikosPelati"].ToString() != null)
-                    {
-                        pelatisID = dr["kodikosPelati"].ToString();
-                    }
-                }
+                pelatisID = DbFiles.DbMethods.user.UserID;
 
                 //find katastimatarxisID from Katastima
                 DataSet dsStoreID = DbFiles.DbMethods.getTableData("katastima", "onomasiaKatastimatos", katastima);
@@ -84,7 +75,8 @@ namespace myGarag_e_MAINPROJECT
             try
             {
                 MySqlConnection dbConnection = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
-                string query = String.Format("INSERT INTO rantevou (ID,IDpelati,IDkatastimatarxi,Description,Date,Confirmed) VALUES (@ID,@IDPelati,@kodikosKatastimatarxi,@description,@date,@confirmed)"); // SQL query
+                string query = String.Format("INSERT INTO rantevou (ID,IDpelati,IDkatastimatarxi,Description,Date,Confirmed) VALUES " +
+                    "(@ID,@IDPelati,@kodikosKatastimatarxi,@description,@date,@confirmed)"); // SQL query
 
 
                 MySqlCommand command = new MySqlCommand(query, dbConnection);

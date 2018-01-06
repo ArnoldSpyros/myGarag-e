@@ -261,7 +261,7 @@
             this.NewClienteleBtn.Name = "NewClienteleBtn";
             this.NewClienteleBtn.Size = new System.Drawing.Size(190, 23);
             this.NewClienteleBtn.TabIndex = 2;
-            this.NewClienteleBtn.Text = "Νέο Πελατολόγιο";
+            this.NewClienteleBtn.Text = "Εισαγωγή στο Πελατολόγιο";
             this.NewClienteleBtn.UseVisualStyleBackColor = true;
             this.NewClienteleBtn.Click += new System.EventHandler(this.NewClienteleBtn_Click);
             // 

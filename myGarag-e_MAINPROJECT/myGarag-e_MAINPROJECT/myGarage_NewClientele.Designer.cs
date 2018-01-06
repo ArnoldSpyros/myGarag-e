@@ -29,29 +29,41 @@
         private void InitializeComponent()
         {
             this.NewClienteleEdit = new System.Windows.Forms.GroupBox();
+            this.ClienteleTbInsertB = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ClienteleTbKatID = new System.Windows.Forms.TextBox();
             this.ClienteleTbKodikosPelati = new System.Windows.Forms.TextBox();
-            this.ClienteleTbKodikosPelatologiou = new System.Windows.Forms.TextBox();
+            this.ClienteleCbKatastima = new System.Windows.Forms.ComboBox();
             this.NewClienteleEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // NewClienteleEdit
             // 
+            this.NewClienteleEdit.Controls.Add(this.ClienteleCbKatastima);
+            this.NewClienteleEdit.Controls.Add(this.ClienteleTbInsertB);
             this.NewClienteleEdit.Controls.Add(this.label3);
             this.NewClienteleEdit.Controls.Add(this.label2);
             this.NewClienteleEdit.Controls.Add(this.label1);
             this.NewClienteleEdit.Controls.Add(this.ClienteleTbKatID);
             this.NewClienteleEdit.Controls.Add(this.ClienteleTbKodikosPelati);
-            this.NewClienteleEdit.Controls.Add(this.ClienteleTbKodikosPelatologiou);
             this.NewClienteleEdit.Location = new System.Drawing.Point(2, 82);
             this.NewClienteleEdit.Name = "NewClienteleEdit";
             this.NewClienteleEdit.Size = new System.Drawing.Size(408, 164);
             this.NewClienteleEdit.TabIndex = 1;
             this.NewClienteleEdit.TabStop = false;
             this.NewClienteleEdit.Text = "Επεξεργασία";
+            // 
+            // ClienteleTbInsertB
+            // 
+            this.ClienteleTbInsertB.Location = new System.Drawing.Point(289, 109);
+            this.ClienteleTbInsertB.Name = "ClienteleTbInsertB";
+            this.ClienteleTbInsertB.Size = new System.Drawing.Size(75, 23);
+            this.ClienteleTbInsertB.TabIndex = 7;
+            this.ClienteleTbInsertB.Text = "ΕΙΣΑΓΩΓΗ";
+            this.ClienteleTbInsertB.UseVisualStyleBackColor = true;
+            this.ClienteleTbInsertB.Click += new System.EventHandler(this.ClienteleTbInsertB_Click);
             // 
             // label3
             // 
@@ -74,11 +86,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 26);
+            this.label1.Location = new System.Drawing.Point(79, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 13);
+            this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Κωδικός πελατολογίου:";
+            this.label1.Text = "Κατάστημα:";
             // 
             // ClienteleTbKatID
             // 
@@ -94,12 +106,13 @@
             this.ClienteleTbKodikosPelati.Size = new System.Drawing.Size(48, 20);
             this.ClienteleTbKodikosPelati.TabIndex = 1;
             // 
-            // ClienteleTbKodikosPelatologiou
+            // ClienteleCbKatastima
             // 
-            this.ClienteleTbKodikosPelatologiou.Location = new System.Drawing.Point(159, 19);
-            this.ClienteleTbKodikosPelatologiou.Name = "ClienteleTbKodikosPelatologiou";
-            this.ClienteleTbKodikosPelatologiou.Size = new System.Drawing.Size(48, 20);
-            this.ClienteleTbKodikosPelatologiou.TabIndex = 0;
+            this.ClienteleCbKatastima.FormattingEnabled = true;
+            this.ClienteleCbKatastima.Location = new System.Drawing.Point(159, 23);
+            this.ClienteleCbKatastima.Name = "ClienteleCbKatastima";
+            this.ClienteleCbKatastima.Size = new System.Drawing.Size(121, 21);
+            this.ClienteleCbKatastima.TabIndex = 8;
             // 
             // myGarage_NewClientele
             // 
@@ -110,6 +123,7 @@
             this.Name = "myGarage_NewClientele";
             this.Text = "Εισαγωγή νέου πελατολογίου";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.myGarage_NewClientele_FormClosed);
+            this.Load += new System.EventHandler(this.myGarage_NewClientele_Load);
             this.NewClienteleEdit.ResumeLayout(false);
             this.NewClienteleEdit.PerformLayout();
             this.ResumeLayout(false);
@@ -124,6 +138,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ClienteleTbKatID;
         private System.Windows.Forms.TextBox ClienteleTbKodikosPelati;
-        private System.Windows.Forms.TextBox ClienteleTbKodikosPelatologiou;
+        private System.Windows.Forms.Button ClienteleTbInsertB;
+        private System.Windows.Forms.ComboBox ClienteleCbKatastima;
     }
 }

@@ -135,7 +135,8 @@ namespace myGarag_e_MAINPROJECT
         {
             try
             {
-                string sql = String.Format("SELECT P.onoma, P.epitheto, P.tilefono, PEL.kodikosPelati, PEL.kodikosSinalagis FROM pelatologio PEL JOIN pelatis P WHERE PEL.kodikosPelati = P.kodikosPelati AND PEL.kodikosKatastimatarxi = {0}", kodikosKatastimatarxi);
+                string sql = String.Format("SELECT P.onoma, P.epitheto, P.tilefono, PEL.kodikosPelati, PEL.kodikosSinalagis, PEL.kodikosPelatologiou " +
+                    "FROM pelatologio PEL JOIN pelatis P WHERE PEL.kodikosPelati = P.kodikosPelati AND PEL.kodikosKatastimatarxi = {0}", kodikosKatastimatarxi);
                 MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
 
                 DataSet ds = new DataSet();
@@ -187,7 +188,7 @@ namespace myGarag_e_MAINPROJECT
             {
                 string sql = "DELETE FROM pelatologio WHERE kodikosSinalagis = @kodikosSinalagis";
                 MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
-
+                
                 MySqlCommand command = new MySqlCommand(sql, con);
                 command.Parameters.AddWithValue("@kodikosSinalagis", kodikosSinalagis);
                 command.Prepare();
@@ -211,7 +212,8 @@ namespace myGarag_e_MAINPROJECT
         {
             try
             {
-                string sql = String.Format("SELECT R.ID,P.onoma,P.epitheto,P.tilefono,P.kodikosPelati,R.description,R.date,R.confirmed FROM Rantevou R INNER JOIN Pelatis P WHERE R.IDpelati = P.kodikosPelati AND R.IDkatastimatarxi = {0}", kodikosKatastimatarxi);
+                string sql = String.Format("SELECT R.ID,P.onoma,P.epitheto,P.tilefono,P.kodikosPelati,R.description,R.date,R.confirmed FROM Rantevou R " +
+                    "INNER JOIN Pelatis P WHERE R.IDpelati = P.kodikosPelati AND R.IDkatastimatarxi = {0}", kodikosKatastimatarxi);
                 MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
 
                 DataSet ds = new DataSet();
