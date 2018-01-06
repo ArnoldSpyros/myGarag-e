@@ -169,6 +169,12 @@
     <Compile Include="mygarage_UserInfo.Designer.cs">
       <DependentUpon>mygarage_UserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="myGarage_AppointmentList.resx">
@@ -225,6 +231,13 @@
     <EmbeddedResource Include="mygarage_UserInfo.resx">
       <DependentUpon>mygarage_UserInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Release\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.el-GR.resources" />
+    <EmbeddedResource Include="obj\Release\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.el.resources" />
+    <EmbeddedResource Include="obj\Release\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.resources" />
+    <EmbeddedResource Include="obj\Release\myGarag_e_MAINPROJECT.myGarage_ShopMain.resources" />
+    <EmbeddedResource Include="obj\Release\myGarag_e_MAINPROJECT.myGarage_StartingPage.resources" />
+    <EmbeddedResource Include="obj\Release\myGarag_e_MAINPROJECT.myGarage_SystemAdminMain.resources" />
+    <EmbeddedResource Include="obj\Release\myGarag_e_MAINPROJECT.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -235,6 +248,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\myGarag-e_MAINPROJECT.exe.config" />
+    <None Include="bin\Release\myGarag-e_MAINPROJECT.exe.config" />
+    <None Include="obj\Release\build.force" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\myGarag-e_MAINPROJECT.csproj.CopyComplete" />
+    <None Include="obj\Release\myGarag-e_MAINPROJECT.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\myGarag-e_MAINPROJECT.csproj.GenerateResource.Cache" />
+    <None Include="obj\Release\myGarag-e_MAINPROJECT.csprojResolveAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -256,6 +277,28 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\el-GR\myGarag-e_MAINPROJECT.resources.dll" />
+    <Content Include="bin\Debug\el\myGarag-e_MAINPROJECT.resources.dll" />
+    <Content Include="bin\Debug\myGarag-e_MAINPROJECT.exe" />
+    <Content Include="bin\Debug\myGarag-e_MAINPROJECT.pdb" />
+    <Content Include="bin\Release\el-GR\myGarag-e_MAINPROJECT.resources.dll" />
+    <Content Include="bin\Release\el\myGarag-e_MAINPROJECT.resources.dll" />
+    <Content Include="bin\Release\myGarag-e_MAINPROJECT.exe" />
+    <Content Include="bin\Release\myGarag-e_MAINPROJECT.pdb" />
+    <Content Include="bin\Release\MySql.Data.dll" />
+    <Content Include="bin\Release\MySql.Data.Entity.EF6.dll" />
+    <Content Include="bin\Release\MySql.Data.Entity.EF6.xml" />
+    <Content Include="bin\Release\MySQL.Data.EntityFrameworkCore.Design.dll" />
+    <Content Include="bin\Release\MySQL.Data.EntityFrameworkCore.Design.xml" />
+    <Content Include="bin\Release\MySQL.Data.EntityFrameworkCore.dll" />
+    <Content Include="bin\Release\MySQL.Data.EntityFrameworkCore.xml" />
+    <Content Include="bin\Release\MySql.Data.xml" />
+    <Content Include="obj\Release\el-GR\myGarag-e_MAINPROJECT.resources.dll" />
+    <Content Include="obj\Release\el\myGarag-e_MAINPROJECT.resources.dll" />
+    <Content Include="obj\Release\myGarag-e_MAINPROJECT.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\myGarag-e_MAINPROJECT.exe" />
+    <Content Include="obj\Release\myGarag-e_MAINPROJECT.pdb" />
+    <Content Include="obj\Release\TempPE\Properties.Resources.Designer.cs.dll" />
     <Content Include="Resources\magnifier-1093184_960_720.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

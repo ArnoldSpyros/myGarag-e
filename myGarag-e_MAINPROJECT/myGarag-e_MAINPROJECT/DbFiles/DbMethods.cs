@@ -12,7 +12,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 {
     class DbMethods
     {
-        public static string connectionString = "server=jabc.zapto.org;uid=KoSp;pwd=A6dK.S5p;database=adopse"; // database connection string.
+        public static string connectionString = "server=localhost;uid=root;pwd=;database=adopse"; // database connection string.
         public static User user = new User(); // logged in user object.
 
         public static MySqlConnection setMySqlConnection(string connectionString) // method that sets the connection with the database.
@@ -235,9 +235,9 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                     return false; // if no user found then return false
                 }
             }
-            catch (MySqlException exc)
+            catch (MySqlException obj)
             {
-                //MessageBox.Show("Error! Could not find shop keeper \n" + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Error! Could not find shop keeper \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false; // could not find customer
             }
         }
