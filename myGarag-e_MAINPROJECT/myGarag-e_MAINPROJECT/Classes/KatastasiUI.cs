@@ -72,6 +72,17 @@ namespace myGarag_e_MAINPROJECT.Classes
         }
         //--------------------------------------
 
+        //Ανοίγει μια φόρμα με μήνυμα από κάποιο event, για προβολή σε καινούριο παράθυρο.
+        public static void openPopup(Form fo, string msg)
+        {
+            Control con = fo.Controls[0];
+            if (con != null)
+            {
+                con.Text = msg;
+            }
+            fo.ShowDialog();
+        }
+
         //μέθοδοι διαχείρησης της αρχικής σελίδας
         public static void openStarting()
         {

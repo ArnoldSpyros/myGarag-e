@@ -33,11 +33,7 @@
             this.ShopPanel = new System.Windows.Forms.Panel();
             this.ShopUserMenuStrip = new System.Windows.Forms.MenuStrip();
             this.MessagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.εισερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.εξερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.πληροφορίεςToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.επεξεργασίαΠροφίλToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShopUserPanel = new System.Windows.Forms.Panel();
             this.AdministrativePanel = new System.Windows.Forms.Panel();
             this.ShopManagementTabs = new System.Windows.Forms.TabControl();
@@ -64,6 +60,8 @@
             this.OrdersContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DeleteOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.InfoOrder = new System.Windows.Forms.ToolStripMenuItem();
+            this.InboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewMsgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShopUserMenuStrip.SuspendLayout();
             this.ShopUserPanel.SuspendLayout();
             this.AdministrativePanel.SuspendLayout();
@@ -117,45 +115,18 @@
             // MessagesMenuItem
             // 
             this.MessagesMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.εισερχόμεναToolStripMenuItem,
-            this.εξερχόμεναToolStripMenuItem});
+            this.InboxToolStripMenuItem,
+            this.NewMsgToolStripMenuItem});
             this.MessagesMenuItem.Name = "MessagesMenuItem";
             this.MessagesMenuItem.Size = new System.Drawing.Size(77, 21);
             this.MessagesMenuItem.Text = "Μηνύματα";
             // 
-            // εισερχόμεναToolStripMenuItem
-            // 
-            this.εισερχόμεναToolStripMenuItem.Name = "εισερχόμεναToolStripMenuItem";
-            this.εισερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.εισερχόμεναToolStripMenuItem.Text = "Εισερχόμενα";
-            this.εισερχόμεναToolStripMenuItem.Click += new System.EventHandler(this.εισερχόμεναToolStripMenuItem_Click);
-            // 
-            // εξερχόμεναToolStripMenuItem
-            // 
-            this.εξερχόμεναToolStripMenuItem.Name = "εξερχόμεναToolStripMenuItem";
-            this.εξερχόμεναToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.εξερχόμεναToolStripMenuItem.Text = "Εξερχόμενα";
-            // 
             // AccountMenuItem
             // 
-            this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.πληροφορίεςToolStripMenuItem,
-            this.επεξεργασίαΠροφίλToolStripMenuItem});
             this.AccountMenuItem.Name = "AccountMenuItem";
             this.AccountMenuItem.Size = new System.Drawing.Size(125, 21);
             this.AccountMenuItem.Text = "Ο λογαριασμός μου";
-            // 
-            // πληροφορίεςToolStripMenuItem
-            // 
-            this.πληροφορίεςToolStripMenuItem.Name = "πληροφορίεςToolStripMenuItem";
-            this.πληροφορίεςToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.πληροφορίεςToolStripMenuItem.Text = "Πληροφορίες Προφίλ";
-            // 
-            // επεξεργασίαΠροφίλToolStripMenuItem
-            // 
-            this.επεξεργασίαΠροφίλToolStripMenuItem.Name = "επεξεργασίαΠροφίλToolStripMenuItem";
-            this.επεξεργασίαΠροφίλToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.επεξεργασίαΠροφίλToolStripMenuItem.Text = "Επεξεργασία προφίλ";
+            this.AccountMenuItem.Click += new System.EventHandler(this.AccountMenuItem_Click);
             // 
             // ShopUserPanel
             // 
@@ -405,6 +376,20 @@
             this.InfoOrder.Size = new System.Drawing.Size(219, 22);
             this.InfoOrder.Text = "Πληροφορίες Παραγγελίας";
             // 
+            // InboxToolStripMenuItem
+            // 
+            this.InboxToolStripMenuItem.Name = "InboxToolStripMenuItem";
+            this.InboxToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.InboxToolStripMenuItem.Text = "Γραμματοκιβώτιο";
+            this.InboxToolStripMenuItem.Click += new System.EventHandler(this.InboxToolStripMenuItem_Click);
+            // 
+            // NewMsgToolStripMenuItem
+            // 
+            this.NewMsgToolStripMenuItem.Name = "NewMsgToolStripMenuItem";
+            this.NewMsgToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.NewMsgToolStripMenuItem.Text = "Σύνταξη νέου μηνύματος";
+            this.NewMsgToolStripMenuItem.Click += new System.EventHandler(this.NewMsgToolStripMenuItem_Click);
+            // 
             // myGarage_ShopMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,11 +428,7 @@
         private System.Windows.Forms.Panel ShopPanel;
         private System.Windows.Forms.MenuStrip ShopUserMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem MessagesMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem εισερχόμεναToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem εξερχόμεναToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem πληροφορίεςToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem επεξεργασίαΠροφίλToolStripMenuItem;
         private System.Windows.Forms.Panel ShopUserPanel;
         private System.Windows.Forms.Panel AdministrativePanel;
         private System.Windows.Forms.ContextMenuStrip ClientContextMenu;
@@ -474,5 +455,7 @@
         private System.Windows.Forms.Button ananeosiB;
         private System.Windows.Forms.Button confirmRantevouBtn;
         private System.Windows.Forms.Button deleteRantevouBtn;
+        private System.Windows.Forms.ToolStripMenuItem InboxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NewMsgToolStripMenuItem;
     }
 }

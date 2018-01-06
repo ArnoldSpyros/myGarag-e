@@ -22,7 +22,12 @@ namespace myGarag_e_MAINPROJECT
 
         private void inboxDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == 4)
+            {
+                //MessageBox.Show("Worked sto keli 4!");
+                string mess = inboxDGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                KatastasiUI.openPopup(new myGarage_InboxMessagePopup(), mess);
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,8 +67,8 @@ namespace myGarag_e_MAINPROJECT
 
             DataSet dataset = DbFiles.DbMethods.getTableData("minimata", "receiver", "1000"); // MUST CHANGE to user.ID as the last parameter
             DataTable datatable = dataset.Tables["minimata"];
-            DataColumn senderNameColumn = new DataColumn("Sender Name", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
-            DataColumn senderLastNameColumn = new DataColumn("Sender Last Name", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
+            DataColumn senderNameColumn = new DataColumn("Όνομα αποστολέα", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
+            DataColumn senderLastNameColumn = new DataColumn("Επώνυμο αποστολέα", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
             datatable.Columns.Add(senderNameColumn);
             datatable.Columns.Add(senderLastNameColumn);
             inboxDGV.DataSource = dataset.Tables["minimata"];
@@ -97,8 +102,8 @@ namespace myGarag_e_MAINPROJECT
 
             DataSet dataset = DbFiles.DbMethods.getTableData("minimata", "sender", "1002"); // MUST CHANGE to user.ID as the last parameter
             DataTable datatable = dataset.Tables["minimata"];
-            DataColumn receiverNameColumn = new DataColumn("Receiver Name", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
-            DataColumn receiverLastNameColumn = new DataColumn("Receiver Last Name", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
+            DataColumn receiverNameColumn = new DataColumn("Όνομα παραλήπτη", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
+            DataColumn receiverLastNameColumn = new DataColumn("Επώνυμο παραλήπτη", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
             datatable.Columns.Add(receiverNameColumn);
             datatable.Columns.Add(receiverLastNameColumn);
             inboxDGV.DataSource = dataset.Tables["minimata"];
@@ -132,16 +137,16 @@ namespace myGarag_e_MAINPROJECT
             {
                 string messageID = inboxDGV.SelectedRows[0].Cells[0].Value.ToString(); // get message ID
 
-                DialogResult result = MessageBox.Show("Are you sure m8?", "WOT", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Είστε σίγουρος για την διαγραφή?", "Ερώτηση", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (result == DialogResult.OK) // if the user pressed the OK button
                 {
                     DbFiles.DbMethods.deleteFromTable("minimata", "kodikosMinimatos", messageID); // delete the message
-                    MessageBox.Show("Message deleted successfuly", "Message deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Το μήνυμα διαγράφτηκε επιτυχώς", "Διαγραφή", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else // if the user cancel the message deletion
                 {
-                    MessageBox.Show("Message deletion canceled", "Deletion canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Η διαγραφή του μηνύματος ακυρώθηκε", "Ακύρωση", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

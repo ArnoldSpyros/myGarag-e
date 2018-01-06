@@ -36,11 +36,9 @@
             this.listappointmentMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CartMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MessagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.εισερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.εξερχόμεναToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.σύνταξηΝέουΜηνύματοςToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.InboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewMsgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ApplicationLOGO = new System.Windows.Forms.Label();
             this.SearchPanel = new System.Windows.Forms.Panel();
             this.SearchBtn = new System.Windows.Forms.Button();
@@ -107,41 +105,28 @@
             // MessagesMenuItem
             // 
             this.MessagesMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.εισερχόμεναToolStripMenuItem,
-            this.εξερχόμεναToolStripMenuItem,
-            this.σύνταξηΝέουΜηνύματοςToolStripMenuItem});
+            this.InboxToolStripMenuItem,
+            this.NewMsgToolStripMenuItem});
             this.MessagesMenuItem.Name = "MessagesMenuItem";
             resources.ApplyResources(this.MessagesMenuItem, "MessagesMenuItem");
             // 
-            // εισερχόμεναToolStripMenuItem
+            // InboxToolStripMenuItem
             // 
-            this.εισερχόμεναToolStripMenuItem.Name = "εισερχόμεναToolStripMenuItem";
-            resources.ApplyResources(this.εισερχόμεναToolStripMenuItem, "εισερχόμεναToolStripMenuItem");
-            this.εισερχόμεναToolStripMenuItem.Click += new System.EventHandler(this.εισερχόμεναToolStripMenuItem_Click);
+            this.InboxToolStripMenuItem.Name = "InboxToolStripMenuItem";
+            resources.ApplyResources(this.InboxToolStripMenuItem, "InboxToolStripMenuItem");
+            this.InboxToolStripMenuItem.Click += new System.EventHandler(this.InboxToolStripMenuItem_Click);
             // 
-            // εξερχόμεναToolStripMenuItem
+            // NewMsgToolStripMenuItem
             // 
-            this.εξερχόμεναToolStripMenuItem.Name = "εξερχόμεναToolStripMenuItem";
-            resources.ApplyResources(this.εξερχόμεναToolStripMenuItem, "εξερχόμεναToolStripMenuItem");
-            // 
-            // σύνταξηΝέουΜηνύματοςToolStripMenuItem
-            // 
-            this.σύνταξηΝέουΜηνύματοςToolStripMenuItem.Name = "σύνταξηΝέουΜηνύματοςToolStripMenuItem";
-            resources.ApplyResources(this.σύνταξηΝέουΜηνύματοςToolStripMenuItem, "σύνταξηΝέουΜηνύματοςToolStripMenuItem");
-            this.σύνταξηΝέουΜηνύματοςToolStripMenuItem.Click += new System.EventHandler(this.σύνταξηΝέουΜηνύματοςToolStripMenuItem_Click);
+            this.NewMsgToolStripMenuItem.Name = "NewMsgToolStripMenuItem";
+            resources.ApplyResources(this.NewMsgToolStripMenuItem, "NewMsgToolStripMenuItem");
+            this.NewMsgToolStripMenuItem.Click += new System.EventHandler(this.NewMsgToolStripMenuItem_Click);
             // 
             // AccountMenuItem
             // 
-            this.AccountMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.infoToolStripMenuItem});
             this.AccountMenuItem.Name = "AccountMenuItem";
             resources.ApplyResources(this.AccountMenuItem, "AccountMenuItem");
-            // 
-            // infoToolStripMenuItem
-            // 
-            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            resources.ApplyResources(this.infoToolStripMenuItem, "infoToolStripMenuItem");
-            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
+            this.AccountMenuItem.Click += new System.EventHandler(this.AccountMenuItem_Click);
             // 
             // ApplicationLOGO
             // 
@@ -211,10 +196,8 @@
         private System.Windows.Forms.Label ApplicationLOGO;
         private System.Windows.Forms.MenuStrip ConsumerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem AccountMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MessagesMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem εισερχόμεναToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem εξερχόμεναToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem InboxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CartMenuItem;
         private System.Windows.Forms.Panel SearchPanel;
         private System.Windows.Forms.Button SearchBtn;
@@ -224,7 +207,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem newappointmentMenuStripItem;
         private System.Windows.Forms.ToolStripMenuItem listappointmentMenuStripItem;
-        private System.Windows.Forms.ToolStripMenuItem σύνταξηΝέουΜηνύματοςToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NewMsgToolStripMenuItem;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
     }
 }

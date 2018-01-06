@@ -219,22 +219,16 @@
   <data name="CartMenuItem.Text" xml:space="preserve">
     <value>Καλάθι αγορών</value>
   </data>
-  <data name="εισερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="InboxToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
-  <data name="εισερχόμεναToolStripMenuItem.Text" xml:space="preserve">
-    <value>Εισερχόμενα</value>
+  <data name="InboxToolStripMenuItem.Text" xml:space="preserve">
+    <value>Γραμματοκιβώτιο</value>
   </data>
-  <data name="εξερχόμεναToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="NewMsgToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
-  <data name="εξερχόμεναToolStripMenuItem.Text" xml:space="preserve">
-    <value>Εξερχόμενα</value>
-  </data>
-  <data name="σύνταξηΝέουΜηνύματοςToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="σύνταξηΝέουΜηνύματοςToolStripMenuItem.Text" xml:space="preserve">
+  <data name="NewMsgToolStripMenuItem.Text" xml:space="preserve">
     <value>Σύνταξη νέου μηνύματος</value>
   </data>
   <data name="MessagesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -242,12 +236,6 @@
   </data>
   <data name="MessagesMenuItem.Text" xml:space="preserve">
     <value>Μηνύματα</value>
-  </data>
-  <data name="infoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
-  <data name="infoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Πληροφορίες προφίλ</value>
   </data>
   <data name="AccountMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 20</value>
@@ -522,34 +510,22 @@
   <data name="&gt;&gt;MessagesMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;εισερχόμεναToolStripMenuItem.Name" xml:space="preserve">
-    <value>εισερχόμεναToolStripMenuItem</value>
+  <data name="&gt;&gt;InboxToolStripMenuItem.Name" xml:space="preserve">
+    <value>InboxToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;εισερχόμεναToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;InboxToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;εξερχόμεναToolStripMenuItem.Name" xml:space="preserve">
-    <value>εξερχόμεναToolStripMenuItem</value>
+  <data name="&gt;&gt;NewMsgToolStripMenuItem.Name" xml:space="preserve">
+    <value>NewMsgToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;εξερχόμεναToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;σύνταξηΝέουΜηνύματοςToolStripMenuItem.Name" xml:space="preserve">
-    <value>σύνταξηΝέουΜηνύματοςToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;σύνταξηΝέουΜηνύματοςToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;NewMsgToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;AccountMenuItem.Name" xml:space="preserve">
     <value>AccountMenuItem</value>
   </data>
   <data name="&gt;&gt;AccountMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;infoToolStripMenuItem.Name" xml:space="preserve">
-    <value>infoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;infoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

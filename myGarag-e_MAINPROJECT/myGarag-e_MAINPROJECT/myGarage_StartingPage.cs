@@ -41,6 +41,8 @@ namespace myGarag_e_MAINPROJECT
                     KatastasiUI.hideStarting();
                     KatastasiUI.openThis(nShop);
                 }
+                UserTB.Text = "";
+                PassTB.Text = "";
             }
             //else if (DbFiles.DbMethods.findShopkeeper(username, password))
             //{
@@ -49,7 +51,8 @@ namespace myGarag_e_MAINPROJECT
             else
             {
                 startingPageErrLabel.Visible = true;
-                loginTimer.Start(); 
+                loginTimer.Start();
+                //MessageBox.Show("User with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             //uncoment the line below to use the software as a user
@@ -65,8 +68,7 @@ namespace myGarag_e_MAINPROJECT
 
         private void myGarage_StartingPage_EnabledChanged(object sender, EventArgs e)
         {
-                UserTB.Text = "";
-                PassTB.Text = "";
+                
         }
 
         private void loginTimer_Tick(object sender, EventArgs e)

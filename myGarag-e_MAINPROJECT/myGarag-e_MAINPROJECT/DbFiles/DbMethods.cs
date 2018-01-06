@@ -12,7 +12,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
 {
     class DbMethods
     {
-        public static string connectionString = "server=jabc.zapto.org;uid=BaKa;pwd=A6dB.K2a;database=adopse"; // database connection string.
+        public static string connectionString = "server=jabc.zapto.org;uid=KoSp;pwd=A6dK.S5p;database=adopse"; // database connection string.
         public static User user = new User(); // logged in user object.
 
         public static MySqlConnection setMySqlConnection(string connectionString) // method that sets the connection with the database.
@@ -69,7 +69,7 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                 dbConnection.Close();
                 return dataset; // return the dataset containg data from the specified table.
             }
-            catch (MySqlException obj)
+            catch (Exception obj)
             {
                 MessageBox.Show(obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null; // if there was an error return null.
@@ -190,13 +190,13 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                 }
                 else
                 {
-                    MessageBox.Show("User with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //MessageBox.Show("User with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false; // if no user found then return false
                 }
             }
             catch (MySqlException obj)
             {
-                MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Error! Could not find customer \n" + obj.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false; // could not find customer
             }
 
@@ -231,13 +231,13 @@ namespace myGarag_e_MAINPROJECT.DbFiles
                 }
                 else
                 {
-                    MessageBox.Show("Shop keeper with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //MessageBox.Show("Shop keeper with username " + username + " was not found!", "No user found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false; // if no user found then return false
                 }
             }
             catch (MySqlException exc)
             {
-                MessageBox.Show("Error! Could not find customer \n" + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Error! Could not find shop keeper \n" + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false; // could not find customer
             }
         }

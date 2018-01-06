@@ -138,7 +138,7 @@
             // 
             // loginTimer
             // 
-            this.loginTimer.Interval = 3000;
+            this.loginTimer.Interval = 8000;
             this.loginTimer.Tick += new System.EventHandler(this.loginTimer_Tick);
             // 
             // userErrLabel

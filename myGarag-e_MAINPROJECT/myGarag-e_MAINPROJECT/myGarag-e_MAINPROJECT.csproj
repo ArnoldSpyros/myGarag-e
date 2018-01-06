@@ -97,6 +97,12 @@
     <Compile Include="mygarage_Inbox.Designer.cs">
       <DependentUpon>mygarage_Inbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="myGarage_InboxMessagePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myGarage_InboxMessagePopup.Designer.cs">
+      <DependentUpon>myGarage_InboxMessagePopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="myGarage_NewAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="myGarage_genericTerminateOrLogoutForm.resx">
       <DependentUpon>myGarage_genericTerminateOrLogoutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myGarage_Inbox.resx">
+      <DependentUpon>mygarage_Inbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myGarage_InboxMessagePopup.resx">
+      <DependentUpon>myGarage_InboxMessagePopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myGarage_NewAppointment.resx">
       <DependentUpon>myGarage_NewAppointment.cs</DependentUpon>

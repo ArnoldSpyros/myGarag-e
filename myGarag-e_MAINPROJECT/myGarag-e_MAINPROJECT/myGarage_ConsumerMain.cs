@@ -53,22 +53,6 @@ namespace myGarag_e_MAINPROJECT
 
         //public static bool infoMenuItemShown = false;
 
-        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //if (!infoMenuItemShown)
-            //{
-            mygarage_UserInfo newuserinfo = new mygarage_UserInfo();
-            KatastasiUI.openThis(newuserinfo);
-                //infoMenuItemShown = true;
-            //}
-        }
-
-        private void σύνταξηΝέουΜηνύματοςToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            myGarage_NewMessage form = new myGarage_NewMessage();
-            KatastasiUI.openThis(form);
-        }
-
         private void ConsumerMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -102,10 +86,26 @@ namespace myGarag_e_MAINPROJECT
 
         }
 
-        private void εισερχόμεναToolStripMenuItem_Click(object sender, EventArgs e)
+        private void InboxToolStripMenuItem_Click(object sender, EventArgs e)
         {
             myGarage_Inbox inbox = new myGarage_Inbox();
             KatastasiUI.openThis(inbox, true);
+        }
+
+        private void AccountMenuItem_Click(object sender, EventArgs e)
+        {
+            //if (!infoMenuItemShown)
+            //{
+            mygarage_UserInfo newuserinfo = new mygarage_UserInfo();
+            KatastasiUI.openThis(newuserinfo);
+            //infoMenuItemShown = true;
+            //}
+        }
+
+        private void NewMsgToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            myGarage_NewMessage form = new myGarage_NewMessage();
+            KatastasiUI.openThis(form);
         }
     }
 }

@@ -365,10 +365,26 @@ namespace myGarag_e_MAINPROJECT
             }
         }
 
-        private void εισερχόμεναToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AccountMenuItem_Click(object sender, EventArgs e)
+        {
+            //if (!infoMenuItemShown)
+            //{
+            mygarage_UserInfo newuserinfo = new mygarage_UserInfo();
+            KatastasiUI.openThis(newuserinfo);
+            //infoMenuItemShown = true;
+            //}
+        }
+
+        private void InboxToolStripMenuItem_Click(object sender, EventArgs e)
         {
             myGarage_Inbox inbox = new myGarage_Inbox();
             KatastasiUI.openThis(inbox, true);
+        }
+
+        private void NewMsgToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            myGarage_NewMessage form = new myGarage_NewMessage();
+            KatastasiUI.openThis(form);
         }
     }
 }

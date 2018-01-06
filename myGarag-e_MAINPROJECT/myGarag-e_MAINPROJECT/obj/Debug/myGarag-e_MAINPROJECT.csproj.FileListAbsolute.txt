@@ -49,14 +49,8 @@ C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINP
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\myGarag-e_MAINPROJECT.pdb
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\el-GR\myGarag-e_MAINPROJECT.resources.dll
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\el\myGarag-e_MAINPROJECT.resources.dll
-C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.dll
-C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.Entity.EF6.dll
-C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.dll
-C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySQL.Data.EntityFrameworkCore.dll
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.xml
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySql.Data.Entity.EF6.xml
-C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySQL.Data.EntityFrameworkCore.xml
-C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.xml
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.csprojResolveAssemblyReference.cache
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_ConsumerMain.resources
 C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewOrder.resources
@@ -143,3 +137,8 @@ C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPRO
 C:\Users\Loco\Desktop\gitRepos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewMessage.resources
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_genericTerminateOrLogoutForm.resources
 C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewMessage.resources
+C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_genericTerminateOrLogoutForm.resources
+C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_NewMessage.resources
+C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.mygarage_UserInfo.resources
+C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_Inbox.resources
+C:\Users\Lordkarnak\Source\Repos\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_InboxMessagePopup.resources
