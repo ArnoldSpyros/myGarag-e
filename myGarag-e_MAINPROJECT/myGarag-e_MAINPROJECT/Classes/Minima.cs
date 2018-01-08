@@ -113,13 +113,13 @@ namespace myGarag_e_MAINPROJECT.Classes
 
             switch (receiverCategory)
             {
-                case 0: // if the senderID category is customer 'pelatis'
+                case 0: // if the receiver category is customer 'pelatis'
                     dataset = DbFiles.DbMethods.getTableData("pelatis", "kodikosPelati", receiverID);
                     receiverName = dataset.Tables["pelatis"].Rows[0][1].ToString(); // get the senderID's name
                     receiverLastName = dataset.Tables["pelatis"].Rows[0][2].ToString(); // get the senderID's last name                                      
                     break;
 
-                case 1: // if the senderID category is store owner (kastastimatarxis)
+                case 1: // if the receiver category is store owner (kastastimatarxis)
                     dataset = DbFiles.DbMethods.getTableData("katastimatarxis", "kodikosKatastimatarxi", receiverID);
                     receiverName = dataset.Tables["katastimatarxis"].Rows[0][1].ToString(); // get the senderID's name
                     receiverLastName = dataset.Tables["katastimatarxis"].Rows[0][2].ToString(); // get the senderID's last name                                      
@@ -130,9 +130,6 @@ namespace myGarag_e_MAINPROJECT.Classes
                     break;
             }
         }
-
-
-
 
 
     }

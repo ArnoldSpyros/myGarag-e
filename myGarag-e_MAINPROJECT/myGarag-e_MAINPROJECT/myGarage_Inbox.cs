@@ -65,27 +65,38 @@ namespace myGarag_e_MAINPROJECT
             string senderName;
             string senderLastName;
 
-            DataSet dataset = DbFiles.DbMethods.getTableData("minimata", "receiver", "1000"); // MUST CHANGE to user.ID as the last parameter
+            DataSet dataset = DbFiles.DbMethods.getTableData("minimata", "receiver", DbFiles.DbMethods.user.UserID); // MUST CHANGE to user.ID as the last parameter
             DataTable datatable = dataset.Tables["minimata"];
             DataColumn senderNameColumn = new DataColumn("Όνομα αποστολέα", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
             DataColumn senderLastNameColumn = new DataColumn("Επώνυμο αποστολέα", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
             datatable.Columns.Add(senderNameColumn);
             datatable.Columns.Add(senderLastNameColumn);
             inboxDGV.DataSource = dataset.Tables["minimata"];
+            int i = 0;
 
             Minima message = new Minima();
 
             foreach (DataGridViewRow gridRow in inboxDGV.Rows)
             {
-                foreach (DataRow row in dataset.Tables["minimata"].Rows) // for each row in the table minimata
-                {
-                    string senderID = row[1].ToString(); // get the senderID's ID
-                    message.getSenderInfo(0, senderID, dataset); // call the getSenderInfo method of the message object to find senderID's first name and last name
+              //  foreach (DataRow row in dataset.Tables["minimata"].Rows) // for each row in the table minimata
+              //  {
+                    string senderID = dataset.Tables["minimata"].Rows[i++][1].ToString(); // get the senderID's ID
+
+                    switch (DbFiles.DbMethods.user.FirstRole)
+                    {
+                        case "Pelatis": message.getSenderInfo(1, senderID, dataset); // call the getSenderInfo method of the message object to find senderID's first name and last name
+                            break;
+                        case "Katastimatarxis": message.getSenderInfo(0, senderID, dataset); // call the getSenderInfo method of the message object to find senderID's first name and last name
+                            break;
+                        default: break;
+                    }
+
+                    //message.getSenderInfo(0, senderID, dataset); // call the getSenderInfo method of the message object to find senderID's first name and last name
                     senderName = message.SenderName;
                     senderLastName = message.SenderLastName;
                     gridRow.Cells[6].Value = senderName; // set the 'Sender Name' column value of the current row to receiverName variable value
                     gridRow.Cells[7].Value = senderLastName; // set the 'Sender Last Name' column value of the current row to lastName variable value
-                }
+             //   }
             }
 
             inboxDGV.Columns[0].Visible = false; // set the messageID column visible prpertie to false
@@ -100,27 +111,41 @@ namespace myGarag_e_MAINPROJECT
             string receiverName;
             string receiverLastName;
 
-            DataSet dataset = DbFiles.DbMethods.getTableData("minimata", "sender", "1002"); // MUST CHANGE to user.ID as the last parameter
+            DataSet dataset = DbFiles.DbMethods.getTableData("minimata", "sender", DbFiles.DbMethods.user.UserID); // MUST CHANGE to user.ID as the last parameter
             DataTable datatable = dataset.Tables["minimata"];
             DataColumn receiverNameColumn = new DataColumn("Όνομα παραλήπτη", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
             DataColumn receiverLastNameColumn = new DataColumn("Επώνυμο παραλήπτη", typeof(string)); // instantiating a DataColumn to store and display the senderID's receiverName in inbox's form dataGridView
             datatable.Columns.Add(receiverNameColumn);
             datatable.Columns.Add(receiverLastNameColumn);
             inboxDGV.DataSource = dataset.Tables["minimata"];
+            int i =0;
 
             Minima message = new Minima();
 
             foreach (DataGridViewRow gridRow in inboxDGV.Rows)
             {
-                foreach (DataRow row in dataset.Tables["minimata"].Rows) // for each row in the table minimata
-                {
-                    string receiverID = row[2].ToString(); // get the senderID's ID
-                    message.getReceiverInfo(0, receiverID, dataset); // call the getSenderInfo method of the message object to find senderID's first name and last name
+                //foreach (DataRow row in dataset.Tables["minimata"].Rows) // for each row in the table minimata
+                //{
+                    string receiverID = dataset.Tables["minimata"].Rows[i++][2].ToString(); // get the senderID's ID
+
+                    switch (DbFiles.DbMethods.user.FirstRole)
+                    {
+                        case "Pelatis":
+                            message.getReceiverInfo(1, receiverID, dataset); // call the getSenderInfo method of the message object to find senderID's first name and last name
+                            break;
+                        case "Katastimatarxis":
+                            message.getReceiverInfo(0, receiverID, dataset); // call the getSenderInfo method of the message object to find senderID's first name and last name
+                            break;
+                        default: break;
+
+                    }
+
+                  //  message.getReceiverInfo(0, receiverID, dataset); // call the getSenderInfo method of the message object to find senderID's first name and last name
                     receiverName = message.ReceiverName;
                     receiverLastName = message.ReceiverLastName;
                     gridRow.Cells[6].Value = receiverName; // set the 'Sender Name' column value of the current row to receiverName variable value
                     gridRow.Cells[7].Value = receiverLastName; // set the 'Sender Last Name' column value of the current row to lastName variable value
-                }
+              //  }
             }
 
             inboxDGV.Columns[0].Visible = false; // set the messageID column visible prpertie to false
