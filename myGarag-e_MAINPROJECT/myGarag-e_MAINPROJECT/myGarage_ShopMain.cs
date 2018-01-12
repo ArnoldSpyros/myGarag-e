@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using myGarag_e_MAINPROJECT.Classes;
-
+using System.IO;
 
 namespace myGarag_e_MAINPROJECT
 {
@@ -42,6 +42,8 @@ namespace myGarag_e_MAINPROJECT
                     case 2:
                         ds = DbFiles.DbMethods.getTableData("proion");
                         dataGridView3.DataSource = ds.Tables["proion"];
+                        dataGridView3.Columns["eikona"].Visible = false;
+                        addImages();
                         break;
 
                     case 3:
@@ -59,7 +61,32 @@ namespace myGarag_e_MAINPROJECT
             }
         }
 
-        
+        private void addImages()
+        {
+            string sql = "select eikona from proion";
+            MySqlConnection con = DbFiles.DbMethods.setMySqlConnection(DbFiles.DbMethods.connectionString);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con);
+            DataSet ds = new DataSet();
+
+            adapter.Fill(ds, "proion");
+
+            int count = 0;
+            foreach(DataRow dr in ds.Tables["proion"].Rows)
+            {
+                
+                byte[] img = (byte[])dr["eikona"];
+                MemoryStream str = new MemoryStream();
+                str.Write(img, 0, img.Length);
+
+                Image i = Image.FromStream(str);
+
+
+
+                dataGridView3.Rows[count].Cells["imageColumn"].Value = i;
+                count++;
+            }
+
+        }
 
         //By default this is set to false, it's enabled when a new client form is shown and switches back and forth
         //public static Boolean newClientFormShown = false;
@@ -385,6 +412,17 @@ namespace myGarag_e_MAINPROJECT
         {
             myGarage_NewMessage form = new myGarage_NewMessage();
             KatastasiUI.openThis(form);
+        }
+
+        private void myGarage_ShopMain_Load(object sender, EventArgs e)
+        {
+            //insert the img column in datagrid3
+            DataGridViewImageColumn imgCol = new DataGridViewImageColumn(true);
+            
+            imgCol.Name = "imageColumn";
+            imgCol.HeaderText = "eikona";
+            
+            dataGridView3.Columns.Add(imgCol);
         }
     }
 }

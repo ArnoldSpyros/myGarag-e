@@ -33,6 +33,8 @@
             this.ShopPanel = new System.Windows.Forms.Panel();
             this.ShopUserMenuStrip = new System.Windows.Forms.MenuStrip();
             this.MessagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.InboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewMsgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShopUserPanel = new System.Windows.Forms.Panel();
             this.AdministrativePanel = new System.Windows.Forms.Panel();
@@ -60,8 +62,6 @@
             this.OrdersContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DeleteOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.InfoOrder = new System.Windows.Forms.ToolStripMenuItem();
-            this.InboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NewMsgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShopUserMenuStrip.SuspendLayout();
             this.ShopUserPanel.SuspendLayout();
             this.AdministrativePanel.SuspendLayout();
@@ -120,6 +120,20 @@
             this.MessagesMenuItem.Name = "MessagesMenuItem";
             this.MessagesMenuItem.Size = new System.Drawing.Size(77, 21);
             this.MessagesMenuItem.Text = "Μηνύματα";
+            // 
+            // InboxToolStripMenuItem
+            // 
+            this.InboxToolStripMenuItem.Name = "InboxToolStripMenuItem";
+            this.InboxToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.InboxToolStripMenuItem.Text = "Γραμματοκιβώτιο";
+            this.InboxToolStripMenuItem.Click += new System.EventHandler(this.InboxToolStripMenuItem_Click);
+            // 
+            // NewMsgToolStripMenuItem
+            // 
+            this.NewMsgToolStripMenuItem.Name = "NewMsgToolStripMenuItem";
+            this.NewMsgToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.NewMsgToolStripMenuItem.Text = "Σύνταξη νέου μηνύματος";
+            this.NewMsgToolStripMenuItem.Click += new System.EventHandler(this.NewMsgToolStripMenuItem_Click);
             // 
             // AccountMenuItem
             // 
@@ -270,6 +284,8 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(7, 54);
             this.dataGridView3.Name = "dataGridView3";
@@ -376,20 +392,6 @@
             this.InfoOrder.Size = new System.Drawing.Size(219, 22);
             this.InfoOrder.Text = "Πληροφορίες Παραγγελίας";
             // 
-            // InboxToolStripMenuItem
-            // 
-            this.InboxToolStripMenuItem.Name = "InboxToolStripMenuItem";
-            this.InboxToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.InboxToolStripMenuItem.Text = "Γραμματοκιβώτιο";
-            this.InboxToolStripMenuItem.Click += new System.EventHandler(this.InboxToolStripMenuItem_Click);
-            // 
-            // NewMsgToolStripMenuItem
-            // 
-            this.NewMsgToolStripMenuItem.Name = "NewMsgToolStripMenuItem";
-            this.NewMsgToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.NewMsgToolStripMenuItem.Text = "Σύνταξη νέου μηνύματος";
-            this.NewMsgToolStripMenuItem.Click += new System.EventHandler(this.NewMsgToolStripMenuItem_Click);
-            // 
             // myGarage_ShopMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,6 +405,7 @@
             this.Name = "myGarage_ShopMain";
             this.Text = "Διαχείρηση Καταστήματος";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.myGarage_ShopMain_FormClosing);
+            this.Load += new System.EventHandler(this.myGarage_ShopMain_Load);
             this.ShopUserMenuStrip.ResumeLayout(false);
             this.ShopUserMenuStrip.PerformLayout();
             this.ShopUserPanel.ResumeLayout(false);

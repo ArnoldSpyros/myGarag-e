@@ -177,3 +177,5 @@ C:\Users\Loco\Desktop\gitRepos\Newest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_
 C:\Users\Loco\Desktop\gitRepos\Newest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\el\myGarag-e_MAINPROJECT.resources.dll
 C:\Users\Loco\Desktop\gitRepos\Newest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.exe
 C:\Users\Loco\Desktop\gitRepos\Newest\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag-e_MAINPROJECT.pdb
+C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_Inbox.resources
+C:\Users\Bill\Documents\GitHub\myGarag-e\myGarag-e_MAINPROJECT\myGarag-e_MAINPROJECT\obj\Debug\myGarag_e_MAINPROJECT.myGarage_InboxMessagePopup.resources

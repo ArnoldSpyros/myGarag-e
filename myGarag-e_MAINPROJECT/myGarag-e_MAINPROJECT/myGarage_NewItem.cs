@@ -35,17 +35,24 @@ namespace myGarag_e_MAINPROJECT
 
         private void insertProductB_Click(object sender, EventArgs e)
         {
-            string productID = ItemTbKodikosProiontos.Text;
-            string productName = ItemTbPerigrafi.Text;
-            string productPrice = ItemTbTimi.Text;
-            string productCompany = ItemTbKataskeuastis.Text;
-            string productCountry = ItemTbXoraKataskeuis.Text;
-            System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            productImgPB.Image.Save(ms, productImgPB.Image.RawFormat);
-            byte[] img = ms.ToArray();
+            try
+            {
+                string productID = ItemTbKodikosProiontos.Text;
+                string productName = ItemTbPerigrafi.Text;
+                string productPrice = ItemTbTimi.Text;
+                string productCompany = ItemTbKataskeuastis.Text;
+                string productCountry = ItemTbXoraKataskeuis.Text;
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                productImgPB.Image.Save(ms, productImgPB.Image.RawFormat);
+                byte[] img = ms.ToArray();
 
-            int insertedRows = DbFiles.DbMethods.insertProduct(productID, productName, img, productPrice, productCompany, productCountry);
-            MessageBox.Show("Inserted " + insertedRows + " products in the database", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int insertedRows = DbFiles.DbMethods.insertProduct(productID, productName, img, productPrice, productCompany, productCountry);
+                MessageBox.Show("Inserted " + insertedRows + " products in the database", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }
